@@ -1,0 +1,69 @@
+/*----------------------------------------------
+	Instagram Feed
+----------------------------------------------*/
+
+.site-contant--instagram-feed  {
+ 	overflow: hidden;
+    
+    .svg-inline--fa {
+	    color: inherit;
+    }
+    
+    .lead {
+	    text-align: center;
+		margin: 2em auto;
+    }
+
+	.flickity-viewport {
+		overflow: visible;
+			
+		.carousel-cell {
+			width: 20vw;
+			height: 20vw;
+			max-width: 350px;		
+			max-height: 350px;
+			min-width: 180px;
+			min-height: 180px;
+			margin-right: 0.5em;
+			transition: opacity .5s ease-in-out;			
+			border: 0;				
+			opacity: .3 ;				
+		
+			&.is-selected {
+				opacity: 1;
+			}
+			
+			a {
+				display: block;
+				border: 0;
+				width: 20vw;
+				height: 20vw;
+				max-width: 350px;		
+				max-height: 350px;
+				min-width: 180px;
+				min-height: 180px;	
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			
+			img {
+				width: 100%;
+				height: auto;
+	 			visibility: hidden;
+			}			
+		}
+							
+		.flickity-prev-next-button {
+		    width: 45px !important;
+		    height: 45px !important;
+		    padding: 0;
+			svg {
+				width: 40% !important;
+				height: 40% !important;
+				left: 29% !important;
+				top: 31% !important;		
+			}
+		}			
+	}
+}

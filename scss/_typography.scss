@@ -1,0 +1,131 @@
+/*----------------------------------------------
+	Typography
+----------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $font-heading;
+	font-weight: normal;
+	line-height: $line-height-heading;	
+}
+
+.title-large {
+	font-size: $font-size-title-large;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+
+.title-medium {
+	margin: .5em 0;
+	font-size: $font-size-title-medium;
+	font-weight: normal;
+	text-align: center;	
+	text-transform: initial;
+	line-height: $line-height-heading;				
+}
+
+p,
+li {
+	line-height: $line-height-base;			
+}
+
+a {
+	font-weight: 400;
+	text-decoration: none;	
+}
+
+hr {
+	border-style: solid;			
+	border-width: 1px;
+}
+
+/*----------------------------------------------
+	Lists
+----------------------------------------------*/
+
+ul,
+ol {
+	list-style: none;
+	
+	li::before {
+		display: inline-block;
+		width: 1em;
+		margin-left: -1em;
+	}
+	
+	&.list-style-none {
+		padding-left: 0;
+	}
+}		
+
+ul {
+	list-style: none;
+}
+
+ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery) {
+	li::before {
+		font-family: sans-serif;
+		content: "•";
+	}
+}
+
+ol {
+	counter-reset: li;
+	
+	li {
+		counter-increment: li;
+		
+		&::before {
+			content: counter(li);
+			font-weight: 400;
+		}
+	}					
+}
+
+/*----------------------------------------------
+	Blockquote
+----------------------------------------------*/
+
+blockquote  {
+	margin-left: 2em;
+	margin-right: 2em;
+	
+	p {	
+		&::before {
+			display: none;
+			font-family: "Font Awesome 5 Light";
+		}				
+					
+		&::before {
+			content: "\f10d";
+		}				
+		
+		.fa-quote-left {
+		    margin-right: .25em;				
+		}
+	}			
+}
+
+/*----------------------------------------------
+	Button
+----------------------------------------------*/
+
+.btn {
+  display: block;
+  padding: .5em 1em;
+  box-shadow: 0 0 30px rgba(0,0,0,.3);
+  font-size: calc(18px + .5vw);
+}
+
+button,
+select,
+textarea,
+input {
+	font-size: $font-size-base;
+	font-family: $font-base;
+	font-weight: 300;
+}

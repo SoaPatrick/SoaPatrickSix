@@ -1,0 +1,62 @@
+/*----------------------------------------------
+	Color Themes
+----------------------------------------------*/
+
+// bg-color
+// sp-color
+// text-color
+// sp-text-color
+
+.red { 
+	@include color-theme(
+		$dark-grey,
+		$red,
+		$white,
+		$white
+	); 
+};
+
+#blue { 
+	@include color-theme(
+		$dark-grey,
+		$blue,
+		$white,
+		$white
+	); 
+};
+
+#pink { 
+	@include color-theme(
+		$dark-grey,
+		$pink,
+		$white,
+		$white
+	); 
+};
+
+#purple { 
+	@include color-theme(
+		$dark-grey,
+		$purple,
+		$white,
+		$white
+	); 
+};
+
+#green { 
+	@include color-theme(
+		$dark-grey,
+		$green,
+		$white,
+		$white
+	); 
+};
+
+#amber { 
+	@include color-theme(
+		$dark-grey,
+		$amber,
+		$white,
+		$dark-grey
+	); 
+};

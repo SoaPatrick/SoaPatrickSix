@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post condensed' ); ?>>
-	<div class="list-wrapper padding-indent">
+	<div class="list-wrapper">
 		<div class="list-icon">
 			<?php if (has_post_format('quote')) : ?>
 				<i class="fal fa-quote-right"></i>	

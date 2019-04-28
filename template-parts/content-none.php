@@ -9,11 +9,11 @@
 
 ?>
 
-<header class="page-header padding-indent">
+<header class="page-header">
 	<h1 class="title-large"><?php esc_html_e( 'Nothing Found', 'soapatricksix' ); ?></h1>
 </header>
 <hr class="margin-extend">
-<div class="page-content padding-indent">
+<div class="page-content">
 	<?php if ( is_search() ) : ?>
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'soapatricksix' ); ?></p>
 		<?php get_search_form(); ?>

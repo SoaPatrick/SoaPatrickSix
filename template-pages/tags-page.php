@@ -12,11 +12,11 @@ get_header(); ?>
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
 				    <span class="breadcrumbs--item__last">Tags</span>
 				</nav>						    
-				<header class="page-header padding-inden">		
+				<header class="page-header">		
 					<h1 class="title-large">Tags</h1>
 				</header>
 				<hr class="margin-extend">
-				<div class="page-content page-content--tag-archive padding-indent">			    
+				<div class="page-content page-content--tag-archive">			    
 					<?php the_widget( 'WP_Widget_Tag_Cloud', '', '' ); ?>
 				</div>
 			</article>

@@ -7,11 +7,11 @@ get_header(); ?>
     <div class="site-content">
 	    <div class="container">
 			<article>	    
-				<header class="page-header padding-indent">
+				<header class="page-header">
 					<h1 class="title-large">Change Log</h1>
 				</header>
 				<hr class="margin-extend">
-				<div class="page-content page-content--changelog padding-indent">
+				<div class="page-content page-content--changelog">
 					<?php				
 					if ( have_posts() ) :					
 						$day_check = '';

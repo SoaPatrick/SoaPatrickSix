@@ -4,6 +4,7 @@
 
 .site-content {
 	padding: 4em 0;
+	overflow-x: hidden;   	
 	
 	.container > article {
 		padding: 4em 0;
@@ -15,6 +16,21 @@
 		&.condensed {
 			padding: 2em 0;
 		}
+	}
+}
+
+@media (min-width: 601px) {
+	.container {
+		max-width: 900px;
+		width: 70vw;
+		min-width: 500px;
+		margin: 0 auto;	
+	}	
+}
+
+@media (max-width: 600px) {
+	.container {
+		margin: 0 $gutter-mobile;
 	}
 }
 

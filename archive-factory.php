@@ -11,7 +11,7 @@ get_header(); ?>
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
 				    <span class="breadcrumbs--item__last">Factory</span>
 				</nav>					
-				<header class="page-header padding-indent">
+				<header class="page-header">
 					<h1 class="title-large">Factory</h1>
 				</header>
 				<hr class="margin-extend">

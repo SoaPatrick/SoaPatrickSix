@@ -11,7 +11,7 @@ get_header(); ?>
     <div class="site-content blog-post-list">
 	    <div class="container">
 			<?php if ( have_posts() ) : ?>					
-				<header class="page-header padding-indent">
+				<header class="page-header">
 					<h1 class="title-large">Search: <?php echo get_search_query(); ?></h1>
 				</header>
 				<hr class="margin-extend">

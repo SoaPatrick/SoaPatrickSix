@@ -16,7 +16,7 @@ get_header(); ?>
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tags/">Tags</a></span>
 				    <span class="breadcrumbs--item__last"><?php the_archive_title();?></span>
 				</nav>					
-				<header class="page-header padding-indent">
+				<header class="page-header">
 					<h1 class="title-large"><?php the_archive_title();?></h1>
 				</header>	
 				<hr class="margin-extend">					

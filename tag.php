@@ -19,7 +19,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="title-large"><?php the_archive_title();?></h1>
 				</header>	
-				<hr class="margin-extend">					
+				<hr>					
 				<?php
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'list' );

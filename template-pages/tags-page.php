@@ -15,7 +15,7 @@ get_header(); ?>
 				<header class="page-header">		
 					<h1 class="title-large">Tags</h1>
 				</header>
-				<hr class="margin-extend">
+				<hr>
 				<div class="page-content page-content--tag-archive">			    
 					<?php the_widget( 'WP_Widget_Tag_Cloud', '', '' ); ?>
 				</div>

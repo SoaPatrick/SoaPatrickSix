@@ -10,7 +10,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="title-large">Change Log</h1>
 				</header>
-				<hr class="margin-extend">
+				<hr>
 				<div class="page-content page-content--changelog">
 					<?php				
 					if ( have_posts() ) :					

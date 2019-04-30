@@ -14,7 +14,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="title-large">Search: <?php echo get_search_query(); ?></h1>
 				</header>
-				<hr class="margin-extend">
+				<hr>
 				<?php
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'list' );

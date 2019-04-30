@@ -5,7 +5,7 @@ Template Name: Archives Change Logs
 
 get_header(); ?>
     <div class="site-content">
-	    <div class="container">
+	    <div class="grid container">
 			<article>	    
 				<header class="page-header">
 					<h1 class="title-large">Change Log</h1>

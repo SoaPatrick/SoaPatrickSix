@@ -5,7 +5,7 @@ Template Name: Archives Facrtory Items
 
 get_header(); ?>
     <div class="site-content">
-	    <div class="container">
+	    <div class="grid container">
 			<article>	    
 				<nav class="breadcrumbs">
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						

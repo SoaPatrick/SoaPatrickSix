@@ -9,7 +9,7 @@
 
 get_header(); ?>
     <div class="site-content">
-	    <div class="container">
+	    <div class="grid container">
 			<article>
 				<header class="page-header padding-indent">
 					<h1 class="title-large"><?php esc_html_e( 'Not the Page you were looking for!', 'soapatricksix' ); ?></h1>

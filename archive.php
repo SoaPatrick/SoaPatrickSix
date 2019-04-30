@@ -9,7 +9,7 @@
 
 get_header(); ?>
     <div class="site-content">
-	    <div class="container">
+	    <div class="grid container">
 			<?php				        
 			if ( have_posts() ) : ?>
 				<nav class="breadcrumbs">

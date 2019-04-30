@@ -77,7 +77,6 @@
 	font-size: 90%;	
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 0;
 	margin-left: 1.5em;
 	
 	> li {
@@ -141,6 +140,7 @@
 	Blog Post Images
 ----------------------------------------------*/
 
+/*
 .alignwide,
 .alignfull {
 	margin: 1em calc(50% - 50vw);
@@ -160,52 +160,28 @@
 		margin-left: -$gutter-mobile;
 	}
 }
+*/
 
 .alignleft,
 .alignright,
 .aligncenter,
 .alignnone {
-	max-width: 100%;
+	width: 100%;
 	height: auto;
-	margin: .5em 0 1em 0;	
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;	
 }
 
-.alignleft {
-	float: left;
-	margin-right: 1em;
-}
 
-.alignright {
-	float: right;
-	margin-left: 1em;	
-}
-
-.aligncenter,
-.alignnone {
-	display: block;
-}
-
-.aligncenter {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media (max-width: 767px) {
-	.alignleft,
-	.alignright {
-		max-width: 100%;			
-		float: none;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-	}
-}
-
-figure {
+.wp-block-image figure {
 	&.alignleft,
 	&.alignright,
 	&.aligncenter,
-	&.alignnone {		
+	&.alignnone {
+		float: none;
+		margin: 0;
+		
 		a img {
 			border: 1px solid inherit;
 			

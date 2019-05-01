@@ -51,9 +51,7 @@
 	}	
 	
 	.breadcrumbs {
-		background: darken($bg-color, 1%);
-
-		.svg-inline--fa {
+		.breadcrumbs--item:after {		
 			color: rgba($text-color, .25);
 		}
 	}	

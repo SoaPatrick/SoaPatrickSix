@@ -4,6 +4,18 @@
 
 .site-contant--instagram-feed  {
  	overflow: hidden;
+ 	
+	.container {
+	    width: 92vw;
+	    max-width: 1440px;
+	    margin: 0 auto;    
+	}
+	
+	@media (min-width: 1500px) {
+		.container {
+		    max-width: calc(1500px + 20vw);
+		}
+	} 	
     
     .svg-inline--fa {
 	    color: inherit;

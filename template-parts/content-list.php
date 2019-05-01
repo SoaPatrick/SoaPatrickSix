@@ -12,21 +12,24 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post condensed' ); ?>>
 	<div class="list-wrapper">
 		<div class="list-icon">
-			<?php if (has_post_format('quote')) : ?>
-				<i class="fal fa-quote-right"></i>	
-			<?php elseif (has_post_format('link')) : ?>
-				<i class="fal fa-link"></i>	
-		    <?php else : ?>
-				<?php if (has_post_thumbnail()) : ?>	
-					<?php the_post_thumbnail( 'list-featured-image' ); ?>						
-				<?php else : ?>		    
-			    	<?php if (get_field( "font-awesome_icon" )) : ?>
-					    <i class="<?php echo get_field( "font-awesome_icon" ) ?>"></i>
-					<?php else : ?>
-						<i class="fal fa-pencil"></i>	
-					<?php endif; ?>
-				<?php endif; ?>
-			<? endif; ?>			
+			<?php 
+				$format = get_post_format();
+				if ($format === 'quote') :
+					echo '<i class="fal fa-quote-right"></i>';
+				elseif ($format === 'link') :
+					echo '<i class="fal fa-link"></i>';
+				else :
+					if (has_post_thumbnail()) :	
+						the_post_thumbnail( 'list-featured-image' );					
+					else :		    
+				    	if (get_field( "font-awesome_icon" )) :
+						    echo '<i class="' . get_field( "font-awesome_icon" ) . '"></i>';
+						 else :
+							echo '<i class="fal fa-pencil"></i>';	
+						endif;
+					endif;
+				endif;
+			?>				
 		</div>
 		<div>
 			<header class="blog-post-header">

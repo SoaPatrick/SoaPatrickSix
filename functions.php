@@ -73,6 +73,45 @@ if ( ! function_exists( 'soapatricksix_setup' ) ) :
 		
 		
 		add_theme_support( 'align-wide' );
+		add_theme_support( 'disable-custom-colors' );
+		
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'Soap', 'soapatricksix' ),
+				'slug'  => 'soap',
+				'color'	=> '#000000',
+			),			
+			array(
+				'name'  => __( 'Red', 'soapatricksix' ),
+				'slug'  => 'red',
+				'color'	=> '#CF3A3A',
+			),
+			array(
+				'name'  => __( 'Blue', 'soapatricksix' ),
+				'slug'  => 'blue',
+				'color' => '#28aae2',
+			),
+			array(
+				'name'  => __( 'Pink', 'soapatricksix' ),
+				'slug'  => 'pink',
+				'color' => '#EC407A',
+			),	
+			array(
+				'name'  => __( 'Purple', 'soapatricksix' ),
+				'slug'  => 'purple',
+				'color' => '#AB47BC',
+			),					
+			array(
+				'name'  => __( 'Green', 'soapatricksix' ),
+				'slug'  => 'green',
+				'color' => '#348236',
+			),
+			array(
+				'name'	=> __( 'Amber', 'soapatricksix' ),
+				'slug'	=> 'amber',
+				'color'	=> '#FFB300',
+			),		
+		) );		
 	}
 endif;
 add_action( 'after_setup_theme', 'soapatricksix_setup' );

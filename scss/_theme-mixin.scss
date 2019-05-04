@@ -2,15 +2,28 @@
 	Theme Mixin
 ----------------------------------------------*/
 
+@mixin has-color($name, $color) {
+	.has-#{$name}-color {
+		color: $color;
+	}
+	
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}	
+}
+
 @mixin color-theme($bg-color, $soap-color, $text-color, $sp-text-color ) {
-	background: $bg-color;
+	background-color: $bg-color;
 	color: $text-color;
 	
+	
+	@include has_color(soap,$soap-color);	
+	
 	.site-header {
-		background: $soap-color;
+		background-color: $soap-color;
 		
 		+ .site-content {
-			background: $bg-color;
+			background-color: $bg-color;
 		}
 	}
 	

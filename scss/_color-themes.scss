@@ -60,3 +60,21 @@
 		$dark-grey
 	); 
 };
+
+#red-invert { 
+	@include color-theme(
+		$white,
+		$red,
+		$dark-grey,
+		$dark-grey
+	); 
+};
+
+#pink-invert { 
+	@include color-theme(
+		$white,
+		$pink,
+		$dark-grey,
+		$dark-grey
+	); 
+};

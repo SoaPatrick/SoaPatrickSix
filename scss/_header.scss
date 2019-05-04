@@ -6,14 +6,13 @@
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-size: calc(100px + 98vw);
-	min-height: calc(15vw + 320px);
 	
 	.logo {
 	    max-width: 10em;
-	    min-width: 8em;
+	    width: 22vw;
 	    height: auto;
 		display: block;
-		margin: 3em auto 18vw auto;
+		margin: 4vw auto 18vw auto;
 		-webkit-filter: drop-shadow( 0 0 20px rgba(0,0,0,.1) );
 		filter: drop-shadow( 0 0 20px rgba(0,0,0,.1) );
 	}
@@ -21,4 +20,10 @@
 	+ .site-content {
 		margin-top: -1px;
 	}	
+}
+
+@media (max-width: 768px) {
+	.site-header .logo {
+		margin: 8vw auto 22vw auto;		
+	}
 }

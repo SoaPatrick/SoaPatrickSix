@@ -71,7 +71,6 @@
 	
 	.soapcolor-bg {
 		background: $soap-color;
-		color: $sp-text-color;
 		
 		a,
 		a:hover,
@@ -87,7 +86,7 @@
 			
 			&:hover,
 			&:focus {
-				border-color: lighten($soap-color, 10%);;
+				border-color: lighten($soap-color, 10%);
 			}			
 		}
 	}
@@ -95,7 +94,8 @@
 	.btn-red,
 	.btn-dark {
 		@extend .btn;		
-	    color: $sp-text-color;
+	    color: $soap-color;
+		border-color: $soap-color;	    
 				
 		.svg-inline--fa {
 			color: $sp-text-color;
@@ -103,17 +103,17 @@
 	}	
 	
 	.btn-red {
-	    background: $soap-color;
+	    background: $soap-color; 
+	    color: $white;
+	    font-weight: 500;
 
 		&:focus,
 		&:hover {
-			background: darken($soap-color, 10%);
+			background: $soap-color;
 		}		
 	}
 	
-	.btn-dark {	
-		background: lighten($bg-color, 10%);
-		
+	.btn-dark {
 		&:focus,
 		&:hover {
 			background: $soap-color;
@@ -185,5 +185,4 @@
 			}
 		}				
 	}
-	
 }

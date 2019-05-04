@@ -117,8 +117,13 @@ blockquote  {
 .btn {
   display: block;
   padding: .5em 1em;
-  box-shadow: 0 0 30px rgba(0,0,0,.3);
-  font-size: calc(18px + .5vw);
+  border-width: 3px;
+  border-style: solid;
+  
+  &:hover {
+	  color: $white;
+	  font-weight: 500;
+  }
 }
 
 button,

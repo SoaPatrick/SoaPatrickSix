@@ -110,16 +110,6 @@ $gutter-mobile: 2em;
 .posts-navigation, 
 .post-navigation {
 	@extend .grid;	
-	
-	.nav-links {
-		grid-column-start: 2;
-		grid-column-end: 5;		
-		
-		@media (max-width: 1100px){
-			grid-column-start: 1;
-			grid-column-end: 6;	
-		}			
-	}	
 }
 
 @include has_color(red,$red);

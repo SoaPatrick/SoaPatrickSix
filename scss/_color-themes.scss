@@ -34,33 +34,6 @@
 	); 
 };
 
-#purple { 
-	@include color-theme(
-		$dark-grey,
-		$purple,
-		$white,
-		$white
-	); 
-};
-
-#green { 
-	@include color-theme(
-		$dark-grey,
-		$green,
-		$white,
-		$white
-	); 
-};
-
-#amber { 
-	@include color-theme(
-		$dark-grey,
-		$amber,
-		$white,
-		$dark-grey
-	); 
-};
-
 #red-invert { 
 	@include color-theme(
 		$white,

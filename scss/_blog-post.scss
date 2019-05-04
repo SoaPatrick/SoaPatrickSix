@@ -142,6 +142,18 @@ article .list-wrapper {
 /*----------------------------------------------
 	Blog Post Images
 ----------------------------------------------*/
+figure {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+figcaption {
+	font-size: .8em;
+	margin-top: 0;
+	font-style: italic;
+}
+
 .blog-post-content img {
 	max-width: 100%;
 	height: auto;
@@ -154,8 +166,6 @@ article .list-wrapper {
 	float: none;	
 	width: 100%;
 	height: auto;
-	margin-left: 0;
-	margin-right: 0;
 	text-align: center;	
 }
 
@@ -166,41 +176,6 @@ article .list-wrapper {
 
 .wp-block-image {
 	text-align: center;
-}
-
-
-.wp-block-image figure {
-	&.alignleft,
-	&.alignright,
-	&.aligncenter,
-	&.alignnone {
-		float: none;
-		margin: 0;
-		
-		a img {
-			border: 1px solid inherit;
-			
-			&:hover,
-			&:focus {
-				border-color: inherit;
-			}				
-		}
-				
-		img {
-		    max-width: 100%;
-		    height: auto;		    		
-		}
-	}
-}
-
-figure {
-	max-width: 100%;
-}
-
-figcaption {
-	font-size: .8em;
-	margin-top: 0;
-	font-style: italic;
 }
 
 .img-link {

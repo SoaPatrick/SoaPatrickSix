@@ -33,29 +33,6 @@
 		input {
 			display: none;
 		}
-		
-		.toggle {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		
-		.toggle::before {
-			display: none;
-			font-family: "Font Awesome 5 Light";
-			content: "\f186";				
-			color: $white;
-			width: 1.25em;			
-		}
-		
-		input:checked + .toggle::before {
-			content: "\f185";					
-		}		
 	}
 	
 	.svg-inline--fa {

@@ -80,7 +80,7 @@
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i></a>		
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>tags"><i class="fal fa-tags"></i></a>
 		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i></a>
-		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"></span></input></label>
+		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"><i class="fal fa-adjust"></i></label>
 	</nav>	
 	<div class="wrapper">
 	    <header class="site-header">	    

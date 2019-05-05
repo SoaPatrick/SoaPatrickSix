@@ -625,3 +625,10 @@ function div_wrapper($content) {
     return $content;    
 }
 add_filter('the_content', 'div_wrapper');
+
+
+
+
+
+
+include('customizer.php');

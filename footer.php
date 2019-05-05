@@ -17,10 +17,10 @@
 			    <div class="container">
 				    <h1 class="title-large text-center"><i class="fab fa-instagram fa-fw"></i>Instagram Feed</h1>
 					<p class="lead">If you have the time and feel like it, why don't you <a href="https://www.instagram.com/SoaPatrick/" target="_blank">follow me</a> on Instagram?</p>
-					<?php simple_instagram(20); ?>
+					<?php //simple_instagram(20); ?>
 			    </div>
 		    </div>
-			<script>var flkty=new Flickity(".main-carousel",{setGallerySize:!0,pageDots:!1,resize:!0,groupCells:1});</script>
+			<?php //<script>var flkty=new Flickity(".main-carousel",{setGallerySize:!0,pageDots:!1,resize:!0,groupCells:1});</script> ?>
 		<?php endif; ?>			    	        	    
 	    <footer class="site-footer<?php if ( !is_home() || is_paged()) : ?> soapcolor-bg<?php endif; ?>">
 		    <div class="container">

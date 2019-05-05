@@ -148,7 +148,7 @@ blockquote  {
 	&:hover {
 		background: var(--soap-color);
 		color: $white;
-		font-weight: 500;
+		font-weight: 400;
 		text-decoration: none;
 	}
 }	
@@ -171,7 +171,7 @@ blockquote  {
 	@extend .btn;
 	background: var(--soap-color);
 	color: $white;
-	font-weight: 500;
+	font-weight: 400;
 	cursor: default;
 }
 

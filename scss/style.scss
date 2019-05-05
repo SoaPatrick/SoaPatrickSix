@@ -62,7 +62,7 @@ $gutter-mobile: 2em;
 	--bubbles: url(bubbles-invert.svg);	
 }
 
-[data-theme="dark"] {
+[data-theme="light"] {
 	--bg-color: #222;
 	--text-color: #fff;
 	--bubbles: url(bubbles.svg);
@@ -86,6 +86,7 @@ $gutter-mobile: 2em;
 @import "_factory.scss";
 @import "_instagram-feed.scss";
 @import "_footer.scss";
+@import "_grid.scss";
 
 /*----------------------------------------------
 	Gutenberg Colors
@@ -98,43 +99,3 @@ $gutter-mobile: 2em;
 @include has_color(green,$green);
 @include has_color(amber,$amber);
 @include has_color(soap,var(--soap-color));	
-
-/*----------------------------------------------
-	Grid
-----------------------------------------------*/
-
-.grid {
-	display: grid;
-	grid-template-columns: 2fr 10rem minmax(730px,38vw) 10rem 2fr;
-	
-	> * {
-		grid-column-start: 3;
-		grid-column-end: 4;
-	}
-	
-	.alignwide {
-		grid-column-start: 2;
-		grid-column-end: 5;		
-	}
-	.alignfull {
-		grid-column-start: 1;
-		grid-column-end: 6;	
-	}
-}
-
-@media (max-width: 1100px){
-	.grid {
-		grid-template-columns: 1fr 1fr minmax(350px,60vw) 1fr 1fr;
-	}
-}
-
-@media (max-width: 430px){
-	.grid {
-		grid-template-columns: 0 1.5em calc(100% - 3em) 1.5em 0;
-	}
-}
-
-.posts-navigation, 
-.post-navigation {
-	@extend .grid;	
-}

@@ -4,7 +4,7 @@
 
 .site-content {
 	padding: 4em 0;
-	overflow-x: hidden;   	
+	overflow-x: hidden;
 	
 	.container > article {
 		padding: 4em 0;
@@ -21,6 +21,7 @@
 
 .soapcolor-bg {	
 	color: $white;
+	background: var(--soap-color);	
 	
 	a {
 		text-decoration: none;
@@ -33,6 +34,7 @@
 		}
 	}	
 }
+
 
 /*----------------------------------------------
 	Changelog

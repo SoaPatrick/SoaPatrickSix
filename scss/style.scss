@@ -54,12 +54,25 @@ $line-height-heading: 1.3;
 
 $gutter-mobile: 2em;
 
+// CSS Variables
+:root {
+	--soap-color: #AB47BC;
+	--bg-color: #fff;
+	--text-color: #222;
+	--bubbles: url(bubbles-invert.svg);	
+}
+
+[data-theme="dark"] {
+	--bg-color: #222;
+	--text-color: #fff;
+	--bubbles: url(bubbles.svg);
+}
+
 /*----------------------------------------------
 	Imports
 ----------------------------------------------*/
 
-@import "_theme-mixin.scss";
-@import "_color-themes.scss";
+@import "_mixins.scss";
 @import "_scaffolding.scss";
 @import "_typography.scss";
 @import "_tools.scss";
@@ -74,7 +87,21 @@ $gutter-mobile: 2em;
 @import "_instagram-feed.scss";
 @import "_footer.scss";
 
+/*----------------------------------------------
+	Gutenberg Colors
+----------------------------------------------*/
 
+@include has_color(red,$red);
+@include has_color(blue,$blue);
+@include has_color(pink,$pink);
+@include has_color(purple,$purple);
+@include has_color(green,$green);
+@include has_color(amber,$amber);
+@include has_color(soap,var(--soap-color));	
+
+/*----------------------------------------------
+	Grid
+----------------------------------------------*/
 
 .grid {
 	display: grid;
@@ -110,22 +137,4 @@ $gutter-mobile: 2em;
 .posts-navigation, 
 .post-navigation {
 	@extend .grid;	
-}
-
-@include has_color(red,$red);
-@include has_color(blue,$blue);
-@include has_color(pink,$pink);
-@include has_color(purple,$purple);
-@include has_color(green,$green);
-@include has_color(amber,$amber);
-
-
-
-
-.site-header {
-	background-image: url('bubbles.svg');
-}
-
-body[id*="-invert"] .site-header {
-	background-image: url('bubbles-invert.svg');
 }

@@ -1,0 +1,25 @@
+/*----------------------------------------------
+	Theme Mixin
+----------------------------------------------*/
+
+@mixin has-color($name, $color) {
+	.has-#{$name}-color {
+		color: $color;
+	}
+	
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+	
+	.wp-block-button__link.has-#{$name}-background-color {
+		background: transparent;
+		border-color: $color;
+		color: $color;
+		
+		&:hover,
+		&:focus {
+			background: $color;
+			color: $white;
+		}
+	}
+}

@@ -11,6 +11,9 @@
 		font-size: calc(18px + 1vw);
 		border: 0;
 		font-weight: 400;
+		background: var(--bg-color); // needs to be darker
+		color: var(--text-color);		
+		
 		
 		&:focus {
 			outline: none;
@@ -19,6 +22,7 @@
 }
 
 #search-collapse {
+	background: var(--soap-color);	
     max-height: 0;
     transition: max-height 0.25s ease-out;
     overflow: hidden;
@@ -27,4 +31,23 @@
 	    max-height: 800px;
 	    transition: max-height 0.25s ease-in;
 	}
+	
+	.search-form input {
+		background: var(--bg-color); // needs to be darker
+		
+		&::-webkit-input-placeholder {
+			  color: var(--bg-color);
+			  opacity: .7;
+		}
+		
+		&::-moz-placeholder {
+			  color: var(--bg-color);
+			  opacity: .7;
+		}
+		
+		&:-ms-input-placeholder {
+			  color: var(--bg-color);
+			  opacity: .7;
+		}
+	}		
 }

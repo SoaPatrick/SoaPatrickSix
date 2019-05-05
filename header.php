@@ -62,7 +62,7 @@
 	endif; 
 ?>
 
-<body <?php echo $body_id ?> <?php body_class('red'); ?>>
+<body <?php echo $body_id ?> <?php body_class(); ?>>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
 	
@@ -75,11 +75,12 @@
 	</div>
 		
 	<nav class="site-navigation">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fal fa-home"></i></a>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-box-full"></i></a>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i></a>		
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>tags"><i class="fal fa-tags"></i></a>
-		<a href="#" id="toggle-search-collapse"><i class="fal fa-search"></i></a>		
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fal fa-home"></i></a>
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-box-full"></i></a>
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i></a>		
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>tags"><i class="fal fa-tags"></i></a>
+		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i></a>
+		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"></span></input></label>
 	</nav>	
 	<div class="wrapper">
 	    <header class="site-header">	    

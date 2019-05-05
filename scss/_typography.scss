@@ -27,21 +27,39 @@ h4 {
 	line-height: $line-height-heading;				
 }
 
+a {
+	font-weight: 400;
+	text-decoration: none;
+	color: var(--soap-color);
+	
+	&:hover,
+	&:focus {
+		color: var(--soap-color);
+		text-decoration: underline;
+	}	
+}
+
+ul,
+ol {
+	li::before {
+		color: var(--soap-color);
+	}
+}
+
 p,
 li {
 	line-height: $line-height-base;			
 }
 
-a {
-	font-weight: 400;
-	text-decoration: none;	
-}
-
 hr {
-	border-style: solid;			
-	border-width: 1px;
+	border: 1px solid var(--soap-color);		
 	width: 100%;
 }
+
+	
+.svg-inline--fa {
+	color: var(--soap-color);
+} 
 
 /*----------------------------------------------
 	Lists
@@ -115,15 +133,56 @@ blockquote  {
 ----------------------------------------------*/
 
 .btn {
-  display: block;
-  padding: .5em 1em;
-  border-width: 3px;
-  border-style: solid;
+	padding: .5em 1em;
+	color: var(--soap-color);
+	border: 3px solid var(--soap-color);
+	background: transparent;
+	font-size: inherit; 
+	border-radius: 0;
+	display: inline-block;	  
+			
+	.svg-inline--fa {
+		color: var(--soap-color);
+	} 	  
   
-  &:hover {
-	  color: $white;
-	  font-weight: 500;
-  }
+	&:hover {
+		background: var(--soap-color);
+		color: $white;
+		font-weight: 500;
+		text-decoration: none;
+	}
+}	
+
+.btn-disabled {
+	@extend .btn;	
+	padding-left: 0;
+	padding-right: 0;	
+	cursor: default;
+	border-color: transparent;
+	
+	&:hover {
+		color: var(--soap-color);
+		background: transparent;
+		font-weight: inherit;		
+	}	
+}
+
+.btn-active {
+	@extend .btn;
+	background: var(--soap-color);
+	color: $white;
+	font-weight: 500;
+	cursor: default;
+}
+
+
+/* Button block
+--------------------------------------------- */
+
+.is-style-squared .wp-block-button__link,
+.is-style-outline .wp-block-button__link,
+.wp-block-button__link {
+	@extend .btn;
 }
 
 button,

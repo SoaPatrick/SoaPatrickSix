@@ -46,7 +46,7 @@
 		}
 		
 		div a {
-		    @extend .btn-dark;
+		    @extend .btn;
 		} 
 	}	
 	
@@ -73,7 +73,7 @@
 		justify-content: center;
 		
 		> * {
-			@extend .btn-dark;
+			@extend .btn;
 			flex: 1;
 			text-align: center;
 			width: 0; // Force equal-width columns

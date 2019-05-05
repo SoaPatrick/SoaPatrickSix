@@ -25,11 +25,24 @@
 		}					
 	}
 	
+
 	.theme-switch {			
 		cursor: pointer;
+		position: relative;
 		
 		input {
 			display: none;
+		}
+		
+		.toggle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		
 		.toggle::before {
@@ -37,6 +50,7 @@
 			font-family: "Font Awesome 5 Light";
 			content: "\f186";				
 			color: $white;
+			width: 1.25em;			
 		}
 		
 		input:checked + .toggle::before {
@@ -47,6 +61,7 @@
 	.svg-inline--fa {
 		color: $white;
 		font-size: calc(18px + .5vw);
+		width: 1.25em;
 	}		
 }
 
@@ -63,7 +78,6 @@
 		
 		.site-navigation__link {
 			flex-grow: 1;
-			width: auto;
 		}
 	}
 }

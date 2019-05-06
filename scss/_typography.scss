@@ -108,24 +108,27 @@ ol {
 	Blockquote
 ----------------------------------------------*/
 
-blockquote  {
-	margin-left: 2em;
-	margin-right: 2em;
+blockquote.wp-block-quote  {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 1em;
+	border-left: 5px solid var(--soap-color);
 	
-	p {	
-		&::before {
-			display: none;
-			font-family: "Font Awesome 5 Light";
-		}				
-					
-		&::before {
-			content: "\f10d";
-		}				
-		
-		.fa-quote-left {
-		    margin-right: .25em;				
-		}
-	}			
+	p {
+		margin-top: 0;
+		font-weight: 400;
+	}
+	
+	&.is-style-large {
+		margin-top: 1em;
+		margin-bottom: 1em; 
+		padding: 0 0 0 2em;		
+	}
+	
+	cite {
+		font-style: normal;
+		font-size: 80%;
+	}		
 }
 
 /*----------------------------------------------

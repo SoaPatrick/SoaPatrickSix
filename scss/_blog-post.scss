@@ -2,61 +2,70 @@
 	Blog Post
 ----------------------------------------------*/
 
-.blog-post-quote {			
-	&::before,		
-	&::after {
-		display: none;
-		font-family: "Font Awesome 5 Light";
-	}				
-				
-	&::before {
-		content: "\f10d";
-	}			
-	
-	&::after {
-		content: "\f10e";
-	}			
-	
-	.fa-quote-left {
-	    margin-right: .25em;				
-	}
-	
-	.fa-quote-right {
-	    margin-left: .25em;				
-	}			
-}
 
-.quote-author {
-	font-style: italic;				
-	
-	&:before {
-		content: "- ";
-	}			
-}	
-
-.blog-post-link {
+.blog-post-header {
+	.inner-wrapper {
+		border-left: 5px solid var(--soap-color);
+		margin: 0 0 1em 0;
+		padding-left: 2em;
+		position: relative;
+		
+		.svg-inline--fa {
+			position: absolute;
+			top: 0;
+			font-size: 1.5em;
+			left: -.5em;
+			background: var(--bg-color);
+			padding-top: .1em;
+			padding-bottom: .5em;
+		}
+		
+		p {
+			font-family: $font-heading;
+			font-size: 110%;
+			line-height: 1.4;
+			margin-top: 0;	
+		}				
+			
+		&.inner-wrapper__quote {
+			&::before {
+				display: none;
+				font-family: "Font Awesome 5 Light";				
+				content: "\f10e";
+			}			
+			
+			blockquote {
+				margin: 0;
+				padding-left: 0;
+				border-left: 0;				
 				
-	&::before {
-		display: none;
-		font-family: "Font Awesome 5 Light";				
-		content: "\f0c1"; // fa-link
-	}					
-	
-	.svg-inline--fa {
-	    margin-right: .25em;						    
-	}		
-}				
-
-.blog-post-status  {		
-	p {	
-		@extend .title-medium;
-		font-family: $font-heading;
-		display: inline;
-	}			
-				
-	.svg-inline--fa {
-	    margin-right: .25em;			
-		font-size: $font-size-title-medium;			    
+				cite em {
+					font-style: normal;
+					font-size: 80%;
+					font-weight: 400;
+				}		
+			}			
+		}
+		
+		&.inner-wrapper__link {
+			&::before {
+				display: none;
+				font-family: "Font Awesome 5 Light";				
+				content: "\f0c1";
+			}	
+			
+			p:last-child {
+				font-size: 80%;
+				font-weight: 400;				
+			}
+		}
+		
+		&.inner-wrapper__link,
+		&.inner-wrapper__status {
+			> *:last-child {
+				margin-bottom: 0;
+			}
+		}		
 	}
 }		
 		

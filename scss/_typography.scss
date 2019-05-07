@@ -115,14 +115,23 @@ blockquote.wp-block-quote  {
 	border-left: 5px solid var(--soap-color);
 	
 	p {
-		margin-top: 0;
 		font-weight: 400;
 	}
+	
+	> *:first-child {
+	    margin-top: 0;
+	}
+	
+	> *:last-child {
+	    margin-bottom: 0;
+	}	
 	
 	&.is-style-large {
 		margin-top: 1em;
 		margin-bottom: 1em; 
-		padding: 0 0 0 2em;		
+		padding: 0 0 0 2em;
+		
+		font-size: 120%;	
 	}
 	
 	cite {

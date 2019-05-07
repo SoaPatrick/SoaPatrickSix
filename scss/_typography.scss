@@ -131,7 +131,10 @@ blockquote.wp-block-quote  {
 		margin-bottom: 1em; 
 		padding: 0 0 0 2em;
 		
-		font-size: 120%;	
+		p {
+			font-size: 120%;	
+			line-height: 1.4;
+		}
 	}
 	
 	cite {

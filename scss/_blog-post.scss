@@ -184,6 +184,7 @@ figcaption {
 	height: auto;
 }
 
+.wp-block-jetpack-slideshow,
 .wp-block-cover,
 .wp-block-image {
 	margin-top: 1em;
@@ -197,4 +198,21 @@ figcaption {
 	img {
 		border: 1px solid var(--soap-color);
 	}
+}
+
+// Jetpack Slideshow
+.wp-block-jetpack-slideshow {
+	.wp-block-jetpack-slideshow_swiper-wrappper {
+		height: auto !important;
+		
+		.wp-block-jetpack-slideshow_slide {
+			background: transparent;
+		}
+	}
+		
+	.swiper-button-next, 
+	.swiper-button-pause, 
+	.swiper-button-prev {
+		top: calc(50% - 16px) !important;
+	}	
 }

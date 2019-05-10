@@ -39,13 +39,6 @@ a {
 	}	
 }
 
-ul,
-ol {
-	li::before {
-		color: var(--soap-color);
-	}
-}
-
 p,
 li {
 	line-height: $line-height-base;			
@@ -70,6 +63,7 @@ ol {
 	list-style: none;
 	
 	li::before {
+		color: var(--soap-color);		
 		display: inline-block;
 		width: 1em;
 		margin-left: -1em;
@@ -80,11 +74,7 @@ ol {
 	}
 }		
 
-ul {
-	list-style: none;
-}
-
-ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery) {
+ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.wp-block-jetpack-slideshow_swiper-wrappper) {
 	li::before {
 		font-family: sans-serif;
 		content: "•";

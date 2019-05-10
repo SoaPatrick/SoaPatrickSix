@@ -11,7 +11,7 @@
 		font-size: calc(18px + 1vw);
 		border: 0;
 		font-weight: 400;
-		background: var(--bg-color); // needs to be darker
+		background: rgba(0,0,0,.1);
 		color: var(--text-color);		
 		
 		
@@ -32,9 +32,7 @@
 	    transition: max-height 0.25s ease-in;
 	}
 	
-	.search-form input {
-		background: var(--bg-color); // needs to be darker
-		
+	.search-form input {		
 		&::-webkit-input-placeholder {
 			  color: var(--bg-color);
 			  opacity: .7;

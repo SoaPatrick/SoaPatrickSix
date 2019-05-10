@@ -455,7 +455,7 @@ function register_my_taxes() {
 		"query_var" => true,
 		"rewrite" => array( 'slug' => 'portfolio_category', 'with_front' => true, ),
 		"show_admin_column" => false,
-		"show_in_rest" => false,
+		"show_in_rest" => true,
 		"rest_base" => "",
 		"show_in_quick_edit" => false,
 	);

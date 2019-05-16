@@ -3,11 +3,8 @@
 ----------------------------------------------*/
 
 .site-header {
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	background-size: calc(100px + 98vw);
-	background-color: var(--soap-color);	
-	background-image: var(--bubbles);
+	background-color: var(--soap-color);
+	position: relative;	
 	
 	.logo {
 	    max-width: 10em;
@@ -28,6 +25,24 @@
 		margin-top: -1px;
 		background-color: var(--bg-color);
 	}	
+	
+	.bubbles {
+		position: absolute;
+		bottom: 0;
+	}	
+	
+	.bubbles--first-row,
+	.bubbles--second-row,
+	.bubbles--third-row {
+		fill: var(--bg-color);	
+	}
+	
+	.bubbles--third-row {
+		opacity: .5;
+	}
+	.bubbles--second-row {
+		opacity: .7;
+	}		
 }
 
 @media (max-width: 768px) {

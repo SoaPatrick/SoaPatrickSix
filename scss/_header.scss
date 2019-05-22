@@ -6,6 +6,11 @@
 	background-color: var(--soap-color);
 	position: relative;	
 	
+	> .container {
+		position: relative;
+		z-index: 1;
+	}
+	
 	.logo {
 	    max-width: 10em;
 	    width: 22vw;

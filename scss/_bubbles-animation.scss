@@ -1,0 +1,84 @@
+/*----------------------------------------------
+	Bubbles Animation
+----------------------------------------------*/
+
+$sideways: random(5) + vw;
+$bubble-size: 10vw;
+$area: 50vw;
+
+.site-header {
+	overflow: hidden;
+}
+
+.bubble {
+    width: $bubble-size;
+    height: $bubble-size;
+    background: var(--bg-color);
+    border-radius: 50%;
+    position: absolute;
+}
+
+@for $i from 1 through 25 {
+	.bubble:nth-child(#{$i}) {
+		left: random(100) + vw;
+		transform: scale(random(15) / 12);
+		opacity: random(9) / 10;
+	    -webkit-animation: moveclouds random(15) + (random(2) / 10) + s linear infinite, sideWays random(5) + s ease-in-out infinite alternate;
+	    -moz-animation: moveclouds random(15) + (random(2) / 10) + s linear infinite, sideWays random(5) + s ease-in-out infinite alternate;
+	    -o-animation: moveclouds random(15) + (random(2) / 10) + s linear infinite, sideWays random(5) + s ease-in-out infinite alternate;
+		animation-delay: random(5) * -1 + s;	    
+	}	
+}
+
+@-webkit-keyframes moveclouds { 
+    0% { 
+        top: $area;
+    }
+    100% { 
+        top: $area * -1;
+    }
+}
+
+@-webkit-keyframes sideWays { 
+    0% { 
+        margin-left: 0;
+    }
+    100% { 
+        margin-left: $sideways;
+    }
+}
+
+@-moz-keyframes moveclouds {     
+    0% { 
+        top: $area;
+    }
+    100% { 
+        top: $area * -1;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% { 
+        margin-left: 0;
+    }
+    100% { 
+        margin-left: $sideways;
+    }
+}
+@-o-keyframes moveclouds {
+    0% { 
+        top: $area;
+    }
+    100% { 
+        top: $area * -1;
+    }
+}
+
+@-o-keyframes sideWays {
+    0% { 
+        margin-left: 0;
+    }
+    100% { 
+        margin-left: $sideways;
+    }
+}

@@ -83,7 +83,13 @@
 		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"><i class="fal fa-adjust"></i></label>
 	</nav>	
 	<div class="wrapper">
-	    <header class="site-header">	    
+	    <header class="site-header">
+		    <?php
+			    $count = 25;
+			    foreach( range(1,$count) as $item){
+			        echo '<div class="bubble"></div>';
+			    }
+			?>			    	    
 		    <div class="container">		
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">					
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 894.28 1024" class="logo">

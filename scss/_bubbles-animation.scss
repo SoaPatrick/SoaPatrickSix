@@ -11,6 +11,16 @@ $area-end: -300px;
 	overflow: hidden;
 }
 
+.bubbles-wrapper {
+	position: absolute;
+	z-index: 1;
+}
+
+.wrapper .site-content {
+	position: relative;
+	z-index: 2;
+}
+
 .bubble {
     width: $bubble-size;
     height: $bubble-size;

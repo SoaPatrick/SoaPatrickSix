@@ -4,22 +4,24 @@
 
 $bubble-size: 10vw;
 $sideways: 2vw;
-$area-start: 60vh;
+$area-start: 50vw;
 $area-end: -300px;
 
-#search-collapse .search-form,
+.site-header {
+	overflow: hidden;
+}
+
+/*
+.bubbles-wrapper {
+	position: absolute;
+	z-index: 1;
+}
+
 .wrapper .site-content {
 	position: relative;
 	z-index: 2;
 }
-
-.bubbles-wrapper {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-	overflow: hidden;
-}
+*/
 
 .bubble {
     width: $bubble-size;
@@ -28,6 +30,7 @@ $area-end: -300px;
     border-radius: 50%;
     position: absolute;
 }
+
 
 @mixin bubbles($left, $scale, $opacity, $moveclouds, $sideways, $delay) {
     left: $left;

@@ -21,7 +21,7 @@
 		    width: 40vw;
 		    
 		    > a {
-			    height: calc(100% - 1em);
+			    height: calc(100% - (1em + 2 * $btn-border-width));
 		    }	    				    		
 		}
 	}	

@@ -140,7 +140,7 @@ blockquote.wp-block-quote  {
 .btn {
 	padding: .5em 1em;
 	color: var(--soap-color);
-	border: 3px solid var(--soap-color);
+	border: $btn-border-width solid var(--soap-color);
 	background: transparent;
 	font-size: inherit; 
 	border-radius: 0;
@@ -148,9 +148,10 @@ blockquote.wp-block-quote  {
 			
 	.svg-inline--fa {
 		color: var(--soap-color);
-	} 	  
-  
-	&:hover {
+	} 
+		  
+	&:hover,
+	&:focus {
 		background: var(--soap-color);
 		color: $white;
 		font-weight: 400;
@@ -165,7 +166,8 @@ blockquote.wp-block-quote  {
 	cursor: default;
 	border-color: transparent;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		color: var(--soap-color);
 		background: transparent;
 		font-weight: inherit;		

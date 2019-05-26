@@ -22,6 +22,7 @@
 	<div class="grid blog-post-meta">
 		<ul class="meta-wrapper fa-ul">
 			<?php soapatricksix_posted_on(); ?>
+<!--			
 			<li><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>
 			<?php $terms = get_the_terms( $post->ID , 'portfolio_category' );
 				foreach ( $terms as $term ) {
@@ -29,6 +30,7 @@
 					echo ', ';
 				}
 			?>
+-->
 			</li>
 			<?php the_tags('<li><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>',', ','</li>'); ?>
 			<?php edit_post_link('Edit', '<li><span class="fa-li"><i class="fal fa-pencil fa-fw"></i></span>','</li>'); ?>			

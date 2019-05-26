@@ -205,10 +205,10 @@ figcaption {
 .wp-block-jetpack-slideshow {
 	.wp-block-jetpack-slideshow_swiper-wrappper {
 		height: auto !important;
-		
-		.wp-block-jetpack-slideshow_slide {
-			background: transparent;
-		}
+	}
+	
+	.wp-block-jetpack-slideshow_slide {
+		background: transparent !important;			
 	}
 		
 	.swiper-button-next, 
@@ -216,4 +216,32 @@ figcaption {
 	.swiper-button-prev {
 		top: calc(50% - 16px) !important;
 	}	
+}
+
+
+// RSS Widget
+.wp-block-rss  {
+    padding-left: 0;
+    	
+	.wp-block-rss__item {
+	    margin-bottom: 1em;  		
+	    
+		&:before {
+	    	content: none !important;	
+	    }
+	    
+	    .wp-block-rss__item-title,
+		.wp-block-rss__item-author,
+		.wp-block-rss__item-excerpt,
+		.wp-block-rss__item-publish-date {
+		    line-height: 1;
+		}
+		
+		.wp-block-rss__item-author,
+		.wp-block-rss__item-excerpt,
+		.wp-block-rss__item-publish-date {		
+		    font-size: 80%;
+		    color: inherit;
+		}			    
+    }
 }

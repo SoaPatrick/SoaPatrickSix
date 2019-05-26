@@ -439,16 +439,16 @@ function register_my_taxes() {
 	/* Taxonomy: Portfolio Categories.*/
 
 	$labels = array(
-		"name" => __( "Portfolio Categories", "" ),
-		"singular_name" => __( "Portfolio Category", "" ),
+		"name" => __( "Portfolio Tags", "" ),
+		"singular_name" => __( "Portfolio Tags", "" ),
 	);
 
 	$args = array(
-		"label" => __( "Portfolio Categories", "" ),
+		"label" => __( "Portfolio Tags", "" ),
 		"labels" => $labels,
 		"public" => true,
 		"hierarchical" => false,
-		"label" => "Portfolio Categories",
+		"label" => "Portfolio Tags",
 		"show_ui" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
@@ -457,7 +457,7 @@ function register_my_taxes() {
 		"show_admin_column" => false,
 		"show_in_rest" => true,
 		"rest_base" => "",
-		"show_in_quick_edit" => false,
+		"show_in_quick_edit" => true,
 	);
 	register_taxonomy( "portfolio_category", array( "factory" ), $args );
 	

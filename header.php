@@ -84,12 +84,14 @@
 	</nav>	
 	<div class="wrapper">
 	    <header class="site-header">
-		    <?php
-			    $count = 25;
-			    foreach( range(1,$count) as $item){
-			        echo '<div class="bubble"></div>';
-			    }
-			?>			    	    
+		    <div id="bubble-wrapper">
+			    <?php
+				    $count = 20;
+				    foreach( range(1,$count) as $item){
+				        echo '<div class="bubble"></div>';
+				    }
+				?>				    
+		    </div>		    	    
 		    <div class="container">		
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">					
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 894.28 1024" class="logo">

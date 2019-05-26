@@ -11,18 +11,6 @@ $area-end: -300px;
 	overflow: hidden;
 }
 
-/*
-.bubbles-wrapper {
-	position: absolute;
-	z-index: 1;
-}
-
-.wrapper .site-content {
-	position: relative;
-	z-index: 2;
-}
-*/
-
 .bubble {
     width: $bubble-size;
     height: $bubble-size;
@@ -36,10 +24,7 @@ $area-end: -300px;
     left: $left;
     transform: scale($scale);
     opacity: $opacity;
-    -webkit-animation: moveclouds $moveclouds linear infinite,sideWays $sideways ease-in-out infinite alternate;
-    -moz-animation: moveclouds $moveclouds linear infinite,sideWays $sideways ease-in-out infinite alternate;
-    -o-animation: moveclouds $moveclouds linear infinite,sideWays $sideways ease-in-out infinite alternate;
-    animation-delay: $delay;	
+    animation: moveclouds $moveclouds linear $delay infinite,sideWays $sideways ease-in-out infinite alternate;
 }
 
 .bubble:nth-child(1) { @include bubbles(77vw,.17,.1,8.1s,2s,-2s); }
@@ -51,49 +36,24 @@ $area-end: -300px;
 .bubble:nth-child(7) { @include bubbles(22vw,.67,.4,9.2s,2s,-5s); }
 .bubble:nth-child(8) { @include bubbles(14vw,.58,.9,5.1s,2s,-1s); }
 .bubble:nth-child(9) { @include bubbles(21vw,.75,.1,10.2s,4s,-5s); }
-.bubble:nth-child(10) { @include bubbles(6vw,.5,.8,27.2s,6s,-4s); }
-.bubble:nth-child(11) { @include bubbles(100vw,.58,.2,3.2s,4s,-2s); }
-.bubble:nth-child(12) { @include bubbles(16vw,.41,.7,14.2s,3s,-3s); }
-.bubble:nth-child(13) { @include bubbles(11vw,1,.3,3.2s,3s,-1s); }
-.bubble:nth-child(14) { @include bubbles(69vw,.67,.9,13.2s,4s,-2s); }
-.bubble:nth-child(15) { @include bubbles(81vw,.92,.9,10.1s,3s,-1s); }
-.bubble:nth-child(16) { @include bubbles(59vw,.67,.2,15.1s,5s,-1s); }
-.bubble:nth-child(17) { @include bubbles(42vw,.16,.6,9.1s,4s,-2s); }
-.bubble:nth-child(18) { @include bubbles(100vw,1.08,.8,12.1s,2s,-1s); }
-.bubble:nth-child(19) { @include bubbles(18vw,.3,.2,4.1s,3s,-4s); }
-.bubble:nth-child(20) { @include bubbles(13vw,.25,.3,6.1s,3s,-1s); }
-.bubble:nth-child(21) { @include bubbles(30vw,1.25,.2,3.5s,2s,-1s); }
-.bubble:nth-child(22) { @include bubbles(64vw,1.08,.2,4.1s,5s,-1s); }
-.bubble:nth-child(23) { @include bubbles(84vw,.58,.3,15.1s,3s,-3s); }
-.bubble:nth-child(24) { @include bubbles(87vw,.3,.9,7.2s,5s,-3s); }
-.bubble:nth-child(25) { @include bubbles(70vw,.83,.7,5.2s,2s,-5s); }
+.bubble:nth-child(10) { @include bubbles(11vw,1,.3,3.2s,3s,-1s); }
+.bubble:nth-child(11) { @include bubbles(69vw,.67,.9,13.2s,4s,-2s); }
+.bubble:nth-child(12) { @include bubbles(81vw,.92,.9,10.1s,3s,-1s); }
+.bubble:nth-child(13) { @include bubbles(59vw,.67,.2,15.1s,5s,-1s); }
+.bubble:nth-child(14) { @include bubbles(42vw,.16,.6,9.1s,4s,-2s); }
+.bubble:nth-child(15) { @include bubbles(18vw,.3,.2,4.1s,3s,-4s); }
+.bubble:nth-child(16) { @include bubbles(13vw,.25,.3,6.1s,3s,-1s); }
+.bubble:nth-child(17) { @include bubbles(30vw,1.25,.2,3.5s,2s,-1s); }
+.bubble:nth-child(18) { @include bubbles(64vw,1.08,.2,4.1s,5s,-1s); }
+.bubble:nth-child(19) { @include bubbles(84vw,.58,.3,15.1s,3s,-3s); }
+.bubble:nth-child(20) { @include bubbles(70vw,.83,.7,5.2s,2s,-5s); }
 
-@-webkit-keyframes moveclouds {
+@keyframes moveclouds {
     0% { top: $area-start; }
     100% { top: $area-end; }
 }
 
-@-webkit-keyframes sideWays {
-    0% { margin-left: 0; }
-    100% { margin-left: $sideways; }
-}
-
-@-moz-keyframes moveclouds {
-    0% { top: $area-start; }
-    100% { top: $area-end; }
-}
-
-@-moz-keyframes sideWays {
-    0% { margin-left: 0; }
-    100% { margin-left: $sideways; }
-}
-
-@-o-keyframes moveclouds {
-    0% { top: $area-start; }
-    100% { top: $area-end; }
-}
-
-@-o-keyframes sideWays {
+@keyframes sideWays {
     0% { margin-left: 0; }
     100% { margin-left: $sideways; }
 }	

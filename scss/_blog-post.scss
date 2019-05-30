@@ -80,6 +80,10 @@
 	
 	> li {
 		padding-right: 3em;
+		
+		&.meta-wrapper--tags a {
+			text-transform: lowercase;			
+		}
 	}						
 }
 
@@ -88,6 +92,7 @@
 	flex-wrap: wrap;
 	margin-top: 1em;
 	font-size: 90%;
+	text-transform: lowercase;
 	
 	> a {
 		margin-right: .5em;		

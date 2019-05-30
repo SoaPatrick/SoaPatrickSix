@@ -28,7 +28,7 @@
 			<div class="blog-post-meta">
 				<ul class="meta-wrapper fa-ul">
 					<?php soapatricksix_posted_on(); ?>
-					<?php the_tags('<li><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>',', ','</li>'); ?>
+					<?php the_tags('<li class="meta-wrapper--tags"><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>',', ','</li>'); ?>
 					<?php edit_post_link('Edit', '<li><span class="fa-li"><i class="fal fa-pencil fa-fw"></i></span>','</li>'); ?>			
 				</ul>
 			</div>	        	
@@ -40,7 +40,7 @@
 		<div class="grid blog-post-meta">
 			<ul class="meta-wrapper fa-ul">
 				<?php soapatricksix_posted_on(); ?>
-				<?php the_tags('<li><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>',', ','</li>'); ?>
+				<?php the_tags('<li class="meta-wrapper--tags"><span class="fa-li"><i class="fal fa-tags fa-fw"></i></span>',', ','</li>'); ?>
 				<?php edit_post_link('Edit', '<li><span class="fa-li"><i class="fal fa-pencil fa-fw"></i></span>','</li>'); ?>			
 			</ul>
 		</div>

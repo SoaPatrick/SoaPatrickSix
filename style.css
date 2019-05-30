@@ -164,11 +164,12 @@ blockquote.wp-block-quote {
 /*----------------------------------------------
 	Button
 ----------------------------------------------*/
-.btn, .btn-disabled, .navigation.pagination .nav-links .dots, .btn-active, .navigation.pagination .nav-links .current, .is-style-squared .wp-block-button__link,
+.btn, .btn-disabled, .btn-active, .is-style-squared .wp-block-button__link,
 .is-style-outline .wp-block-button__link,
-.wp-block-button__link, .page-content--tag-archive .tagcloud a, .navigation.posts-navigation .nav-links div a,
-.navigation.post-navigation .nav-links div a, .navigation.posts-navigation .nav-links-custom a,
-.navigation.post-navigation .nav-links-custom a, .navigation.pagination .nav-links > * {
+.wp-block-button__link, .page-content--tag-archive .tagcloud a, .navigation.posts-navigation .nav-links a,
+.navigation.posts-navigation .nav-links-custom a,
+.navigation.post-navigation .nav-links a,
+.navigation.post-navigation .nav-links-custom a {
   padding: .5em 1.25em;
   color: var(--soap-color);
   border: 3px solid var(--soap-color);
@@ -177,15 +178,17 @@ blockquote.wp-block-quote {
   border-radius: 0;
   display: inline-block;
   border-radius: 2em; }
-  .btn .svg-inline--fa, .btn-disabled .svg-inline--fa, .navigation.pagination .nav-links .dots .svg-inline--fa, .btn-active .svg-inline--fa, .navigation.pagination .nav-links .current .svg-inline--fa, .wp-block-button__link .svg-inline--fa, .page-content--tag-archive .tagcloud a .svg-inline--fa, .navigation.posts-navigation .nav-links div a .svg-inline--fa, .navigation.post-navigation .nav-links div a .svg-inline--fa, .navigation.posts-navigation .nav-links-custom a .svg-inline--fa, .navigation.post-navigation .nav-links-custom a .svg-inline--fa, .navigation.pagination .nav-links > * .svg-inline--fa {
+  .btn .svg-inline--fa, .btn-disabled .svg-inline--fa, .btn-active .svg-inline--fa, .wp-block-button__link .svg-inline--fa, .page-content--tag-archive .tagcloud a .svg-inline--fa, .navigation.posts-navigation .nav-links a .svg-inline--fa, .navigation.posts-navigation .nav-links-custom a .svg-inline--fa, .navigation.post-navigation .nav-links a .svg-inline--fa, .navigation.post-navigation .nav-links-custom a .svg-inline--fa {
     color: var(--soap-color); }
-  .btn:hover, .btn-disabled:hover, .navigation.pagination .nav-links .dots:hover, .btn-active:hover, .navigation.pagination .nav-links .current:hover,
-  .wp-block-button__link:hover, .page-content--tag-archive .tagcloud a:hover, .navigation.posts-navigation .nav-links div a:hover,
-  .navigation.post-navigation .nav-links div a:hover, .navigation.posts-navigation .nav-links-custom a:hover,
-  .navigation.post-navigation .nav-links-custom a:hover, .navigation.pagination .nav-links > :hover, .btn:focus, .btn-disabled:focus, .navigation.pagination .nav-links .dots:focus, .btn-active:focus, .navigation.pagination .nav-links .current:focus,
-  .wp-block-button__link:focus, .page-content--tag-archive .tagcloud a:focus, .navigation.posts-navigation .nav-links div a:focus,
-  .navigation.post-navigation .nav-links div a:focus, .navigation.posts-navigation .nav-links-custom a:focus,
-  .navigation.post-navigation .nav-links-custom a:focus, .navigation.pagination .nav-links > :focus {
+  .btn:hover, .btn-disabled:hover, .btn-active:hover,
+  .wp-block-button__link:hover, .page-content--tag-archive .tagcloud a:hover, .navigation.posts-navigation .nav-links a:hover,
+  .navigation.posts-navigation .nav-links-custom a:hover,
+  .navigation.post-navigation .nav-links a:hover,
+  .navigation.post-navigation .nav-links-custom a:hover, .btn:focus, .btn-disabled:focus, .btn-active:focus,
+  .wp-block-button__link:focus, .page-content--tag-archive .tagcloud a:focus, .navigation.posts-navigation .nav-links a:focus,
+  .navigation.posts-navigation .nav-links-custom a:focus,
+  .navigation.post-navigation .nav-links a:focus,
+  .navigation.post-navigation .nav-links-custom a:focus {
     background: var(--soap-color);
     color: #fff;
     font-weight: 400;
@@ -196,17 +199,17 @@ blockquote.wp-block-quote {
   font-size: 90%;
   border-width: calc(3px - 1px); }
 
-.btn-disabled, .navigation.pagination .nav-links .dots {
+.btn-disabled {
   padding-left: 0;
   padding-right: 0;
   cursor: default;
   border-color: transparent; }
-  .btn-disabled:hover, .navigation.pagination .nav-links .dots:hover, .btn-disabled:focus, .navigation.pagination .nav-links .dots:focus {
+  .btn-disabled:hover, .btn-disabled:focus {
     color: var(--soap-color);
     background: transparent;
     font-weight: inherit; }
 
-.btn-active, .navigation.pagination .nav-links .current {
+.btn-active {
   background: var(--soap-color);
   color: #fff;
   font-weight: 400;
@@ -398,6 +401,8 @@ video.wp-video-shortcode {
 .page-content--changelog .changes {
   margin-bottom: 3em;
   margin-left: 1.5em; }
+  .page-content--changelog .changes:last-child {
+    margin-bottom: 0; }
 
 /*----------------------------------------------
 	Tag Archive
@@ -434,91 +439,87 @@ video.wp-video-shortcode {
 /*----------------------------------------------
 	Content Navigation
 ----------------------------------------------*/
-.navigation.posts-navigation h2,
-.navigation.post-navigation h2,
-.navigation.pagination h2 {
-  display: none; }
+body.archive.date .posts-navigation {
+  margin-top: 4em; }
 
-.navigation.posts-navigation .nav-links,
-.navigation.posts-navigation .nav-links-custom,
-.navigation.post-navigation .nav-links,
-.navigation.post-navigation .nav-links-custom,
-.navigation.pagination .nav-links,
-.navigation.pagination .nav-links-custom {
-  display: flex; }
-
-.navigation.post-navigation .nav-links .nav-previous,
-.navigation.post-navigation .nav-links .nav-next {
-  width: 40vw; }
-  .navigation.post-navigation .nav-links .nav-previous > a,
-  .navigation.post-navigation .nav-links .nav-next > a {
-    height: calc(100% - (1em + 2 * 3px)); }
-
-.navigation.posts-navigation .nav-links,
-.navigation.post-navigation .nav-links {
-  justify-content: space-between; }
-
-.navigation.posts-navigation .nav-links .nav-previous,
-.navigation.post-navigation .nav-links .nav-previous {
-  margin-right: 2em;
-  text-align: left; }
-
-.navigation.posts-navigation .nav-links .nav-next,
-.navigation.post-navigation .nav-links .nav-next {
-  margin-left: 2em;
-  text-align: right; }
-
-.navigation.posts-navigation .nav-links-custom,
-.navigation.post-navigation .nav-links-custom {
-  justify-content: space-between; }
-
-@media (max-width: 768px) {
+.navigation.posts-navigation,
+.navigation.post-navigation {
+  /*
+	.nav-previous,
+	.nav-next {
+		a:hover,
+		a:focus {
+			.svg-inline--fa {
+				color: #fff;
+			}
+		}
+	}
+	
+	.nav-previous a::before {
+		display: none;
+		font-family: "Font Awesome 5 Regular";						
+		content: "\f053";
+	}
+	
+	.nav-previous .svg-inline--fa {
+		margin-right: .5em;		
+	}
+	
+	.nav-next a::after {
+		display: none;
+		font-family: "Font Awesome 5 Regular";					
+		content: "\f054";
+	}		
+	
+	.nav-next .svg-inline--fa {
+		margin-left: .5em;		
+	}	
+*/ }
+  .navigation.posts-navigation h2,
+  .navigation.post-navigation h2 {
+    display: none; }
   .navigation.posts-navigation .nav-links,
-  .navigation.post-navigation .nav-links {
+  .navigation.posts-navigation .nav-links-custom,
+  .navigation.post-navigation .nav-links,
+  .navigation.post-navigation .nav-links-custom {
+    display: flex; }
+  .navigation.posts-navigation .nav-links-custom,
+  .navigation.post-navigation .nav-links-custom {
+    flex-direction: row-reverse; }
+
+.navigation.post-navigation .nav-links {
+  flex-direction: column-reverse;
+  align-items: center; }
+  .navigation.post-navigation .nav-links .nav-previous,
+  .navigation.post-navigation .nav-links .nav-next {
+    text-align: center; }
+  .navigation.post-navigation .nav-links .nav-next {
+    margin-bottom: 2em; }
+
+.navigation.posts-navigation .nav-links,
+.navigation.posts-navigation .nav-links-custom {
+  justify-content: space-around; }
+
+@media (max-width: 991px) {
+  .navigation.posts-navigation .nav-links {
     flex-direction: column-reverse;
     align-items: center; }
-    .navigation.posts-navigation .nav-links .nav-previous,
-    .navigation.post-navigation .nav-links .nav-previous {
+    .navigation.posts-navigation .nav-links .nav-previous {
       margin-right: 0; }
-    .navigation.posts-navigation .nav-links .nav-next,
-    .navigation.post-navigation .nav-links .nav-next {
+    .navigation.posts-navigation .nav-links .nav-next {
       margin-bottom: 2em;
       margin-left: 0; }
     .navigation.posts-navigation .nav-links .nav-previous,
-    .navigation.posts-navigation .nav-links .nav-next,
-    .navigation.post-navigation .nav-links .nav-previous,
-    .navigation.post-navigation .nav-links .nav-next {
+    .navigation.posts-navigation .nav-links .nav-next {
       text-align: center;
       width: auto; }
-  .navigation.posts-navigation .nav-links-custom,
-  .navigation.post-navigation .nav-links-custom {
+  .navigation.posts-navigation .nav-links-custom {
     flex-direction: column;
     align-items: center; }
-    .navigation.posts-navigation .nav-links-custom a,
-    .navigation.post-navigation .nav-links-custom a {
+    .navigation.posts-navigation .nav-links-custom a {
       text-align: center; }
-      .navigation.posts-navigation .nav-links-custom a:first-child,
-      .navigation.post-navigation .nav-links-custom a:first-child {
+      .navigation.posts-navigation .nav-links-custom a:first-child {
         margin-bottom: 2em; } }
-
-.navigation.pagination .nav-links {
-  justify-content: center; }
-  .navigation.pagination .nav-links > * {
-    flex: 1;
-    text-align: center;
-    width: 0;
-    margin-right: 1em; }
-    .navigation.pagination .nav-links > *:last-child {
-      margin-right: 0; }
-
-@media (max-width: 767px) {
-  .navigation.pagination .nav-links {
-    flex-direction: column; }
-    .navigation.pagination .nav-links > * {
-      width: auto; }
-    .navigation.pagination .nav-links .page-numbers {
-      margin: 0 0 1em 0;
-      text-align: center; } }
 
 /*----------------------------------------------
 	Search

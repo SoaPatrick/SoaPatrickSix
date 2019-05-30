@@ -25,8 +25,12 @@ get_header(); ?>
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'list' );
 					endwhile;
-					the_posts_navigation();	
 				?>
+				<nav class="navigation posts-navigation">
+					<div class="nav-links-custom">
+						<?php posts_nav_link(' ','Newer Posts','Older Posts'); ?>
+					</div>				
+				</nav>				
 			<?php endif; ?>			
 		</div>
 	</div>

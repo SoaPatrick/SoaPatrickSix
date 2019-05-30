@@ -16,6 +16,25 @@ get_header(); ?>
 					<h1 class="title-large"><?php echo single_term_title(); ?></h1>
 				</header>
 				<hr>
+				<div class="tags-wrapper">
+				<?php 		
+					$args = array(
+					    'orderby'    => 'name', 
+					    'order'      => 'ASC',
+					    'hide_empty' => TRUE, 
+					    'fields'     => 'all', 
+					); 
+					$terms = get_terms( 'factory_tags', $args);
+					$currentTerm = $wp_query->get_queried_object();
+				    foreach ( $terms as $term ) {
+					    if ($currentTerm->term_id === $term->term_id)
+					    	echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small btn-active">'. $term->name .'</a>';
+					    else {
+						    echo '<a href="'. get_term_link( $term ) .'" class="btn btn-small">'. $term->name .'</a>';
+					    }     				        
+				    }
+				?>
+				</div>				
 				<div class="page-content page-content--factory">
 					<?php						
 					if ( have_posts() ) : 
@@ -31,3 +50,5 @@ get_header(); ?>
 
 <?php
 get_footer();
+
+

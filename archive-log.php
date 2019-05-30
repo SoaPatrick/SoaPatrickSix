@@ -34,7 +34,11 @@ get_header(); ?>
 					?>
 				</div>
 			</article>
-			<?php the_posts_pagination( ); ?> 
+			<nav class="navigation posts-navigation">
+				<div class="nav-links-custom">
+					<?php posts_nav_link(' ','Newer Logs','Older Logs'); ?>
+				</div>				
+			</nav>
 		</div>
 	</div>
 <?php

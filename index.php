@@ -19,13 +19,20 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 					get_template_part( 'template-parts/content-single', get_post_type() );
 				endwhile;
-				
+			?>			    	
+		</div>
+		<div class="grid">
+			<?php 
 				if ( is_single() ) :
 					the_post_navigation();
-				else :
-					the_posts_navigation();
-				endif ;
-			?>			    	
+				else : ?>
+					<nav class="navigation posts-navigation">
+						<div class="nav-links-custom">
+							<?php posts_nav_link(' ','Newer Posts','Older Posts'); ?>
+						</div>				
+					</nav>
+				<?php endif ;			
+			?>			
 		</div>
 	</div>
 <?php

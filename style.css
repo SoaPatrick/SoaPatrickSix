@@ -167,7 +167,8 @@ blockquote.wp-block-quote {
 .btn, .btn-disabled, .navigation.pagination .nav-links .dots, .btn-active, .navigation.pagination .nav-links .current, .is-style-squared .wp-block-button__link,
 .is-style-outline .wp-block-button__link,
 .wp-block-button__link, .page-content--tag-archive .tagcloud a, .navigation.posts-navigation .nav-links div a,
-.navigation.post-navigation .nav-links div a, .navigation.pagination .nav-links > * {
+.navigation.post-navigation .nav-links div a, .navigation.posts-navigation .nav-links-custom a,
+.navigation.post-navigation .nav-links-custom a, .navigation.pagination .nav-links > * {
   padding: .5em 1.25em;
   color: var(--soap-color);
   border: 3px solid var(--soap-color);
@@ -176,13 +177,15 @@ blockquote.wp-block-quote {
   border-radius: 0;
   display: inline-block;
   border-radius: 2em; }
-  .btn .svg-inline--fa, .btn-disabled .svg-inline--fa, .navigation.pagination .nav-links .dots .svg-inline--fa, .btn-active .svg-inline--fa, .navigation.pagination .nav-links .current .svg-inline--fa, .wp-block-button__link .svg-inline--fa, .page-content--tag-archive .tagcloud a .svg-inline--fa, .navigation.posts-navigation .nav-links div a .svg-inline--fa, .navigation.post-navigation .nav-links div a .svg-inline--fa, .navigation.pagination .nav-links > * .svg-inline--fa {
+  .btn .svg-inline--fa, .btn-disabled .svg-inline--fa, .navigation.pagination .nav-links .dots .svg-inline--fa, .btn-active .svg-inline--fa, .navigation.pagination .nav-links .current .svg-inline--fa, .wp-block-button__link .svg-inline--fa, .page-content--tag-archive .tagcloud a .svg-inline--fa, .navigation.posts-navigation .nav-links div a .svg-inline--fa, .navigation.post-navigation .nav-links div a .svg-inline--fa, .navigation.posts-navigation .nav-links-custom a .svg-inline--fa, .navigation.post-navigation .nav-links-custom a .svg-inline--fa, .navigation.pagination .nav-links > * .svg-inline--fa {
     color: var(--soap-color); }
   .btn:hover, .btn-disabled:hover, .navigation.pagination .nav-links .dots:hover, .btn-active:hover, .navigation.pagination .nav-links .current:hover,
   .wp-block-button__link:hover, .page-content--tag-archive .tagcloud a:hover, .navigation.posts-navigation .nav-links div a:hover,
-  .navigation.post-navigation .nav-links div a:hover, .navigation.pagination .nav-links > :hover, .btn:focus, .btn-disabled:focus, .navigation.pagination .nav-links .dots:focus, .btn-active:focus, .navigation.pagination .nav-links .current:focus,
+  .navigation.post-navigation .nav-links div a:hover, .navigation.posts-navigation .nav-links-custom a:hover,
+  .navigation.post-navigation .nav-links-custom a:hover, .navigation.pagination .nav-links > :hover, .btn:focus, .btn-disabled:focus, .navigation.pagination .nav-links .dots:focus, .btn-active:focus, .navigation.pagination .nav-links .current:focus,
   .wp-block-button__link:focus, .page-content--tag-archive .tagcloud a:focus, .navigation.posts-navigation .nav-links div a:focus,
-  .navigation.post-navigation .nav-links div a:focus, .navigation.pagination .nav-links > :focus {
+  .navigation.post-navigation .nav-links div a:focus, .navigation.posts-navigation .nav-links-custom a:focus,
+  .navigation.post-navigation .nav-links-custom a:focus, .navigation.pagination .nav-links > :focus {
     background: var(--soap-color);
     color: #fff;
     font-weight: 400;
@@ -437,8 +440,11 @@ video.wp-video-shortcode {
   display: none; }
 
 .navigation.posts-navigation .nav-links,
+.navigation.posts-navigation .nav-links-custom,
 .navigation.post-navigation .nav-links,
-.navigation.pagination .nav-links {
+.navigation.post-navigation .nav-links-custom,
+.navigation.pagination .nav-links,
+.navigation.pagination .nav-links-custom {
   display: flex; }
 
 .navigation.post-navigation .nav-links .nav-previous,
@@ -462,19 +468,38 @@ video.wp-video-shortcode {
   margin-left: 2em;
   text-align: right; }
 
+.navigation.posts-navigation .nav-links-custom,
+.navigation.post-navigation .nav-links-custom {
+  justify-content: space-between; }
+
 @media (max-width: 768px) {
   .navigation.posts-navigation .nav-links,
   .navigation.post-navigation .nav-links {
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+    align-items: center; }
     .navigation.posts-navigation .nav-links .nav-previous,
     .navigation.post-navigation .nav-links .nav-previous {
-      margin-right: 0;
-      width: 60%; }
+      margin-right: 0; }
     .navigation.posts-navigation .nav-links .nav-next,
     .navigation.post-navigation .nav-links .nav-next {
-      margin-left: 40%;
       margin-bottom: 2em;
-      width: 60%; } }
+      margin-left: 0; }
+    .navigation.posts-navigation .nav-links .nav-previous,
+    .navigation.posts-navigation .nav-links .nav-next,
+    .navigation.post-navigation .nav-links .nav-previous,
+    .navigation.post-navigation .nav-links .nav-next {
+      text-align: center;
+      width: auto; }
+  .navigation.posts-navigation .nav-links-custom,
+  .navigation.post-navigation .nav-links-custom {
+    flex-direction: column;
+    align-items: center; }
+    .navigation.posts-navigation .nav-links-custom a,
+    .navigation.post-navigation .nav-links-custom a {
+      text-align: center; }
+      .navigation.posts-navigation .nav-links-custom a:first-child,
+      .navigation.post-navigation .nav-links-custom a:first-child {
+        margin-bottom: 2em; } }
 
 .navigation.pagination .nav-links {
   justify-content: center; }
@@ -796,30 +821,33 @@ figcaption {
 /*----------------------------------------------
 	Grid
 ----------------------------------------------*/
-.grid, .posts-navigation,
-.post-navigation {
+.grid {
   display: grid;
   grid-template-columns: 2fr 10rem minmax(730px, 38vw) 10rem 2fr; }
-  .grid > *, .posts-navigation > *, .post-navigation > * {
+  .grid > * {
     grid-column-start: 3;
     grid-column-end: 4; }
-  .grid .alignwide, .posts-navigation .alignwide, .post-navigation .alignwide {
+  .grid .alignwide {
     grid-column-start: 2;
     grid-column-end: 5; }
-  .grid .alignfull, .posts-navigation .alignfull, .post-navigation .alignfull {
+  .grid .alignfull {
     grid-column-start: 1;
     grid-column-end: 6; }
 
 @media (max-width: 1100px) {
-  .grid, .posts-navigation,
-  .post-navigation {
+  .grid {
     grid-template-columns: 1fr 1fr minmax(350px, 60vw) 1fr 1fr; } }
 
 @media (max-width: 430px) {
-  .grid, .posts-navigation,
-  .post-navigation {
+  .grid {
     grid-template-columns: 0 1.5em calc(100% - 3em) 1.5em 0; } }
 
+/*
+.posts-navigation, 
+.post-navigation {
+	@extend .grid;	
+}
+*/
 /*----------------------------------------------
 	Bubbles Animation
 ----------------------------------------------*/

@@ -15,6 +15,28 @@ get_header(); ?>
 					<h1 class="title-large">Factory</h1>
 				</header>
 				<hr>
+				<div class="tags-wrapper">
+				<?php 	
+				 	$args = array(
+					    'orderby'    => 'name', 
+					    'order'      => 'ASC',
+					    'hide_empty' => TRUE, 
+					    'fields'     => 'all', 
+					); 
+					$terms = get_terms( 'factory_tags', $args);			
+				    foreach ( $terms as $term ) {
+				        $url = get_term_link( $term );
+				        if ( is_wp_error( $url ) ) {
+				            continue;
+				        }
+				        printf(
+				            '<a href="%s" class="btn btn-small">%s</a>',
+				            $url,
+				            $term->name
+				        );				        				        
+				    }
+				?>
+				</div>	
 				<div class="page-content page-content--factory">
 					<?php						
 					if ( have_posts() ) : 

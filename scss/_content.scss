@@ -62,10 +62,11 @@
 	}
 	
 	.tagcloud {
-		text-align: center;
+		@extend .tags-wrapper;
 		
 		a {
-			padding: .25em .5em;										
+			@extend .btn;
+			@extend .btn-small;							
 		}
 	}
 }

@@ -322,38 +322,15 @@ add_filter('the_content','give_linked_images_class');
 
 function register_custom_post_types() {
 
-	/* Post Type: Portfolios. */
-
+	/* Post Type: Factory. */
 	$labels = array(
-		"name" => __( "Factory", "" ),
-		"singular_name" => __( "Portfolio", "" ),
-		"menu_name" => __( "Portfolios", "" ),
-		"all_items" => __( "Portfolios", "" ),
-		"add_new" => __( "Add New", "" ),
-		"add_new_item" => __( "Add New Portfolio", "" ),
-		"edit_item" => __( "Edit Portfolio", "" ),
-		"new_item" => __( "New Portfolio", "" ),
-		"view_item" => __( "View Portfolio", "" ),
-		"view_items" => __( "View Portfolios", "" ),
-		"search_items" => __( "Search Portfolios", "" ),
-		"not_found" => __( "No Portfolios found", "" ),
-		"not_found_in_trash" => __( "No Portfolios found in Trash", "" ),
-		"parent_item_colon" => __( "Parent Portfolio", "" ),
-		"featured_image" => __( "Featured image for Portfolio", "" ),
-		"set_featured_image" => __( "Set featured image for Portfolio", "" ),
-		"use_featured_image" => __( "Use as featured image for this Portfolio", "" ),
-		"archives" => __( "Portfolio Archives", "" ),
-		"insert_into_item" => __( "Insert into Portfolio", "" ),
-		"uploaded_to_this_item" => __( "Uploaded to this Portfolio", "" ),
-		"filter_items_list" => __( "Filter Portfolio List", "" ),
-		"items_list_navigation" => __( "Portfolios List Navigation", "" ),
-		"items_list" => __( "Portfolios List", "" ),
-		"attributes" => __( "Portfolios Attributes", "" ),
-		"parent_item_colon" => __( "Parent Portfolio", "" ),
+		"name" => "Factory",
+		"singular_name" => "Factory Item",
+		"menu_name" => "Factory",
 	);
 
 	$args = array(
-		"label" => __( "Portfolios", "" ),
+		"label" => "Portfolios",
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -369,42 +346,24 @@ function register_custom_post_types() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => array( "slug" => "factory", "with_front" => true ),
+		"rewrite" => array( "slug" => "factory", "with_front" => false ),
 		"query_var" => true,
 		"supports" => array( "title", "editor", "thumbnail", "post-formats" ),
+		"taxonomy" => "factory_tags",
 	);
 
 	register_post_type( "factory", $args );
 	
+	
 	/* Post Type: Changelog. */
-
 	$labels = array(
-		"name" => __( "Logs", "" ),
-		"singular_name" => __( "Log", "" ),
-		"menu_name" => __( "Logs", "" ),
-		"all_items" => __( "Logs", "" ),
-		"add_new" => __( "Add New", "" ),
-		"add_new_item" => __( "Add New Log", "" ),
-		"edit_item" => __( "Edit Log", "" ),
-		"new_item" => __( "New Log", "" ),
-		"view_item" => __( "View Log", "" ),
-		"view_items" => __( "View Logs", "" ),
-		"search_items" => __( "Search Logs", "" ),
-		"not_found" => __( "No Logs found", "" ),
-		"not_found_in_trash" => __( "No Logs found in Trash", "" ),
-		"parent_item_colon" => __( "Parent Log", "" ),
-		"archives" => __( "Log Archives", "" ),
-		"insert_into_item" => __( "Insert into Log", "" ),
-		"uploaded_to_this_item" => __( "Uploaded to this Log", "" ),
-		"filter_items_list" => __( "Filter Log List", "" ),
-		"items_list_navigation" => __( "Log List Navigation", "" ),
-		"items_list" => __( "Logs List", "" ),
-		"attributes" => __( "Logs Attributes", "" ),
-		"parent_item_colon" => __( "Parent Log", "" ),
+		"name" => "Logs",
+		"singular_name" => "Log",
+		"menu_name" => "Logs",
 	);
 
 	$args = array(
-		"label" => __( "Logs", "" ),
+		"label" => "Logs",
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -420,7 +379,7 @@ function register_custom_post_types() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => array( "slug" => "log", "with_front" => true ),
+		"rewrite" => array( "slug" => "log", "with_front" => false ),
 		"query_var" => true,
 		"supports" => array( "title"),
 	);
@@ -436,31 +395,24 @@ add_action( 'init', 'register_custom_post_types' );
 
 function register_my_taxes() {
 
-	/* Taxonomy: Portfolio Categories.*/
-
-	$labels = array(
-		"name" => __( "Portfolio Tags", "" ),
-		"singular_name" => __( "Portfolio Tags", "" ),
-	);
-
-	$args = array(
-		"label" => __( "Portfolio Tags", "" ),
-		"labels" => $labels,
+	/* Taxonomy: Factory Tags.*/
+	$factory_tag_args = array(
+		"label" => "Factory Tags",
+		"labels" => $factory_tag_labels,
 		"public" => true,
 		"hierarchical" => false,
-		"label" => "Portfolio Tags",
+		"label" => "Factory Tags",
 		"show_ui" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => array( 'slug' => 'portfolio_category', 'with_front' => true, ),
-		"show_admin_column" => false,
+		"rewrite" => array( 'slug' => 'factory-tag', 'with_front' => false, ),
+		"show_admin_column" => true,
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"show_in_quick_edit" => true,
 	);
-	register_taxonomy( "portfolio_category", array( "factory" ), $args );
-	
+	register_taxonomy( "factory_tags", array( "factory" ), $factory_tag_args );	
 }
 
 add_action( 'init', 'register_my_taxes' );
@@ -591,18 +543,15 @@ add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
 
 
 /**
- * Change the Tag Cloud's Font Sizes.
+ * Remove the Tag Cloud's Font Sizes.
  *
- * @param array $args
- * @return array
  */
-function change_tag_cloud_font_sizes( array $args ) {
-    $args['smallest'] = '16';
-    $args['largest'] = '32';
 
-    return $args;
+add_filter('wp_generate_tag_cloud', 'myprefix_tag_cloud',10,1);
+
+function myprefix_tag_cloud($tag_string){
+  return preg_replace('/style=("|\')(.*?)("|\')/','',$tag_string);
 }
-add_filter( 'widget_tag_cloud_args', 'change_tag_cloud_font_sizes');
 
 
 /**

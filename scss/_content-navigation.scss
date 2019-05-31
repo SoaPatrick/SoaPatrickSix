@@ -2,7 +2,7 @@
 	Content Navigation
 ----------------------------------------------*/
 
-
+body.search.search-results,
 body.archive.date {
 	.posts-navigation {
 		margin-top: 4em;
@@ -16,108 +16,61 @@ body.archive.date {
 		display: none;
 	}
 	
-	.nav-links,
-	.nav-links-custom {
-		display: flex;
+	.nav-links {
+		display: grid;	
 		
 		a {
 		    @extend .btn;
 		}
 	}
 	
-	.nav-links-custom {
-		flex-direction: row-reverse;
+	.nav-previous {	
+		grid-area: older;		
 	}
-	
-/*
-	.nav-previous,
+
 	.nav-next {
-		a:hover,
-		a:focus {
-			.svg-inline--fa {
-				color: #fff;
-			}
-		}
+		grid-area: newer;		
 	}
 	
-	.nav-previous a::before {
-		display: none;
-		font-family: "Font Awesome 5 Regular";						
-		content: "\f053";
-	}
-	
-	.nav-previous .svg-inline--fa {
-		margin-right: .5em;		
-	}
-	
-	.nav-next a::after {
-		display: none;
-		font-family: "Font Awesome 5 Regular";					
-		content: "\f054";
-	}		
-	
-	.nav-next .svg-inline--fa {
-		margin-left: .5em;		
-	}	
-*/	
-}
-
-.navigation.post-navigation {	
-	.nav-links {
-		flex-direction: column-reverse;
-		align-items: center;
-
-		.nav-previous,
-		.nav-next {
-			text-align: center;
-		}			
-		
-		.nav-next {
-		    margin-bottom: 2em;	    				    			    		
-		}	
-	}		
-}
-
-
-.navigation.posts-navigation {
-	.nav-links,
-	.nav-links-custom {
-		justify-content: space-around;	
-	}
-	
-	@media (max-width: 991px) {
+	@media (min-width: 992px) {
 		.nav-links {
-			flex-direction: column-reverse;
-			align-items: center;
-			
-			.nav-previous {
-			    margin-right: 0;		    	
-			}
-			
-			.nav-next {
-			    margin-bottom: 2em;
-			    margin-left: 0;			    				    			    		
-			}
-			
-			.nav-previous,
-			.nav-next {
-				text-align: center;
-				width: auto;
-			}		
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: "older newer";
+			grid-column-gap: 2em;				
 		}
 		
-		.nav-links-custom {
-			flex-direction: column;
-			align-items: center;
+		.nav-next {
+			justify-self: end;
+			
+			a {
+				text-align: right;
+			}				
+		}
+		
+		.nav-previous {
+			justify-self: start;
+			
+			a {
+				text-align: left;
+			}				
+		}
+		
+	}		
+	
+	@media (max-width: 991px) {	
+		.nav-links {
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas: "newer" "older";
+			grid-row-gap: 2em;				
+		}
+				
+		.nav-next,
+		.nav-previous {
+			justify-self: center;
 			
 			a {
 				text-align: center;
-				
-				&:first-child {
-				    margin-bottom: 2em;					
-				}
-			}		
-		}		
-	}	
+			}				
+		}			
+	}
 }
-

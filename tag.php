@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying tag archive.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -23,9 +23,14 @@ get_header(); ?>
 				<?php
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'list' );
-					endwhile;
-					the_posts_navigation();			
+					endwhile;		
 				?>
+				<nav class="navigation posts-navigation">
+					<div class="nav-links">
+						<div class="nav-next"><?php previous_posts_link( 'Newer Posts' ); ?></div>
+						<div class="nav-previous"><?php next_posts_link( 'Older Posts', '' ); ?></div>
+					</div>				
+				</nav>					
 			<?php endif; ?>
 		</div>
 	</div>

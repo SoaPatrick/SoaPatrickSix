@@ -55,14 +55,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php 
-	$body_id = "";
-	if(get_option('body_id')) : 
-		$body_id = 'id="' . get_option('body_id') . '"';
-	endif; 
-?>
-
-<body <?php echo $body_id ?> <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
 	

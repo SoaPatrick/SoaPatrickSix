@@ -35,8 +35,9 @@ get_header(); ?>
 				</div>
 			</article>
 			<nav class="navigation posts-navigation">
-				<div class="nav-links-custom">
-					<?php posts_nav_link(' ','Newer Logs','Older Logs'); ?>
+				<div class="nav-links">
+					<div class="nav-next"><?php previous_posts_link( 'Newer Logs' ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( 'Older Logs', '' ); ?></div>
 				</div>				
 			</nav>
 		</div>

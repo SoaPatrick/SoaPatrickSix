@@ -19,8 +19,13 @@ get_header(); ?>
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'list' );
 					endwhile;
-					the_posts_navigation(); 
 				?>
+				<nav class="navigation posts-navigation">
+					<div class="nav-links">
+						<div class="nav-next"><?php previous_posts_link( 'Newer Posts' ); ?></div>
+						<div class="nav-previous"><?php next_posts_link( 'Older Posts', '' ); ?></div>
+					</div>				
+				</nav>					
 			<?php else :
 				get_template_part( 'template-parts/content', 'none' );
 			endif; ?> 

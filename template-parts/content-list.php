@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts in list form
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

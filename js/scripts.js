@@ -11,10 +11,7 @@ window.onload = function(){
 	};	
 };
 
-
-
-
-
+// script to toggle between light and dark mode and store setting in local storage
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 toggleSwitch.addEventListener('change', switchTheme, false);
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying Factory Items.
+ * Template part for displaying factory list items.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

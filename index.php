@@ -27,10 +27,11 @@ get_header(); ?>
 					the_post_navigation();
 				else : ?>
 					<nav class="navigation posts-navigation">
-						<div class="nav-links-custom">
-							<?php posts_nav_link(' ','Newer Posts','Older Posts'); ?>
+						<div class="nav-links">
+							<div class="nav-next"><?php previous_posts_link( 'Newer Posts' ); ?></div>
+							<div class="nav-previous"><?php next_posts_link( 'Older Posts', '' ); ?></div>
 						</div>				
-					</nav>
+					</nav>	
 				<?php endif ;			
 			?>			
 		</div>

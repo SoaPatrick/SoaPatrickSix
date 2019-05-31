@@ -146,7 +146,7 @@ add_action( 'after_setup_theme', 'soapatricksix_content_width', 0 );
 function soapatricksix_scripts() {
 	wp_enqueue_style( 'soapatricksix-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'soapatricksix-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );	
-  wp_enqueue_script( 'soapatricksix-fa5', get_template_directory_uri() . '/js/fontawesome-all.min.js','','5.2.0', true  );
+  wp_enqueue_script( 'soapatricksix-fa5', get_template_directory_uri() . '/js/fontawesome-all.min.js','','5.8.2', true  );
 	if ( !is_admin() ) wp_deregister_script('jquery');		
 }
 add_action( 'wp_enqueue_scripts', 'soapatricksix_scripts' );
@@ -422,8 +422,6 @@ add_action( 'init', 'register_my_taxes' );
  * Advanced Custom Fields
  */
 
-
-
 define( 'ACF_LITE', true );
 include_once('advanced-custom-fields/acf.php');
 
@@ -507,27 +505,6 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));	
 }	
-
-/**
- * add Custom Field to Generel Settings Tab
- *
- */
-
-$new_general_setting = new new_general_setting();
-
-class new_general_setting {
-    function new_general_setting( ) {
-        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
-    }
-    function register_fields() {
-        register_setting( 'general', 'body_id', 'esc_attr' );
-        add_settings_field('fav_color', '<label for="body_id">'.__('Body ID' , 'body_id' ).'</label>' , array(&$this, 'fields_html') , 'general' );
-    }
-    function fields_html() {
-        $value = get_option( 'body_id', '' );
-        echo '<input type="text" id="body_id" name="body_id" value="' . $value . '" />';
-    }
-}
 	
 /**
  * Remove archive title prefixes.
@@ -535,6 +512,7 @@ class new_general_setting {
  * @param  string  $title  The archive title from get_the_archive_title();
  * @return string          The cleaned title.
  */
+ 
 function grd_custom_archive_title( $title ) {
 	// Remove any HTML, words, digits, and spaces before the title.
 	return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
@@ -553,11 +531,11 @@ function myprefix_tag_cloud($tag_string){
   return preg_replace('/style=("|\')(.*?)("|\')/','',$tag_string);
 }
 
-
 /**
  * wrap all iframes within content with a div and class
  *
  */
+ 
 function div_wrapper($content) {
     // match any iframes
     $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';

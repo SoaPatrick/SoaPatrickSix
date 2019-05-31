@@ -47,10 +47,11 @@ get_header(); ?>
 				</div>
 			</article>
 			<nav class="navigation posts-navigation">
-				<div class="nav-links-custom">
-					<?php posts_nav_link(' ','Newer Factory Items','Older Factory Items'); ?>
+				<div class="nav-links">
+					<div class="nav-next"><?php previous_posts_link( 'Newer Factory Items' ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( 'Older Factory Items', '' ); ?></div>
 				</div>				
-			</nav>
+			</nav>			
 		</div>
 	</div>
 

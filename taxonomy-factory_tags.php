@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: Archives Facrtory Items
+Template Name: Archives factory tag items
  */
 
 get_header(); ?>
@@ -44,7 +44,12 @@ get_header(); ?>
 					endif; ?>
 				</div>
 			</article>
-			<?php the_posts_pagination( ); ?> 
+			<nav class="navigation posts-navigation">
+				<div class="nav-links">
+					<div class="nav-next"><?php previous_posts_link( 'Newer Factory Items' ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( 'Older Factory Items', '' ); ?></div>
+				</div>				
+			</nav>	
 		</div>
 	</div>
 

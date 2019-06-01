@@ -385,6 +385,17 @@ video.wp-video-shortcode {
     .soapcolor-bg a:hover, .soapcolor-bg a:focus {
       text-decoration: underline; }
 
+.site-contant--factory-feed .factory-items {
+  margin-top: 2em;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1em; }
+  .site-contant--factory-feed .factory-items > a img {
+    max-width: 100%;
+    height: auto; }
+
 /*----------------------------------------------
 	Changelog
 ----------------------------------------------*/

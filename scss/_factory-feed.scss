@@ -1,0 +1,40 @@
+/*----------------------------------------------
+	Factory Feed
+----------------------------------------------*/
+
+.factory-feed {
+    margin: 2em 0;		
+	padding: 4em 0;
+	
+    .svg-inline--fa {
+	    color: inherit;
+    }
+    
+    .lead {
+	    text-align: center;
+		margin: 2em auto 0;
+    }    	
+	
+	.factory-feed__items {
+		margin-top: 2em;
+	    display: grid;
+	    	    
+	    img {
+		    max-width: 100%;
+		    height: auto;
+	    }
+	    
+	    @media (min-width: 768px) {	    
+		    grid-column-start: 2;
+		    grid-column-end: 5;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-column-gap: .5em;	    	  
+	    }
+	    @media (max-width: 767px) {	  
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: .5em;		      
+			grid-template-columns: 1fr 1fr;	
+			grid-row-gap: .5em;				    
+	    }
+	}
+}

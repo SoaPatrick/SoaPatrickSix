@@ -53,7 +53,7 @@ $line-height-base: calc(1.5em + .2vw);
 $line-height-heading: 1.3;
 
 // Buttons
-$btn-border-width: 3px;
+$btn-border-width: .125em;
 
 // CSS Variables
 :root {
@@ -74,22 +74,23 @@ $btn-border-width: 3px;
 	Imports
 ----------------------------------------------*/
 
-@import "_mixins.scss";
-@import "_scaffolding.scss";
-@import "_typography.scss";
-@import "_tools.scss";
-@import "_header.scss";
-@import "_navigation.scss";
-@import "_breadcrumbs.scss";
-@import "_content.scss";
-@import "_content-navigation.scss";
-@import "_search.scss";
-@import "_blog-post.scss";
-@import "_factory.scss";
-@import "_instagram-feed.scss";
-@import "_footer.scss";
-@import "_grid.scss";
-@import "_bubbles-animation.scss";
+@import "mixins";
+@import "scaffolding";
+@import "typography";
+@import "tools";
+@import "header";
+@import "navigation";
+@import "breadcrumbs";
+@import "content";
+@import "content-navigation";
+@import "search";
+@import "blog-post";
+@import "factory";
+@import "factory-feed";
+@import "instagram-feed";
+@import "footer";
+@import "grid";
+@import "bubbles-animation";
 
 /*----------------------------------------------
 	Gutenberg Colors
@@ -101,4 +102,4 @@ $btn-border-width: 3px;
 @include has_color(purple,$purple);
 @include has_color(green,$green);
 @include has_color(amber,$amber);
-@include has_color(soap,var(--soap-color));	
+@include has_color(soap,var(--soap-color));

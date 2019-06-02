@@ -15,7 +15,7 @@
 			<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>							
 		    <div class="site-content site-contant--instagram-feed soapcolor-bg">
 			    <div class="container">
-				    <h1 class="title-large text-center"><i class="fab fa-instagram fa-fw"></i>Instagram Feed</h1>
+				    <h2 class="title-large text-center"><i class="fab fa-instagram fa-fw"></i>Instagram Feed</h2>
 					<p class="lead">If you have the time and feel like it, why don't you <a href="https://www.instagram.com/SoaPatrick/" target="_blank">follow me</a> on Instagram?</p>
 					<?php simple_instagram(20); ?>
 			    </div>

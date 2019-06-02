@@ -233,28 +233,6 @@ if ( function_exists( 'add_image_size' ) ) {
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-/**
- * add featured image/video to RSS feed
- */
-
-function featured_toRSS($content) {
-	global $post;
-	$post_id = get_the_ID();
-	
-	$video = get_post_meta( $post_id, '_format_video_embed', true);
-	if ( ! empty( $video ) ) {
-	    $content = '<div>' . $video . '</div>' . $content;
-	}	
-	
-	if ( has_post_thumbnail( $post->ID ) ){
-		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'full', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
-	}
-	
-	return $content;
-}
- 
-add_filter('the_excerpt_rss', 'featured_toRSS');
-add_filter('the_content_feed', 'featured_toRSS');
 
 /**
  * Shortens title used in next and previous post links.
@@ -552,27 +530,6 @@ function div_wrapper($content) {
     return $content;    
 }
 add_filter('the_content', 'div_wrapper');
-
-
-/**
- * Register our sidebars and widgetized areas.
- *
- */
-function arphabet_widgets_init() {
-
-	register_sidebar( array(
-		'name'          => 'Home Top',
-		'id'            => 'home_top',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded">',
-		'after_title'   => '</h2>',
-	) );
-
-}
-add_action( 'widgets_init', 'arphabet_widgets_init' );
-
-
 
 
 include('customizer.php');

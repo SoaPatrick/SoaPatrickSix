@@ -20,28 +20,8 @@ get_header(); ?>
 					$postCount = 0;				
 					while ( have_posts() ) : the_post();
 						$postCount++;
-						if ( $postCount == 2  && is_home() && !is_paged() ) :
-							?>
-							<div class="site-content site-contant--factory-feed soapcolor-bg" style="margin-top: 2em;margin-bottom: 2em;">
-								<div class="grid container">
-									<h1 class="title-large text-center">Factory News</h1>
-									<div class="factory-items">
-									<?php
-										$args = array( 'post_type'   => 'factory', 'post_status' => 'publish', 'posts_per_page' => '3' );
-										$factory = new WP_Query( $args );
-										if( $factory->have_posts() ) :
-											while( $factory->have_posts() ) : $factory->the_post();
-												if (has_post_thumbnail()) : ?>
-													<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-												<?php endif;
-											endwhile;
-										    wp_reset_postdata();
-										endif;
-									?>											
-									</div>						
-								</div>
-							</div>
-							<?php							
+						if ( $postCount == 2  && is_home() && !is_paged() ) : 
+							get_template_part( 'template-parts/content-factory-feed' );
 						endif; 
 						get_template_part( 'template-parts/content-single', get_post_type() );
 					endwhile;

@@ -13,7 +13,7 @@ get_header(); ?>
 			<?php				        
 			if ( have_posts() ) : ?>
 				<nav class="breadcrumbs">
-				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
+				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">SoaPatrick</a></span>						
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/storage/">Storage</a></span>
 				    <span class="breadcrumbs--item__last"><?php the_archive_title();?></span>
 				</nav>			

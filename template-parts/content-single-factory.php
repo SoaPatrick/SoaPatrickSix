@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
 	<div class="grid">
 		<nav class="breadcrumbs">
-		    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
+		    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">SoaPatrick</a></span>						
 		    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>factory">Factory</a></span>
 		    <span class="breadcrumbs--item__last"><?php the_title() ?></span>
 		</nav>		

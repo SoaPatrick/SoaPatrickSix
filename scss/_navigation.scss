@@ -4,6 +4,23 @@
 
 $navigation-border-radius: 2em;
 
+.nav-logo {
+	width: calc(var(--navigation-width)/3);
+	
+	.logo--letter-s,
+	.logo--letter-p {
+		fill: var(--soap-color);
+	}
+	
+	&:hover,
+	&:focus {
+		.logo--letter-s,
+		.logo--letter-p {
+			fill: $white;
+		}		
+	}
+}
+
 .site-navigation {
 	position: fixed;
 	width: var(--navigation-width);
@@ -22,7 +39,12 @@ $navigation-border-radius: 2em;
 		
 		&:hover,
 		&:focus {
-			background: var(--soap-color);			
+			background: var(--soap-color);
+					
+			.logo--letter-s,
+			.logo--letter-p {
+				fill: $white;
+			}	
 		}				
 	}
 	

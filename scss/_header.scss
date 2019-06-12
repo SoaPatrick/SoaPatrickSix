@@ -52,3 +52,41 @@
 		margin: 8vw auto 22vw auto;		
 	}
 }
+
+.site-header--not-home {
+	position: absolute;
+	width: 100%;
+	height: 16vw;
+	
+	.bubbles {
+		position: relative;
+		z-index: -1;
+	}
+	
+	.bubbles--first-row,
+	.bubbles--second-row,
+	.bubbles--third-row {
+		fill: var(--soap-color);	
+	}
+	
+	.bubbles--third-row {
+		opacity: .3;
+	}
+	.bubbles--second-row {
+		opacity: .5;
+	}
+	
+	+ .site-content {
+		padding-top: calc(14vw + 2em);
+	}			
+}
+
+@media (max-width: 768px) {
+	.site-header--not-home {
+		border-top: 1em solid var(--soap-color);
+		
+		+ .site-content {
+			padding-top: calc(14vw + 3em);
+		}					
+	}
+}

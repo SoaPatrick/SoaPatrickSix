@@ -12,7 +12,7 @@ get_header(); ?>
 	    <div class="grid container">
 			<?php if ( have_posts() ) : ?>
 				<nav class="breadcrumbs">
-				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
+				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">SoaPatrick</a></span>						
 				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/tags/">Tags</a></span>
 				    <span class="breadcrumbs--item__last"><?php the_archive_title();?></span>
 				</nav>					

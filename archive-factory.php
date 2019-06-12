@@ -8,7 +8,7 @@ get_header(); ?>
 	    <div class="grid container">
 			<article>	    
 				<nav class="breadcrumbs">
-				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></span>						
+				    <span class="breadcrumbs--item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">SoaPatrick</a></span>						
 				    <span class="breadcrumbs--item__last">Factory</span>
 				</nav>					
 				<header class="page-header">

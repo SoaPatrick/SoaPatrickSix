@@ -35,3 +35,13 @@ function cd_color_picker()
 		</style>
     <?php
 }
+
+add_action( 'customize_register', 'remove_settings',999,1);
+function remove_settings() {     
+	global $wp_customize;
+	$wp_customize->remove_panel( 'nav_menus' );	
+	$wp_customize->remove_section( 'title_tagline' );		
+	$wp_customize->remove_section( 'jetpack_content_options' );
+	$wp_customize->remove_section( 'static_front_page');
+	$wp_customize->remove_section( 'custom_css' );
+} 

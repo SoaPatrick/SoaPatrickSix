@@ -4,7 +4,7 @@ Theme URI: http://www.soapatrick
 Author: Patrick Leisinger
 Author URI: http://www.soapatrick.com/
 Description: Theme for the SoaPatrick Website
-Version: 6.0.0
+Version: 6.1.0
 */
 
 /*----------------------------------------------
@@ -15,12 +15,13 @@ Version: 6.0.0
 @import url("//hello.myfonts.net/count/36f9a1");
 
 @font-face {
-  font-family: 'AmsiProNarw-Black';
-  src: url('font/36F9A1_0_0.eot');
-  src: url('font/36F9A1_0_0.eot?#iefix') format('embedded-opentype'),
-    url('font/36F9A1_0_0.woff2') format('woff2'),
-    url('font/36F9A1_0_0.woff') format('woff'),
-    url('font/36F9A1_0_0.ttf') format('truetype');
+	font-family: 'AmsiProNarw-Black';
+	src: url('font/36F9A1_0_0.eot');
+	src: url('font/36F9A1_0_0.eot?#iefix') format('embedded-opentype'),
+		url('font/36F9A1_0_0.woff2') format('woff2'),
+		url('font/36F9A1_0_0.woff') format('woff'),
+		url('font/36F9A1_0_0.ttf') format('truetype');
+	font-display: swap;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");

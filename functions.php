@@ -301,7 +301,7 @@ add_filter('the_content','give_linked_images_class');
 function register_custom_post_types() {
 
 	/* Post Type: Factory. */
-	$labels = array(
+	$factory_labels = array(
 		"name" => "Factory",
 		"singular_name" => "Factory Item",
 		"menu_name" => "Factory",
@@ -309,7 +309,7 @@ function register_custom_post_types() {
 
 	$args = array(
 		"label" => "Portfolios",
-		"labels" => $labels,
+		"labels" => $factory_labels,
 		"description" => "",
 		"public" => true,
 		"publicly_queryable" => true,
@@ -334,7 +334,7 @@ function register_custom_post_types() {
 	
 	
 	/* Post Type: Changelog. */
-	$labels = array(
+	$changelog_labels = array(
 		"name" => "Logs",
 		"singular_name" => "Log",
 		"menu_name" => "Logs",
@@ -342,7 +342,7 @@ function register_custom_post_types() {
 
 	$args = array(
 		"label" => "Logs",
-		"labels" => $labels,
+		"labels" => $changelog_labels,
 		"description" => "",
 		"public" => true,
 		"publicly_queryable" => true,
@@ -372,6 +372,12 @@ add_action( 'init', 'register_custom_post_types' );
  */
 
 function register_my_taxes() {
+	
+	$factory_tag_labels = array(
+		"name" => "Factory Tags",
+		"singular_name" => "Factory Tags",
+	);
+	
 
 	/* Taxonomy: Factory Tags.*/
 	$factory_tag_args = array(
@@ -379,7 +385,6 @@ function register_my_taxes() {
 		"labels" => $factory_tag_labels,
 		"public" => true,
 		"hierarchical" => false,
-		"label" => "Factory Tags",
 		"show_ui" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,

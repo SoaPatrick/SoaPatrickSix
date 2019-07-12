@@ -431,7 +431,7 @@ video.wp-video-shortcode {
   position: fixed;
   width: var(--navigation-width);
   top: var(--navigation-width);
-  right: 0;
+  left: 0;
   z-index: 1000;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
   background: var(--navigation-bg);
@@ -476,8 +476,8 @@ video.wp-video-shortcode {
 
 @media (min-width: 768px) {
   .site-navigation {
-    border-top-left-radius: 2em;
-    border-bottom-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
   }
   .site-navigation:before, .site-navigation:after {
     content: "";
@@ -485,10 +485,10 @@ video.wp-video-shortcode {
     height: 2em;
   }
   .site-navigation:before {
-    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
   }
   .site-navigation:after {
-    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
   }
 }
 

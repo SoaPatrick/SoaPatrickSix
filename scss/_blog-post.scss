@@ -181,11 +181,15 @@ figure {
 	margin-right: 0;
 	max-width: 100%;
 }
-
-figcaption {
-	font-size: .8em;
-	margin-top: 0;
-	font-style: italic;
+.wp-block-image,
+.wp-block-video {
+	figcaption {
+		font-size: .8em;
+		margin-top: 0;
+		font-style: italic;
+		color: inherit;
+		opacity: .7;
+	}	
 }
 
 .blog-post-content img {

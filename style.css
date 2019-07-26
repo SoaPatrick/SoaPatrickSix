@@ -917,10 +917,13 @@ figure {
   max-width: 100%;
 }
 
-figcaption {
+.wp-block-image figcaption,
+.wp-block-video figcaption {
   font-size: .8em;
   margin-top: 0;
   font-style: italic;
+  color: inherit;
+  opacity: .7;
 }
 
 .blog-post-content img {

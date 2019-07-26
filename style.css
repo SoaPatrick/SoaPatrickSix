@@ -920,7 +920,7 @@ figure {
 .wp-block-image figcaption,
 .wp-block-video figcaption {
   font-size: .8em;
-  margin-top: 0;
+  margin-bottom: 0;
   font-style: italic;
   color: inherit;
   opacity: .7;

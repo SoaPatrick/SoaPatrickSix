@@ -85,6 +85,10 @@
 	.site-header--not-home {
 		border-top: 1em solid var(--soap-color);
 		
+		.bubbles {
+			margin-top: -1px;
+		}
+		
 		+ .site-content {
 			padding-top: calc(14vw + 3em);
 		}					

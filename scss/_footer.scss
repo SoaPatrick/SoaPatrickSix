@@ -6,3 +6,9 @@
 	padding: 2em 1.5em;
 	text-align: center;
 }
+
+@media (max-width: 767px) {
+	.site-footer {
+		padding-bottom: calc(var(--navigation-width) * 1.2 + 2em);
+	}
+}

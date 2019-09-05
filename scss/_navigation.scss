@@ -92,18 +92,18 @@ $navigation-border-radius: 2em;
 }	
 
 @media (max-width: 767px) {
-	body {
-		margin-top: var(--navigation-width);
-	}
-
 	.site-navigation {	
-		top: 0;
-		height: var(--navigation-width);
+		top: auto;
+		bottom: 0;
+		height: calc(var(--navigation-width) * 1.2);
 		width: 100%;
 		display: flex;
 		
 		.site-navigation__link {
 			flex-grow: 1;
+			height: calc(var(--navigation-width) * 1.2);
+			align-items: end;
+			padding-top: 1em;			
 		}
 	}
 }

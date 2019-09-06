@@ -74,29 +74,11 @@
 				<path class="logo--letter-p" d="M130.56,856.83c-6.84,0-15.63-.32-16.28-.32-33.21-1.63-59.9-9.12-79.43-22.47C12.06,818.42.67,792.7,0,754.94c-.32-25.39,4.89-57.3,15.63-94.41L34.2,596.07H170.27l-12.69,41.67c-4.56,17.58-6.84,30.28-6.84,39.72.33,19.86,11.4,31.25,30.28,31.25h1a73.18,73.18,0,0,0,15.3-1.63l.66-.32a50.68,50.68,0,0,0,22.13-15c9.12-11.07,17.26-27.67,24.74-51.43,4.89-17.91,7.17-33.54,7.17-47.53,0-24.42-5.86-45.91-17.58-63.16-11.07-16.28-23.12-32.88-36.46-49.16-8.47-9.76-16.93-20.51-25.4-31.57a206.37,206.37,0,0,1-21.81-35.81,213.32,213.32,0,0,1-15.62-42.65,207.61,207.61,0,0,1-6.19-52.09c0-30.92,6.19-67.06,18.23-108.08,11.39-37.11,24.42-69.66,38.74-96.68,14.32-26.37,31.25-48.51,50.46-65.11a185.79,185.79,0,0,1,67.39-36.79C329.47,3.91,359.74,0,393.92,0,440.15,0,475,8.14,498.1,24.09c22.46,15.63,33.53,41.67,33.53,79.76,0,25.39-5.86,57-16.93,94.08l-19.53,64.13H357.79l14.65-43.62c4.88-17.25,7.48-30.28,7.48-39.39,0-20.18-11.06-31.58-30.6-31.58-15.3,0-28.32,5.86-38.09,17.58-9.44,11.07-16.92,28-23.43,52.41A155.66,155.66,0,0,0,282.91,237a100.72,100.72,0,0,0-1.3,17.25c0,21.49,5.53,40.37,16.28,56.32,10.09,15,22.13,30.28,35.16,45.9,8.13,9.77,16.6,20.51,25.39,31.58a246.34,246.34,0,0,1,22.46,36.46c6.84,13.35,12.37,28.65,16.93,44.93s6.84,34.83,6.84,55a347.36,347.36,0,0,1-3.91,49.48c-2.6,17.91-7.16,37.12-13,57.63-13,43.62-27,80.08-41.67,109.05C331.42,768.94,314.16,792.38,295,810a167.1,167.1,0,0,1-67.06,36.79c-26.05,7.16-56.65,10.74-91.48,10.74A18.09,18.09,0,0,0,130.56,856.83Z"/>
 			</svg>
 		</a>		
-		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage">
-			<svg class="svg-inline--fa fa-archive fa-w-16" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="archive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-				<path fill="currentColor" d="M464 32H48C21.5 32 0 53.5 0 80v64c0 8.8 7.2 16 16 16h16v272c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V160h16c8.8 0 16-7.2 16-16V80c0-26.5-21.5-48-48-48zm-16 400c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V160h384v272zm32-304H32V80c0-8.8 7.2-16 16-16h416c8.8 0 16 7.2 16 16v48zM204 256h104c6.6 0 12-5.4 12-12v-8c0-6.6-5.4-12-12-12H204c-6.6 0-12 5.4-12 12v8c0 6.6 5.4 12 12 12z"></path>
-			</svg>
-		</a>
-		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory">
-			<svg class="svg-inline--fa fa-industry fa-w-16" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="industry" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-				<path fill="currentColor" d="M477.267 162.534L320 241.167V184c0-18.007-18.948-29.359-34.733-21.466L128 241.167V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56v400c0 13.255 10.745 24 24 24h464c13.255 0 24-10.745 24-24V184c0-18.007-18.948-29.359-34.733-21.466zM107.578 287.155L288 196.944V280c0 5.949 6.268 9.81 11.578 7.155L480 196.944V448H32V64h64v216c0 5.947 6.269 9.811 11.578 7.155z"></path>
-			</svg>			
-		</a>		
-		<a class="site-navigation__link" href="#" id="toggle-search-collapse">
-			<svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-				<path fill="currentColor" d="M508.5 481.6l-129-129c-2.3-2.3-5.3-3.5-8.5-3.5h-10.3C395 312 416 262.5 416 208 416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c54.5 0 104-21 141.1-55.2V371c0 3.2 1.3 6.2 3.5 8.5l129 129c4.7 4.7 12.3 4.7 17 0l9.9-9.9c4.7-4.7 4.7-12.3 0-17zM208 384c-97.3 0-176-78.7-176-176S110.7 32 208 32s176 78.7 176 176-78.7 176-176 176z"></path>
-			</svg>		
-		</a>
-		<label class="site-navigation__link theme-switch" for="checkbox">
-			<input type="checkbox" id="checkbox">
-			<div class="toggle">
-				<svg class="svg-inline--fa fa-adjust fa-w-16" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="adjust" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-					<path fill="currentColor" d="M256 40c119.945 0 216 97.337 216 216 0 119.945-97.337 216-216 216-119.945 0-216-97.337-216-216 0-119.945 97.337-216 216-216m0-32C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm-32 124.01v247.98c-53.855-13.8-96-63.001-96-123.99 0-60.99 42.145-110.19 96-123.99M256 96c-88.366 0-160 71.634-160 160s71.634 160 160 160V96z"></path>
-				</svg>
-			</div>
-		</label>
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-box-full"></i></a>
+		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i></a>		
+
+		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i></a>
+		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"><i class="fal fa-adjust"></i></label>
 	</nav>	
 	<div class="wrapper">
 		<?php if ( is_home() && !is_paged() ) : ?>		

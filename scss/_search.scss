@@ -15,6 +15,10 @@
 		color: var(--text-color);
 		border-radius: 2em;	
 		
+		@media (min-width: 768px) {    		
+			grid-column-start: 2;
+			grid-column-end: 5;		
+		}
 		
 		&:focus {
 			outline: none;
@@ -28,6 +32,10 @@
     transition: max-height 0.25s ease-out;
     overflow: hidden;
     
+	@media (min-width: 768px) {    
+    	margin-left: var(--navigation-width);
+    }
+    
     &.open {
 	    max-height: 800px;
 	    transition: max-height 0.25s ease-in;
@@ -35,18 +43,18 @@
 	
 	.search-form input {		
 		&::-webkit-input-placeholder {
-			  color: var(--bg-color);
-			  opacity: .7;
+			  color: var(--text-color);
+			  opacity: .5;
 		}
 		
 		&::-moz-placeholder {
-			  color: var(--bg-color);
-			  opacity: .7;
+			  color: var(--text-color);
+			  opacity: .5;
 		}
 		
 		&:-ms-input-placeholder {
-			  color: var(--bg-color);
-			  opacity: .7;
+			  color: var(--text-color);
+			  opacity: .5;
 		}
 	}		
 }

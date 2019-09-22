@@ -4,7 +4,7 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: 2fr 10rem minmax(705px,38vw) 10rem 2fr;
+	grid-template-columns: 2fr 10rem minmax(630px,38vw) 10rem 2fr;
 	
 	> * {
 		grid-column-start: 3;

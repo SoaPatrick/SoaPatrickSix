@@ -81,12 +81,6 @@
 	}			
 }
 
-@media (min-width: 768px) {
-	.site-header--not-home {
-	    width: calc(100% - var(--navigation-width));
-	}
-}
-
 @media (max-width: 768px) {
 	.site-header--not-home {
 		border-top: 1em solid var(--soap-color);

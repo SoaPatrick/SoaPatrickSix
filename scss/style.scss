@@ -59,17 +59,33 @@ $btn-border-width: .125em;
 // CSS Variables
 :root {
 	--soap-color: #EC407A;
+	--body-color: #1c1c1c;
 	--bg-color: #222;
 	--text-color: #fff;
 	
-	--navigation-bg: #1c1c1c;
 	--navigation-width: 3em;
 }
 
 [data-theme="light"] {
 	--bg-color: #fff;
+	--body-color: #eee;
 	--text-color: #222;
 }
+
+
+.soa,
+.patrick {
+	font-style: normal;
+	display: inline-block;		
+}
+
+.soa {
+	margin-top: -.2em;
+}	
+
+.patrick {
+	margin-top: .13em;
+}	
 
 /*----------------------------------------------
 	Imports

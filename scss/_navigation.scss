@@ -27,10 +27,9 @@ $navigation-border-radius: 2em;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	padding-top: calc(var(--navigation-width) / 2);
-	z-index: 1000;
-	box-shadow: 0 0 .5em rgba(0,0,0,.25);		
-	background: var(--navigation-bg);			
+	padding-top: 2em;
+	z-index: 1000;	
+
 	
 	.site-navigation__link {
 		height: var(--navigation-width);
@@ -46,6 +45,10 @@ $navigation-border-radius: 2em;
 			.logo--letter-s,
 			.logo--letter-p {
 				fill: $white;
+			}
+			
+			.svg-inline--fa {
+				color: $white;
 			}
 			
 			span {
@@ -65,10 +68,9 @@ $navigation-border-radius: 2em;
 			background-color: var(--text-color);
 			color: var(--bg-color);	
 			padding: .5em 1.25em;
-			box-shadow: 0 0 .5em rgba(0,0,0,.25);
 			font-weight: 400;	
-			border-radius: 2em;	  
-		}				
+			border-radius: 2em;	 
+		}		
 	}
 	
 
@@ -86,7 +88,12 @@ $navigation-border-radius: 2em;
 	}
 	
 	.svg-inline--fa {
-		color: $white;
+		color: var(--text-color);
+		
+		@media (max-width: 767px) {			
+			color: $white;
+		}
+		
 		font-size: calc(var(--navigation-width)/3);
 		width: 1.25em;
 	}		
@@ -99,6 +106,8 @@ $navigation-border-radius: 2em;
 		width: 100%;
 		display: flex;	
 		padding: 0;
+		box-shadow: 0 0 .5em rgba(0,0,0,.25);		
+		background: #1c1c1c;			
 		
 		.site-navigation__link {
 			flex-grow: 1;

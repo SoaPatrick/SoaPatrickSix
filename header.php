@@ -53,6 +53,11 @@
 	
 	-->	
 	<?php wp_head(); ?>
+	<?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) { ?>
+    	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/fontawesome-all.min.js"></script>
+   	<?php } else {
+		echo '<script defer src="https://pro.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-S++1cFhwpxbtRScUliTyprAMK33gMHbukurY4rNyt9CxIniGm6PfioUsQPoAITQJ" crossorigin="anonymous"></script>';
+	}?>		
 </head>
 
 <body <?php body_class(); ?>>

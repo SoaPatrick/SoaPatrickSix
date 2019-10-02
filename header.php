@@ -53,17 +53,28 @@
 	
 	-->	
 	<?php wp_head(); ?>
-	<?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) { ?>
-    	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/fontawesome-all.min.js"></script>
-   	<?php } else {
-		echo '<script defer src="https://pro.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-S++1cFhwpxbtRScUliTyprAMK33gMHbukurY4rNyt9CxIniGm6PfioUsQPoAITQJ" crossorigin="anonymous"></script>';
-	}?>		
+	<script src="https://kit.fontawesome.com/89d3ae0c6b.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
-	
+	<div id="settings">
+		<div class="settings">
+			<div id="close-settings">
+				<i class="fal fa-times fa-fw"></i>
+			</div>
+			<h2>Settings</h2>
+			<div class="theme-switch-wrapper">
+				<i class="fal fa-lightbulb-slash"></i>
+				<label class="theme-switch" for="checkbox">
+					<input type="checkbox" id="checkbox">
+					<div class="slider round"></div>
+				</label>
+				<i class="fal fa-lightbulb-on"></i>
+			</div>
+		</div>
+	</div>
 	<div id="search-collapse">
 		<div class="container">
 			<form class="grid search-form" action="<?php echo home_url( '/' ); ?>" method="get">
@@ -82,8 +93,8 @@
 		</a>		
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-archive"></i><span>Storage</span></a>
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i><span>Factory</span></a>		
-		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></a>
-		<label class="site-navigation__link theme-switch" for="checkbox"><input type="checkbox" id="checkbox"><div class="toggle"><i class="fal fa-adjust"></i></div><span>Theme</span></label>
+		<a class="site-navigation__link" href="#" id="toggle-settings"><i class="fal fa-sliders-v"></i><span>Settings</span></a>
+		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></a>		
 	</nav>	
 	<div class="wrapper">
 		<?php if ( is_home() && !is_paged() ) : ?>		

@@ -38,8 +38,7 @@ $navigation-border-radius: 2em;
 		justify-content: center;
 		align-items: center;	
 		
-		&:hover,
-		&:focus {
+		&:hover {
 			background: var(--soap-color);
 					
 			.logo--letter-s,

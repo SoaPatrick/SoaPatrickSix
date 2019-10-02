@@ -9,6 +9,14 @@ window.onload = function(){
 		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera    
 		document.getElementById('search-collapse--input').value = "";	    
 	};	
+	
+	document.getElementById('toggle-settings').onclick = function() {
+    	document.getElementById('settings').classList.toggle('open');   	    
+	};
+	
+	document.getElementById('close-settings').onclick = function() {
+    	document.getElementById('settings').classList.toggle('open');   	    
+	};		
 };
 
 // script to toggle between light and dark mode and store setting in local storage

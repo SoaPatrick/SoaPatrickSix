@@ -72,6 +72,22 @@ $btn-border-width: .125em;
 	--text-color: #222;
 }
 
+[data-color="pink"] {
+	--soap-color: #EC407A;	
+}
+
+[data-color="red"] {
+	--soap-color: #CF3A3A;	
+}
+
+[data-color="purple"] {
+	--soap-color: #AB47BC;	
+}
+
+[data-color="blue"] {
+	--soap-color: #28aae2;	
+}
+
 
 .soa,
 .patrick {

@@ -21,9 +21,10 @@ window.onload = function(){
 	};		
 };
 
+
 // script to toggle between light and dark mode and store setting in local storage
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-toggleSwitch.addEventListener('change', switchTheme, false);
+const toggleThemeSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+toggleThemeSwitch.addEventListener('change', switchTheme, false);
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -42,9 +43,52 @@ if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     if (currentTheme === 'light') {	    
-        toggleSwitch.checked = true;
+        toggleThemeSwitch.checked = true;
     }
 }
+
+
+// script to toggle between color themes and store setting in local storage
+const toggleColorSwitch = document.getElementById("color-switch");
+toggleColorSwitch.addEventListener('click', function () {
+    
+    if (document.getElementById('switch--pink').checked) {
+        document.documentElement.setAttribute('data-color', 'pink');      
+        localStorage.setItem('color', 'pink'); //add this
+    }
+    else if (document.getElementById('switch--red').checked) {    
+        document.documentElement.setAttribute('data-color', 'red');     
+        localStorage.setItem('color', 'red'); //add this
+    } 
+    else if (document.getElementById('switch--purple').checked) {
+        document.documentElement.setAttribute('data-color', 'purple');     
+        localStorage.setItem('color', 'purple'); //add this
+    } 
+    else if (document.getElementById('switch--blue').checked) {	    
+        document.documentElement.setAttribute('data-color', 'blue');     
+        localStorage.setItem('color', 'blue'); //add this
+    }     
+});
+
+const currentColor = localStorage.getItem('color') ? localStorage.getItem('color') : null;
+
+if (currentColor) {
+    document.documentElement.setAttribute('data-color', currentColor);
+
+    if (currentColor === 'pink') {	    
+        document.getElementById('switch--pink').checked = true;
+    } 
+    else if (currentColor === 'red') {
+	    document.getElementById('switch--red').checked = true;
+    }
+    else if (currentColor === 'purple') {
+	    document.getElementById('switch--purple').checked = true;
+    }
+    else if (currentColor === 'purple') {
+	    document.getElementById('switch--blue').checked = true;
+    }        
+}
+
 
 // make Settings draggagle:
 dragElement(document.getElementById("settings"));

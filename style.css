@@ -37,6 +37,22 @@ Version: 6.1.0
   --text-color: #222;
 }
 
+[data-color="pink"] {
+  --soap-color: #EC407A;
+}
+
+[data-color="red"] {
+  --soap-color: #CF3A3A;
+}
+
+[data-color="purple"] {
+  --soap-color: #AB47BC;
+}
+
+[data-color="blue"] {
+  --soap-color: #28aae2;
+}
+
 .soa,
 .patrick {
   font-style: normal;
@@ -446,8 +462,8 @@ video.wp-video-shortcode {
   position: fixed;
   bottom: 4em;
   left: calc(50% - 100px);
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 16em;
   z-index: 3;
   display: none;
   /*slider switch css */
@@ -507,7 +523,7 @@ video.wp-video-shortcode {
   height: 34px;
   position: relative;
   width: 60px;
-  margin: 0 1em;
+  margin: 0 .5em;
 }
 
 #settings .theme-switch input {
@@ -550,6 +566,50 @@ video.wp-video-shortcode {
 
 #settings .slider.round:before {
   border-radius: 50%;
+}
+
+#settings #color-switch {
+  margin-top: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#settings #color-switch input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  height: 3em;
+  width: 3em;
+  margin: 0;
+  padding: 0;
+  border: 0.3em solid var(--text-color);
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: .5em;
+}
+
+#settings #color-switch input#switch--pink {
+  background-color: #EC407A;
+}
+
+#settings #color-switch input#switch--red {
+  background-color: #CF3A3A;
+}
+
+#settings #color-switch input#switch--purple {
+  background-color: #AB47BC;
+}
+
+#settings #color-switch input#switch--blue {
+  background-color: #28aae2;
+}
+
+#settings #color-switch input:checked {
+  border-color: var(--bg-color);
 }
 
 /*----------------------------------------------

@@ -2,8 +2,8 @@
 	position: fixed;
 	bottom: 4em;	
 	left: calc(50% - 100px);
-	width: 200px;
-	height: 200px;	
+	width: 150px;
+	height: 16em;	
 	z-index: 3;
 	display: none;	
 	
@@ -62,7 +62,7 @@
 		height: 34px;
 		position: relative;
 		width: 60px;
-		margin: 0 1em;
+		margin: 0 .5em;
 	}
 	
 	.theme-switch input {
@@ -105,5 +105,50 @@
 	
 	.slider.round:before {
 		border-radius: 50%;
+	}
+	
+	#color-switch {
+		margin-top: 1.5em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		
+		
+		input {
+			-webkit-appearance: none;
+			-moz-appearance: none;		
+			appearance: none;
+			display: inline-block;
+			position: relative;
+			height: 3em;
+			width: 3em;
+			margin: 0;
+			padding: 0;
+			border: .3em solid var(--text-color);
+			border-radius: 50px;
+			cursor: pointer;     
+			outline: none;
+			margin-bottom: .5em;
+			
+			&#switch--pink {
+				background-color: $pink;			
+			}
+			
+			&#switch--red {
+				background-color: $red;			
+			}	
+			
+			&#switch--purple {
+				background-color: $purple;			
+			}			
+			
+			&#switch--blue {
+				background-color: $blue;			
+			}
+					
+			&:checked {
+				border-color: var(--bg-color);
+			}	
+		}		
 	}
 }

@@ -74,6 +74,14 @@
 				</label>
 				<i class="fal fa-lightbulb-on"></i>
 			</div>
+			<div class="color-switch-wrapper">
+				<label id="color-switch" for="radio">
+					<input type="radio" name="color" id="switch--pink" value="pink" checked>
+					<input type="radio" name="color" id="switch--red" value="red">
+					<input type="radio" name="color" id="switch--purple" value="purple">
+					<input type="radio" name="color" id="switch--blue" value="blue">
+				</label>
+			</div>
 		</div>
 	</div>
 	<div id="search-collapse">

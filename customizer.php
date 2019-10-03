@@ -24,6 +24,7 @@ function cd_color_picker_settings( $wp_customize ) {
 	) ) );		
 }
 
+/*
 add_action( 'wp_head', 'cd_color_picker');
 function cd_color_picker()
 {
@@ -35,6 +36,7 @@ function cd_color_picker()
 		</style>
     <?php
 }
+*/
 
 add_action( 'customize_register', 'remove_settings',999,1);
 function remove_settings() {     

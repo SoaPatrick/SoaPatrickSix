@@ -59,10 +59,10 @@
 <body <?php body_class(); ?>>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
-	<div id="settings">
-		<div class="settings">
-			<div id="settings__handlebar"></div>
-			<div id="close-settings">
+	<div id="settings-window">
+		<div class="container">
+			<div id="settings-window__header"></div>
+			<div id="settings-window__close">
 				<i class="fal fa-times fa-fw"></i>
 			</div>
 			<h2>Settings</h2>
@@ -76,10 +76,12 @@
 			</div>
 			<div class="color-switch-wrapper">
 				<label id="color-switch" for="radio">
-					<input type="radio" name="color" id="switch--pink" value="pink" checked>
-					<input type="radio" name="color" id="switch--red" value="red">
+					<input type="radio" name="color" id="switch--amber" value="amber">	
+					<input type="radio" name="color" id="switch--red" value="red">					
+					<input type="radio" name="color" id="switch--pink" value="pink">
 					<input type="radio" name="color" id="switch--purple" value="purple">
 					<input type="radio" name="color" id="switch--blue" value="blue">
+					<input type="radio" name="color" id="switch--green" value="green">				
 				</label>
 			</div>
 		</div>

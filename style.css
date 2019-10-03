@@ -24,7 +24,13 @@ Version: 6.1.0
 	Variables
 ----------------------------------------------*/
 :root {
-  --soap-color: #EC407A;
+  --amber: #FFB300;
+  --red: #CF3A3A;
+  --pink: #EC407A;
+  --purple: #AB47BC;
+  --blue: #28aae2;
+  --green: #348236;
+  --soap-color: var(--purple);
   --body-color: #1c1c1c;
   --bg-color: #222;
   --text-color: #fff;
@@ -37,34 +43,28 @@ Version: 6.1.0
   --text-color: #222;
 }
 
-[data-color="pink"] {
-  --soap-color: #EC407A;
+[data-color="amber"] {
+  --soap-color: var(--amber);
 }
 
 [data-color="red"] {
-  --soap-color: #CF3A3A;
+  --soap-color: var(--red);
+}
+
+[data-color="pink"] {
+  --soap-color: var(--pink);
 }
 
 [data-color="purple"] {
-  --soap-color: #AB47BC;
+  --soap-color: var(--purple);
 }
 
 [data-color="blue"] {
-  --soap-color: #28aae2;
+  --soap-color: var(--blue);
 }
 
-.soa,
-.patrick {
-  font-style: normal;
-  display: inline-block;
-}
-
-.soa {
-  margin-top: -.2em;
-}
-
-.patrick {
-  margin-top: .13em;
+[data-color="green"] {
+  --soap-color: var(--green);
 }
 
 /*----------------------------------------------
@@ -458,18 +458,21 @@ video.wp-video-shortcode {
   }
 }
 
-#settings {
+#settings-window {
   position: fixed;
   bottom: 4em;
-  left: calc(50% - 85px);
-  width: 170px;
-  height: 16em;
+  left: calc(50% - 4.6em);
+  width: 9.2em;
+  height: 14.5em;
   z-index: 3;
   display: none;
-  /*slider switch css */
 }
 
-#settings .settings {
+#settings-window.open {
+  display: flex;
+}
+
+#settings-window .container {
   position: relative;
   background: var(--text-color);
   color: var(--bg-color);
@@ -477,7 +480,7 @@ video.wp-video-shortcode {
   padding: 2em 1em;
 }
 
-#settings #settings__handlebar {
+#settings-window .container #settings-window__header {
   cursor: move;
   position: absolute;
   z-index: 4;
@@ -487,15 +490,7 @@ video.wp-video-shortcode {
   height: 2em;
 }
 
-#settings svg {
-  color: var(--bg-color);
-}
-
-#settings.open {
-  display: flex;
-}
-
-#settings #close-settings {
+#settings-window .container #settings-window__close {
   position: absolute;
   z-index: 5;
   right: .75em;
@@ -503,34 +498,49 @@ video.wp-video-shortcode {
   cursor: pointer;
 }
 
-#settings h2 {
+#settings-window .svg-inline--fa {
+  color: var(--bg-color);
+}
+
+#settings-window h2 {
   text-align: center;
   margin-top: 0;
 }
 
-#settings .theme-switch-wrapper {
+/*----------------------------------------------
+	Theme Switcher
+----------------------------------------------*/
+.theme-switch-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#settings .theme-switch-wrapper svg {
-  font-size: 1.2em;
+.theme-switch-wrapper .svg-inline--fa {
+  font-size: 1.3em;
 }
 
-#settings .theme-switch {
+.theme-switch-wrapper .theme-switch {
   display: inline-block;
-  height: 34px;
+  height: 1.5em;
   position: relative;
-  width: 60px;
+  width: 3em;
   margin: 0 .5em;
 }
 
-#settings .theme-switch input {
+.theme-switch-wrapper .theme-switch input {
   display: none;
 }
 
-#settings .slider {
+.theme-switch-wrapper .theme-switch input:checked + .slider {
+  background-color: #ccc;
+}
+
+.theme-switch-wrapper .theme-switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+.theme-switch-wrapper .theme-switch .slider {
   background-color: #222;
   bottom: 0;
   cursor: pointer;
@@ -541,80 +551,96 @@ video.wp-video-shortcode {
   transition: .4s;
 }
 
-#settings .slider:before {
+.theme-switch-wrapper .theme-switch .slider:before {
   background-color: #fff;
-  bottom: 4px;
   content: "";
-  height: 26px;
-  left: 4px;
   position: absolute;
+  bottom: .15em;
+  left: .15em;
+  height: 1.2em;
+  width: 1.2em;
   transition: .4s;
-  width: 26px;
 }
 
-#settings input:checked + .slider {
-  background-color: #ccc;
+.theme-switch-wrapper .theme-switch .slider.round {
+  border-radius: 1.5em;
 }
 
-#settings input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-#settings .slider.round {
-  border-radius: 34px;
-}
-
-#settings .slider.round:before {
+.theme-switch-wrapper .theme-switch .slider.round:before {
   border-radius: 50%;
 }
 
-#settings #color-switch {
+/*----------------------------------------------
+	Color Switch
+----------------------------------------------*/
+#color-switch {
   margin-top: 1.5em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#settings #color-switch input {
+#color-switch input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   display: inline-block;
   position: relative;
-  height: 3em;
-  width: 3em;
-  margin: 0;
+  margin: 0 0 .5em 0;
   padding: 0;
-  border: 0.3em solid var(--text-color);
-  border-radius: 50px;
+  height: 2em;
+  width: 2em;
+  border: 0.2em solid var(--text-color);
+  border-radius: 50%;
   cursor: pointer;
   outline: none;
-  margin-bottom: .5em;
 }
 
-#settings #color-switch input#switch--pink {
-  background-color: #EC407A;
-}
-
-#settings #color-switch input#switch--red {
-  background-color: #CF3A3A;
-}
-
-#settings #color-switch input#switch--purple {
-  background-color: #AB47BC;
-}
-
-#settings #color-switch input#switch--blue {
-  background-color: #28aae2;
-}
-
-#settings #color-switch input:checked {
+#color-switch input:checked {
   border-color: var(--bg-color);
+}
+
+#color-switch input#switch--amber {
+  background-color: var(--amber);
+}
+
+#color-switch input#switch--red {
+  background-color: var(--red);
+}
+
+#color-switch input#switch--pink {
+  background-color: var(--pink);
+}
+
+#color-switch input#switch--purple {
+  background-color: var(--purple);
+}
+
+#color-switch input#switch--blue {
+  background-color: var(--blue);
+}
+
+#color-switch input#switch--green {
+  background-color: var(--green);
 }
 
 /*----------------------------------------------
 	Navigation
 ----------------------------------------------*/
+.soa,
+.patrick {
+  font-style: normal;
+  display: inline-block;
+}
+
+.soa {
+  margin-top: -.2em;
+}
+
+.patrick {
+  margin-top: .13em;
+}
+
 .nav-logo {
   width: calc(var(--navigation-width)/3);
 }
@@ -1600,116 +1626,116 @@ figure {
 	Gutenberg Colors
 ----------------------------------------------*/
 .has-red-color {
-  color: #CF3A3A;
+  color: var(--red);
 }
 
 .has-red-background-color {
-  background-color: #CF3A3A;
+  background-color: var(--red);
 }
 
 .wp-block-button__link.has-red-background-color {
   background: transparent;
-  border-color: #CF3A3A;
-  color: #CF3A3A;
+  border-color: var(--red);
+  color: var(--red);
 }
 
 .wp-block-button__link.has-red-background-color:hover, .wp-block-button__link.has-red-background-color:focus {
-  background: #CF3A3A;
+  background: var(--red);
   color: #fff;
 }
 
 .has-blue-color {
-  color: #28aae2;
+  color: var(--blue);
 }
 
 .has-blue-background-color {
-  background-color: #28aae2;
+  background-color: var(--blue);
 }
 
 .wp-block-button__link.has-blue-background-color {
   background: transparent;
-  border-color: #28aae2;
-  color: #28aae2;
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .wp-block-button__link.has-blue-background-color:hover, .wp-block-button__link.has-blue-background-color:focus {
-  background: #28aae2;
+  background: var(--blue);
   color: #fff;
 }
 
 .has-pink-color {
-  color: #EC407A;
+  color: var(--pink);
 }
 
 .has-pink-background-color {
-  background-color: #EC407A;
+  background-color: var(--pink);
 }
 
 .wp-block-button__link.has-pink-background-color {
   background: transparent;
-  border-color: #EC407A;
-  color: #EC407A;
+  border-color: var(--pink);
+  color: var(--pink);
 }
 
 .wp-block-button__link.has-pink-background-color:hover, .wp-block-button__link.has-pink-background-color:focus {
-  background: #EC407A;
+  background: var(--pink);
   color: #fff;
 }
 
 .has-purple-color {
-  color: #AB47BC;
+  color: var(--purple);
 }
 
 .has-purple-background-color {
-  background-color: #AB47BC;
+  background-color: var(--purple);
 }
 
 .wp-block-button__link.has-purple-background-color {
   background: transparent;
-  border-color: #AB47BC;
-  color: #AB47BC;
+  border-color: var(--purple);
+  color: var(--purple);
 }
 
 .wp-block-button__link.has-purple-background-color:hover, .wp-block-button__link.has-purple-background-color:focus {
-  background: #AB47BC;
+  background: var(--purple);
   color: #fff;
 }
 
 .has-green-color {
-  color: #348236;
+  color: var(--green);
 }
 
 .has-green-background-color {
-  background-color: #348236;
+  background-color: var(--green);
 }
 
 .wp-block-button__link.has-green-background-color {
   background: transparent;
-  border-color: #348236;
-  color: #348236;
+  border-color: var(--green);
+  color: var(--green);
 }
 
 .wp-block-button__link.has-green-background-color:hover, .wp-block-button__link.has-green-background-color:focus {
-  background: #348236;
+  background: var(--green);
   color: #fff;
 }
 
 .has-amber-color {
-  color: #FFB300;
+  color: var(--amber);
 }
 
 .has-amber-background-color {
-  background-color: #FFB300;
+  background-color: var(--amber);
 }
 
 .wp-block-button__link.has-amber-background-color {
   background: transparent;
-  border-color: #FFB300;
-  color: #FFB300;
+  border-color: var(--amber);
+  color: var(--amber);
 }
 
 .wp-block-button__link.has-amber-background-color:hover, .wp-block-button__link.has-amber-background-color:focus {
-  background: #FFB300;
+  background: var(--amber);
   color: #fff;
 }
 

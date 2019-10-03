@@ -31,14 +31,13 @@ Version: 6.1.0
 ----------------------------------------------*/
 
 // Colors @link https://material.io/guidelines/style/color.html#color-color-palette
-$red: #CF3A3A;
-$blue: #28aae2;
-$pink: #EC407A;
-$purple: #AB47BC;
-$green: #348236;
-$amber: #FFB300;
-
 // Base Colors
+$amber: var(--amber);
+$red: var(--red);
+$pink: var(--pink);
+$purple: var(--purple);
+$blue: var(--blue);
+$green: var(--green);
 
 $white: #fff;
 
@@ -58,7 +57,14 @@ $btn-border-width: .125em;
 
 // CSS Variables
 :root {
-	--soap-color: #EC407A;
+	--amber: #FFB300;	
+	--red: #CF3A3A;
+	--pink: #EC407A;
+	--purple: #AB47BC;
+	--blue: #28aae2;	
+	--green: #348236;	
+	
+	--soap-color: var(--purple);
 	--body-color: #1c1c1c;
 	--bg-color: #222;
 	--text-color: #fff;
@@ -72,36 +78,12 @@ $btn-border-width: .125em;
 	--text-color: #222;
 }
 
-[data-color="pink"] {
-	--soap-color: #EC407A;	
-}
-
-[data-color="red"] {
-	--soap-color: #CF3A3A;	
-}
-
-[data-color="purple"] {
-	--soap-color: #AB47BC;	
-}
-
-[data-color="blue"] {
-	--soap-color: #28aae2;	
-}
-
-
-.soa,
-.patrick {
-	font-style: normal;
-	display: inline-block;		
-}
-
-.soa {
-	margin-top: -.2em;
-}	
-
-.patrick {
-	margin-top: .13em;
-}	
+[data-color="amber"] { --soap-color: var(--amber); }
+[data-color="red"] { --soap-color: var(--red); }
+[data-color="pink"] { --soap-color: var(--pink); }
+[data-color="purple"] { --soap-color: var(--purple); }
+[data-color="blue"] { --soap-color: var(--blue); }
+[data-color="green"] { --soap-color: var(--green); }
 
 /*----------------------------------------------
 	Imports

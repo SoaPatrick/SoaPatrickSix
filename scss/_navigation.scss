@@ -2,6 +2,22 @@
 	Navigation
 ----------------------------------------------*/
 
+// SoaPatrick Styling
+.soa,
+.patrick {
+	font-style: normal;
+	display: inline-block;		
+}
+
+.soa {
+	margin-top: -.2em;
+}	
+
+.patrick {
+	margin-top: .13em;
+}	
+
+// Navigation
 $navigation-border-radius: 2em;
 
 .nav-logo {

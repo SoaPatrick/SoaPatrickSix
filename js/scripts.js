@@ -12,12 +12,12 @@ window.onload = function(){
 	
 	// toggle Settings from Navigation
 	document.getElementById('toggle-settings').onclick = function() {
-		document.getElementById('settings').classList.toggle('open');   	    
+		document.getElementById('settings-window').classList.toggle('open');   	    
 	};
 	
 	// Close Settings
-	document.getElementById('close-settings').onclick = function() {
-		document.getElementById('settings').classList.toggle('open');   	    
+	document.getElementById('settings-window__close').onclick = function() {
+		document.getElementById('settings-window').classList.toggle('open');   	    
 	};		
 };
 
@@ -50,54 +50,69 @@ if (currentTheme) {
 
 // script to toggle between color themes and store setting in local storage
 const toggleColorSwitch = document.getElementById("color-switch");
-toggleColorSwitch.addEventListener('click', function () {
-    
-    if (document.getElementById('switch--pink').checked) {
+toggleColorSwitch.addEventListener('click', switchColor, false);
+	
+function switchColor(e) {	  
+	if (e.target.id == 'switch--amber') {	    
+        document.documentElement.setAttribute('data-color', 'amber');     
+        localStorage.setItem('color', 'amber'); //add this
+    }
+    else if (e.target.id == 'switch--red') {    
+        document.documentElement.setAttribute('data-color', 'red');     
+        localStorage.setItem('color', 'red'); //add this
+    }      	
+    else if (e.target.id == 'switch--pink') {
         document.documentElement.setAttribute('data-color', 'pink');      
         localStorage.setItem('color', 'pink'); //add this
     }
-    else if (document.getElementById('switch--red').checked) {    
-        document.documentElement.setAttribute('data-color', 'red');     
-        localStorage.setItem('color', 'red'); //add this
-    } 
-    else if (document.getElementById('switch--purple').checked) {
+    else if (e.target.id == 'switch--purple') {
         document.documentElement.setAttribute('data-color', 'purple');     
         localStorage.setItem('color', 'purple'); //add this
     } 
-    else if (document.getElementById('switch--blue').checked) {	    
+    else if (e.target.id == 'switch--blue') {	    
         document.documentElement.setAttribute('data-color', 'blue');     
         localStorage.setItem('color', 'blue'); //add this
-    }     
-});
+    }
+    else if (e.target.id == 'switch--green') {	    
+        document.documentElement.setAttribute('data-color', 'green');     
+        localStorage.setItem('color', 'green'); //add this
+    }              
+}
 
 const currentColor = localStorage.getItem('color') ? localStorage.getItem('color') : null;
 
 if (currentColor) {
     document.documentElement.setAttribute('data-color', currentColor);
 
-    if (currentColor === 'pink') {	    
-        document.getElementById('switch--pink').checked = true;
+	if (currentColor === 'amber') {
+	    document.getElementById('switch--amber').checked = true;
     } 
     else if (currentColor === 'red') {
 	    document.getElementById('switch--red').checked = true;
-    }
+    }    
+    else if (currentColor === 'pink') {	    
+        document.getElementById('switch--pink').checked = true;
+    } 
     else if (currentColor === 'purple') {
 	    document.getElementById('switch--purple').checked = true;
     }
-    else if (currentColor === 'purple') {
+    else if (currentColor === 'blue') {
 	    document.getElementById('switch--blue').checked = true;
-    }        
+    }
+    else if (currentColor === 'green') {
+	    document.getElementById('switch--green').checked = true;
+    }              
 }
 
 
 // make Settings draggagle:
-dragElement(document.getElementById("settings"));
+dragElement(document.getElementById("settings-window"));
 
 function dragElement(elmnt) {
 	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-	if (document.getElementById(elmnt.id + "__handlebar")) {
+	if (document.getElementById(elmnt.id + "__header")) {
 		/* if present, the header is where you move the DIV from:*/
-		document.getElementById(elmnt.id + "__handlebar").onmousedown = dragMouseDown;
+		document.getElementById(elmnt.id + "__header").onmousedown = dragMouseDown;
 	} else {
 		/* otherwise, move the DIV from anywhere inside the DIV:*/
 		elmnt.onmousedown = dragMouseDown;

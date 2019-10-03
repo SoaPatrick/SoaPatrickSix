@@ -61,6 +61,7 @@
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
 	<div id="settings">
 		<div class="settings">
+			<div id="settings__handlebar"></div>
 			<div id="close-settings">
 				<i class="fal fa-times fa-fw"></i>
 			</div>
@@ -93,8 +94,8 @@
 		</a>		
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-archive"></i><span>Storage</span></a>
 		<a class="site-navigation__link" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i><span>Factory</span></a>		
-		<a class="site-navigation__link" href="#" id="toggle-settings"><i class="fal fa-sliders-v"></i><span>Settings</span></a>
-		<a class="site-navigation__link" href="#" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></a>		
+		<span class="site-navigation__link" id="toggle-settings"><i class="fal fa-sliders-v"></i><span>Settings</span></span>
+		<spam class="site-navigation__link" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></span>		
 	</nav>	
 	<div class="wrapper">
 		<?php if ( is_home() && !is_paged() ) : ?>		

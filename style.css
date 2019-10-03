@@ -447,6 +447,7 @@ video.wp-video-shortcode {
   bottom: 4em;
   left: calc(50% - 100px);
   width: 200px;
+  height: 200px;
   z-index: 3;
   display: none;
   /*slider switch css */
@@ -460,6 +461,16 @@ video.wp-video-shortcode {
   padding: 2em 1em;
 }
 
+#settings #settings__handlebar {
+  cursor: move;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2em;
+}
+
 #settings svg {
   color: var(--bg-color);
 }
@@ -470,6 +481,7 @@ video.wp-video-shortcode {
 
 #settings #close-settings {
   position: absolute;
+  z-index: 5;
   right: .75em;
   top: .75em;
   cursor: pointer;
@@ -574,6 +586,7 @@ video.wp-video-shortcode {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .site-navigation .site-navigation__link:hover {

@@ -1,8 +1,9 @@
 #settings {
 	position: fixed;
-	bottom: 4em;
+	bottom: 4em;	
 	left: calc(50% - 100px);
-	width: 200px;	
+	width: 200px;
+	height: 200px;	
 	z-index: 3;
 	display: none;	
 	
@@ -12,6 +13,16 @@
 		color: var(--bg-color);
 		box-shadow: 0 0 .5em rgba(0,0,0,.5);
 		padding: 2em 1em;
+	}
+	
+	#settings__handlebar {
+		cursor: move;
+		position: absolute;
+		z-index: 4;		
+		left: 0;
+		top: 0;
+		right: 0;
+		height: 2em;
 	}
 	
 	svg {
@@ -24,6 +35,7 @@
 	
 	#close-settings {
 		position: absolute;
+		z-index: 5;
 		right: .75em;
 		top: .75em;
 		cursor: pointer;

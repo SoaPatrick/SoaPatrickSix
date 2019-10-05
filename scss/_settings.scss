@@ -71,7 +71,7 @@
 			display:none;
 			
 			&:checked + .slider {
-				background-color: #ccc;
+				background-color: $dark-grey;
 				
 				&:before {
 					transform: translateX(1.5em);
@@ -80,7 +80,7 @@
 		}
 		
 		.slider {
-			background-color: #222;
+			background-color: $darker-grey;
 			bottom: 0;
 			cursor: pointer;
 			left: 0;
@@ -90,7 +90,7 @@
 			transition: .4s;
 			
 			&:before {
-				background-color: #fff;
+				background-color: $white;
 				content: "";
 				position: absolute;
 				bottom: .15em;				
@@ -140,30 +140,13 @@
 		
 		&:checked {
 			border-color: var(--bg-color);
-		}		
-		
-		&#switch--amber {
-			background-color: var(--amber);			
-		}
-		
-		&#switch--red {
-			background-color: var(--red);			
-		}						
-		
-		&#switch--pink {
-			background-color: var(--pink);			
-		}	
-		
-		&#switch--purple {
-			background-color: var(--purple);			
 		}			
-		
-		&#switch--blue {
-			background-color: var(--blue);			
-		}
-		
-		&#switch--green {
-			background-color: var(--green);			
-		}				
-	}		
+	}
+	
+	@include color-switch(amber);	
+	@include color-switch(red);
+	@include color-switch(pink);
+	@include color-switch(purple);	
+	@include color-switch(blue);
+	@include color-switch(green);
 }

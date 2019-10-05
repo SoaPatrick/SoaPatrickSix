@@ -10,7 +10,6 @@ Version: 6.1.0
 /*----------------------------------------------
 	Import Font
 ----------------------------------------------*/
-/* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/36f9a1");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap");
 @font-face {
@@ -37,6 +36,9 @@ Version: 6.1.0
   --navigation-width: 3em;
 }
 
+/*----------------------------------------------
+	Theming
+----------------------------------------------*/
 [data-theme="light"] {
   --bg-color: #fff;
   --body-color: #eee;
@@ -533,7 +535,7 @@ video.wp-video-shortcode {
 }
 
 .theme-switch-wrapper .theme-switch input:checked + .slider {
-  background-color: #ccc;
+  background-color: #555;
 }
 
 .theme-switch-wrapper .theme-switch input:checked + .slider:before {
@@ -600,27 +602,27 @@ video.wp-video-shortcode {
   border-color: var(--bg-color);
 }
 
-#color-switch input#switch--amber {
+#color-switch #switch--amber {
   background-color: var(--amber);
 }
 
-#color-switch input#switch--red {
+#color-switch #switch--red {
   background-color: var(--red);
 }
 
-#color-switch input#switch--pink {
+#color-switch #switch--pink {
   background-color: var(--pink);
 }
 
-#color-switch input#switch--purple {
+#color-switch #switch--purple {
   background-color: var(--purple);
 }
 
-#color-switch input#switch--blue {
+#color-switch #switch--blue {
   background-color: var(--blue);
 }
 
-#color-switch input#switch--green {
+#color-switch #switch--green {
   background-color: var(--green);
 }
 

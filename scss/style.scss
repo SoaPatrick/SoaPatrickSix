@@ -11,7 +11,7 @@ Version: 6.1.0
 	Import Font
 ----------------------------------------------*/
 
-/* @import must be at top of file, otherwise CSS will not work */
+// @import must be at top of file, otherwise CSS will not work
 @import url("//hello.myfonts.net/count/36f9a1");
 
 @font-face {
@@ -30,16 +30,10 @@ Version: 6.1.0
 	Variables
 ----------------------------------------------*/
 
-// Colors @link https://material.io/guidelines/style/color.html#color-color-palette
-// Base Colors
-$amber: var(--amber);
-$red: var(--red);
-$pink: var(--pink);
-$purple: var(--purple);
-$blue: var(--blue);
-$green: var(--green);
-
+// Base Color
 $white: #fff;
+$dark-grey: #555;
+$darker-grey: #222;
 
 // Font
 $font-base: 'Source Sans Pro', serif;
@@ -56,6 +50,7 @@ $line-height-heading: 1.3;
 $btn-border-width: .125em;
 
 // CSS Variables
+// Colors @link https://material.io/guidelines/style/color.html#color-color-palette
 :root {
 	--amber: #FFB300;	
 	--red: #CF3A3A;
@@ -71,6 +66,10 @@ $btn-border-width: .125em;
 	
 	--navigation-width: 3em;
 }
+
+/*----------------------------------------------
+	Theming
+----------------------------------------------*/
 
 [data-theme="light"] {
 	--bg-color: #fff;
@@ -112,10 +111,10 @@ $btn-border-width: .125em;
 	Gutenberg Colors
 ----------------------------------------------*/
 
-@include has_color(red,$red);
-@include has_color(blue,$blue);
-@include has_color(pink,$pink);
-@include has_color(purple,$purple);
-@include has_color(green,$green);
-@include has_color(amber,$amber);
-@include has_color(soap,var(--soap-color));
+@include has_color(red,red);
+@include has_color(blue,blue);
+@include has_color(pink,pink);
+@include has_color(purple,purple);
+@include has_color(green,green);
+@include has_color(amber,amber);
+@include has_color(soap,soap-color);

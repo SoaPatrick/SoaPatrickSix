@@ -4,22 +4,28 @@
 
 @mixin has-color($name, $color) {
 	.has-#{$name}-color {
-		color: $color;
+		color: var(--#{$color});
 	}
 	
 	.has-#{$name}-background-color {
-		background-color: $color;
+		background-color: var(--#{$color});
 	}
 	
 	.wp-block-button__link.has-#{$name}-background-color {
 		background: transparent;
-		border-color: $color;
-		color: $color;
+		border-color: var(--#{$color});
+		color: var(--#{$color});
 		
 		&:hover,
 		&:focus {
-			background: $color;
+			background: var(--#{$color});
 			color: $white;
 		}
+	}
+}
+
+@mixin color-switch($color) {
+	#switch--#{$color} {
+		background-color: var(--#{$color});
 	}
 }

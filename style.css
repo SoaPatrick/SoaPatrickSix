@@ -758,7 +758,7 @@ video.wp-video-shortcode {
 
 @media (min-width: 768px) {
   body.admin-bar .site-navigation {
-    padding-top: var(--navigation-width);
+    padding-top: calc(2em + 32px);
   }
 }
 

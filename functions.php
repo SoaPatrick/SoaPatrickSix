@@ -546,3 +546,37 @@ include('customizer.php');
  */
 add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
 add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
+
+
+
+/**
+ * Replace Youtube Videos with Preview Image instead
+ * of embeded iFrame, play video on click
+ *
+ */
+function youtube_embeded($content){
+
+	//youtube.com\^(?!href=)
+	if (preg_match_all('#(?<!href\=\")https\:\/\/www.youtube.com\/watch\?([\\\&\;\=\w\d]+|)v\=[\w\d]{11}+([\\\&\;\=\w\d]+|)(?!\"\>)#', $content, $youtube_match)) {
+		foreach ($youtube_match[0] as $youtube_url) {
+			parse_str( parse_url( wp_specialchars_decode( $youtube_url ), PHP_URL_QUERY ), $youtube_video );
+			if (isset($youtube_video['v'])){
+				$content = str_replace($youtube_url, '<div class="youtube-wrapper"><div class="youtube-wrapper__video" data-id="'.$youtube_video['v'].'"></div></div>', $content);
+			}
+		}
+	}
+	
+	//youtu.be
+	if (preg_match_all('#(?<!href\=\")https\:\/\/youtu.be/([\\\&\;\=\w\d]+|)(?!\"\>)#', $content, $youtube_match)){
+		foreach ($youtube_match[0] as $youtube_url) {
+			$youtube_video = str_replace('https://youtu.be/', '', $youtube_url);
+			if (isset($youtube_video)){
+				$content = str_replace($youtube_url, '<div class="youtube-wrapper"><div class="youtube-wrapper__video" data-id="'.$youtube_video.'"></div></div>', $content);
+			}
+		}
+	}
+
+	return $content;
+
+}
+add_filter('the_content', 'youtube_embeded',1);	

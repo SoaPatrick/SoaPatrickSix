@@ -365,6 +365,66 @@ video.wp-video-shortcode {
 }
 
 /*----------------------------------------------
+	Youtube Embeded Replacer
+----------------------------------------------*/
+.youtube-wrapper__video {
+  position: relative;
+  padding-bottom: 56.23%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.youtube-wrapper__video iframe,
+.youtube-wrapper__video object,
+.youtube-wrapper__video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: transparent;
+}
+
+.youtube-wrapper__video img {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  height: auto;
+  cursor: pointer;
+  -webkit-transition: .4s all;
+  -moz-transition: .4s all;
+  transition: .4s all;
+}
+
+.youtube-wrapper__video .video--play-btn {
+  position: absolute;
+  left: calc(50% - 2em);
+  top: calc(50% - 1.25em);
+  width: 4em;
+  height: 2.5em;
+  margin: 0;
+}
+
+.youtube-wrapper__video .video--play-btn:hover {
+  cursor: pointer;
+}
+
+.youtube-wrapper__video .video--play-btn:hover .video--play-btn__bg {
+  fill: #f00;
+  fill-opacity: 1;
+}
+
+/*----------------------------------------------
 	Site Header
 ----------------------------------------------*/
 .site-header {

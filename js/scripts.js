@@ -23,27 +23,17 @@ window.onload = function(){
 // script to load YouTube Videos only on
 // click on Preview Image
 // ----------------------------------------
-document.addEventListener("DOMContentLoaded",
-    function() {
-        var div, n,
-            v = document.getElementsByClassName("youtube-wrapper__video");
-        for (n = 0; n < v.length; n++) {
-            div = document.createElement("div");
-			if (typeof v[n].dataset.nocookie !== 'undefined' && v[n].dataset.nocookie === '1'){
-				div.setAttribute("data-nocookie", v[n].dataset.nocookie);
-			}
-			if (typeof v[n].dataset.controls !== 'undefined' && v[n].dataset.controls === '0'){
-				div.setAttribute("data-controls", v[n].dataset.controls);
-			}
-			if (typeof v[n].dataset.start !== 'undefined' && parseInt(v[n].dataset.start) > 0 ) {
-				div.setAttribute("data-start", v[n].dataset.start);
-			}
-            div.setAttribute("data-id", v[n].dataset.id);
-            div.innerHTML = ytThumb(v[n].dataset.id);
-            div.onclick = ytIframe;
-            v[n].appendChild(div);
-        }
-    });
+document.addEventListener("DOMContentLoaded",function() {
+    var div, n,
+        v = document.getElementsByClassName("youtube-wrapper__video");
+    for (n = 0; n < v.length; n++) {
+        div = document.createElement("div");
+        div.setAttribute("data-id", v[n].dataset.id);
+        div.innerHTML = ytThumb(v[n].dataset.id);
+        div.onclick = ytIframe;
+        v[n].appendChild(div);
+    }
+});
 
 function ytThumb(id) {
 	var thumbRes = (document.body.clientWidth > 640) ? 'maxresdefault.jpg' : 'hqdefault.jpg',
@@ -63,14 +53,6 @@ function ytIframe() {
     this.parentNode.replaceChild(iframe, this);
 
 }
-
-var playButtons = document.getElementsByClassName("video--play-btn");
-for (var i = 0; i < playButtons.length; i++) {
-	playButtons[i].addEventListener("click", function () {
-		video.muted = false;
-	});
-}
-
 
 // script to toggle between light and dark 
 // mode and store setting in local storage

@@ -71,8 +71,7 @@ function switchTheme(e) {
     }    
 }
 
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
+// currentTheme variable set in head
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -93,8 +92,7 @@ function switchColor(e) {
 	localStorage.setItem('color', e.target.value);	       
 }
 
-const currentColor = localStorage.getItem('color') ? localStorage.getItem('color') : null;
-
+// currentColor variable set in head
 if (currentColor) {
     document.documentElement.setAttribute('data-color', currentColor);
     document.getElementById('switch--'+currentColor).checked = true;            

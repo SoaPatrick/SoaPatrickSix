@@ -2,3 +2,6 @@
 config.codekit3
 /scss/.sass-cache/*
 .DS_Store
+*.css
+package-lock.json
+node_modules/*

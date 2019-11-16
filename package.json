@@ -1,0 +1,22 @@
+{
+  "name": "sass-compiler",
+  "version": "1.0.0",
+  "description": "compile sass to css",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://SoaPatrick@bitbucket.org/SoaPatrick/soapatricksix.git"
+  },
+  "author": "SoaPatrick",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/SoaPatrick/soapatricksix#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  }
+}

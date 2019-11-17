@@ -579,3 +579,71 @@ function youtube_embeded($content){
 
 }
 add_filter('the_content', 'youtube_embeded',1);	
+
+
+/**
+ * Adding the Open Graph in the Language Attributes
+ *
+ */
+function add_opengraph_doctype($output) {
+    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+
+/**
+ * add Open Graph Meta Info
+ *
+ */
+function add_opengraph_infos() {
+	
+    global $post;
+	$default_image = get_template_directory_uri().'/img/open-graph-logo.png';
+	
+	// if page is not single
+    if ( !is_singular() ) {
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+        echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+        return;
+	}
+	
+	// if post has excerpt or not
+    if ($excerpt = $post->post_excerpt) {
+        $excerpt = strip_tags($post->post_excerpt);
+    } else {
+        $excerpt = wp_trim_words($post->post_content,20);
+    }
+
+	// basic meta infos
+    echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+    echo '<meta property="og:description" content="' . $excerpt . '"/>';
+    
+    // type if is factory or anything else
+    if ( is_singular( 'factory' ) ) {
+    	echo '<meta property="og:type" content="portfolio"/>';
+	} else {
+		echo '<meta property="og:type" content="article"/>';	
+	}
+	
+	// more meta infos
+    echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+    echo '<meta property="og:site_name" content="' . get_bloginfo() . '"/>';
+
+    echo '<meta name="twitter:title" content="' . get_the_title() . '"/>';
+    echo '<meta name="twitter:card" content="summary" />';
+    echo '<meta name="twitter:description" content="' . $excerpt . '" />';
+    echo '<meta name="twitter:url" content="' . get_permalink() . '"/>';
+
+	// if post has featured image or not
+    if ( !has_post_thumbnail($post->ID) ) {
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+        echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+    } else {
+        $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+        echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+        echo '<meta name="twitter:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+    }
+}
+
+add_action('wp_head', 'add_opengraph_infos', 5);

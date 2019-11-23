@@ -142,7 +142,7 @@ add_action( 'after_setup_theme', 'soapatricksix_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
- */
+ */ 
 function soapatricksix_scripts() {
 	wp_enqueue_style( 'soapatricksix-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'soapatricksix-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );	
@@ -647,3 +647,26 @@ function add_opengraph_infos() {
 }
 
 add_action('wp_head', 'add_opengraph_infos', 5);
+
+
+
+/**
+ * add versioning to CSS und JS
+ *
+ */
+function set_custom_ver_css_js( $src ) {
+	$style_file = get_stylesheet_directory().'/style.css'; 
+	if ( $style_file ) {
+		$version = filemtime($style_file); 
+		
+		if ( strpos( $src, 'ver=' ) )
+			$src = add_query_arg( 'ver', $version, $src );
+		return esc_url( $src );
+	}
+}
+
+function css_js_versioning() {
+	add_filter( 'style_loader_src', 'set_custom_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'set_custom_ver_css_js', 9999 );
+}
+add_action('init', 'css_js_versioning');

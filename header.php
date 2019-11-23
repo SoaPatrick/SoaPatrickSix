@@ -14,20 +14,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<script>
-		FontAwesomeConfig = { searchPseudoElements: true };
-	</script>
-	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/soapatricksix/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/soapatricksix/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/soapatricksix/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/wp-content/themes/soapatricksix/favicon/site.webmanifest">
-	<link rel="mask-icon" href="/wp-content/themes/soapatricksix/favicon/safari-pinned-tab.svg" color="#cf3c3b">
-	<link rel="shortcut icon" href="/wp-content/themes/soapatricksix/favicon/favicon.ico">
-	<meta name="msapplication-TileColor" content="#222222">
-	<meta name="msapplication-config" content="/wp-content/themes/soapatricksix/favicon/browserconfig.xml">
-	<meta name="theme-color" content="#222222">
+	<script>FontAwesomeConfig = { searchPseudoElements: true };</script>
 	<!--
 	/**
 	 * @license
@@ -52,7 +40,17 @@
 	*/
 
 	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<?php wp_head(); ?>
+	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/soapatricksix/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/soapatricksix/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/soapatricksix/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/wp-content/themes/soapatricksix/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/soapatricksix/favicon/safari-pinned-tab.svg" color="#cf3c3b">
+	<link rel="shortcut icon" href="/wp-content/themes/soapatricksix/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#222222">
+	<meta name="msapplication-config" content="/wp-content/themes/soapatricksix/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#222222">	
 	<script>const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;const currentColor = localStorage.getItem('color') ? localStorage.getItem('color') : null;if(currentTheme){document.documentElement.setAttribute('data-theme', currentTheme);}if(currentColor){document.documentElement.setAttribute('data-color', currentColor);}</script>
 	<script src="https://kit.fontawesome.com/89d3ae0c6b.js" crossorigin="anonymous"></script>
 </head>

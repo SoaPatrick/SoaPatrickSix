@@ -36,33 +36,9 @@ a {
 		color: var(--soap-color);
 		text-decoration: underline;
 	}
-	
-	&[target="_blank"] {
-		&::after {
-			display: none;
-			font-family: "Font Awesome 5 Duotone";
-			font-size: 1em;
-		}				
-					
-		&::after {
-			content: "\f35d";
-		}
-		
-		> .svg-inline--fa {
-			margin-left: .4em;
-			font-size: .6em;
-			margin-bottom: .05em;
-			
-			.fa-secondary {
-				fill: var(--text-color);
-			}
-			
-			.fa-primary {
-				fill: var(--soap-color);
-			}
-		}
-	}
 }
+
+
 
 p,
 li {

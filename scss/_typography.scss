@@ -82,7 +82,7 @@ ol {
 	}
 }		
 
-ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.wp-block-jetpack-slideshow_swiper-wrappper) {
+ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.blocks-gallery-grid):not(.wp-block-jetpack-slideshow_swiper-wrappper) {
 	li::before {
 		font-family: sans-serif;
 		content: "•";

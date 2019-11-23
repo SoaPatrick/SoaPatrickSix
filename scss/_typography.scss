@@ -8,7 +8,7 @@ h3,
 h4 {
 	font-family: $font-heading;
 	font-weight: normal;
-	line-height: $line-height-heading;	
+	line-height: $line-height-heading;
 }
 
 .title-large {
@@ -21,16 +21,16 @@ h4 {
 	margin: .5em 0;
 	font-size: $font-size-title-medium;
 	font-weight: normal;
-	text-align: center;	
+	text-align: center;
 	text-transform: initial;
-	line-height: $line-height-heading;				
+	line-height: $line-height-heading;
 }
 
 a {
 	font-weight: 400;
 	text-decoration: none;
 	color: var(--soap-color);
-	
+
 	&:hover,
 	&:focus {
 		color: var(--soap-color);
@@ -42,18 +42,18 @@ a {
 
 p,
 li {
-	line-height: $line-height-base;			
+	line-height: $line-height-base;
 }
 
 hr {
-	border: 1px solid var(--soap-color);		
+	border: 1px solid var(--soap-color);
 	width: 100%;
 }
 
-	
+
 .svg-inline--fa {
 	color: var(--soap-color);
-} 
+}
 
 code {
 	background: var(--body-color);
@@ -69,20 +69,20 @@ code {
 ul,
 ol {
 	list-style: none;
-	
+
 	li::before {
-		color: var(--soap-color);		
+		color: var(--soap-color);
 		display: inline-block;
 		width: 1em;
 		margin-left: -1em;
 	}
-	
+
 	&.list-style-none {
 		padding-left: 0;
 	}
-}		
+}
 
-ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.wp-block-jetpack-slideshow_swiper-wrappper) {
+ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.blocks-gallery-grid):not(.wp-block-jetpack-slideshow_swiper-wrappper) {
 	li::before {
 		font-family: sans-serif;
 		content: "•";
@@ -91,15 +91,15 @@ ul:not(.fa-ul):not(.list-style-none):not(.wp-block-gallery):not(.wp-block-jetpac
 
 ol {
 	counter-reset: li;
-	
+
 	li {
 		counter-increment: li;
-		
+
 		&::before {
 			content: counter(li);
 			font-weight: 400;
 		}
-	}					
+	}
 }
 
 /*----------------------------------------------
@@ -111,34 +111,34 @@ blockquote.wp-block-quote  {
 	margin-right: 0;
 	padding-left: 1em;
 	border-left: 5px solid var(--soap-color);
-	
+
 	p {
 		font-weight: 400;
 	}
-	
+
 	> *:first-child {
-	    margin-top: 0;
+		margin-top: 0;
 	}
-	
+
 	> *:last-child {
-	    margin-bottom: 0;
-	}	
-	
+		margin-bottom: 0;
+	}
+
 	&.is-style-large {
 		margin-top: 1em;
-		margin-bottom: 1em; 
+		margin-bottom: 1em;
 		padding: 0 0 0 2em;
-		
+
 		p {
-			font-size: 120%;	
+			font-size: 120%;
 			line-height: 1.4;
 		}
 	}
-	
+
 	cite {
 		font-style: normal;
 		font-size: 80%;
-	}		
+	}
 }
 
 /*----------------------------------------------
@@ -150,15 +150,15 @@ blockquote.wp-block-quote  {
 	color: var(--soap-color);
 	border: $btn-border-width solid var(--soap-color);
 	background: transparent;
-	font-size: inherit; 
+	font-size: inherit;
 	border-radius: 0;
-	display: inline-block;	
-	border-radius: 2em; 
-			
+	display: inline-block;
+	border-radius: 2em;
+
 	.svg-inline--fa {
 		color: var(--soap-color);
-	} 
-		  
+	}
+		
 	&:hover,
 	&:focus {
 		background: var(--soap-color);
@@ -171,21 +171,21 @@ blockquote.wp-block-quote  {
 .btn-small {
 	padding: .25em .75em;
 	font-size: 90%;
-}	
+}
 
 .btn-disabled {
-	@extend .btn;	
+	@extend .btn;
 	padding-left: 0;
-	padding-right: 0;	
+	padding-right: 0;
 	cursor: default;
 	border-color: transparent;
-	
+
 	&:hover,
 	&:focus {
 		color: var(--soap-color);
 		background: transparent;
-		font-weight: inherit;		
-	}	
+		font-weight: inherit;
+	}
 }
 
 .btn-active {

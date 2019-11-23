@@ -19,7 +19,7 @@
 				if( $factory->have_posts() ) :
 					while( $factory->have_posts() ) : $factory->the_post();
 						if (has_post_thumbnail()) : ?>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
 						<?php endif;
 					endwhile;
 				    wp_reset_postdata();

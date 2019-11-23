@@ -106,7 +106,7 @@
 		<a class="site-navigation__link" alt="Storage" href="<?php echo esc_url( home_url( '/' ) ); ?>storage"><i class="fal fa-archive"></i><span>Storage</span></a>
 		<a class="site-navigation__link" alt="Factory" href="<?php echo esc_url( home_url( '/' ) ); ?>factory"><i class="fal fa-industry"></i><span>Factory</span></a>
 		<span class="site-navigation__link" alt="Settings" id="toggle-settings"><i class="fal fa-sliders-v"></i><span>Settings</span></span>
-		<spam class="site-navigation__link" alt="FInd Stuff" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></span>
+		<spam class="site-navigation__link" alt="Find Stuff" id="toggle-search-collapse"><i class="fal fa-search"></i><span>Find stuff</span></span>
 	</nav>
 	<div class="wrapper">
 		<?php if ( is_home() && !is_paged() ) : ?>

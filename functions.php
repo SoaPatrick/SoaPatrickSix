@@ -70,17 +70,17 @@ if ( ! function_exists( 'soapatricksix_setup' ) ) :
 			'link',
 			'status'
 		) );
-		
-		
+
+
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'disable-custom-colors' );
-		
+
 		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'  => __( 'Soap', 'soapatricksix' ),
 				'slug'  => 'soap',
 				'color'	=> '#000000',
-			),			
+			),
 			array(
 				'name'  => __( 'Red', 'soapatricksix' ),
 				'slug'  => 'red',
@@ -95,12 +95,12 @@ if ( ! function_exists( 'soapatricksix_setup' ) ) :
 				'name'  => __( 'Pink', 'soapatricksix' ),
 				'slug'  => 'pink',
 				'color' => '#EC407A',
-			),	
+			),
 			array(
 				'name'  => __( 'Purple', 'soapatricksix' ),
 				'slug'  => 'purple',
 				'color' => '#AB47BC',
-			),					
+			),
 			array(
 				'name'  => __( 'Green', 'soapatricksix' ),
 				'slug'  => 'green',
@@ -110,8 +110,8 @@ if ( ! function_exists( 'soapatricksix_setup' ) ) :
 				'name'	=> __( 'Amber', 'soapatricksix' ),
 				'slug'	=> 'amber',
 				'color'	=> '#FFB300',
-			),		
-		) );		
+			),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'soapatricksix_setup' );
@@ -142,11 +142,11 @@ add_action( 'after_setup_theme', 'soapatricksix_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
- */ 
+ */
 function soapatricksix_scripts() {
 	wp_enqueue_style( 'soapatricksix-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'soapatricksix-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );	
-	if ( !is_admin() ) wp_deregister_script('jquery');		
+	wp_enqueue_script( 'soapatricksix-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );
+	if ( !is_admin() ) wp_deregister_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', 'soapatricksix_scripts' );
 
@@ -175,7 +175,7 @@ if ( ! function_exists( 'soapatricksix_posted_on' ) ) :
 			esc_html_x( '%s', 'post date', 'soapatricksix' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
-		
+
 		echo '<li><span class="fa-li"><i class="fal fa-calendar fa-fw"></i></span>' . $posted_on . '</li>';
 
 	}
@@ -218,12 +218,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 /**
  * Custom Image Sizes
- * 
+ *
  * https://codex.wordpress.org/Function_Reference/add_image_size
  */
-if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'large-featured-image', 1400 );  	  
-	add_image_size( 'list-featured-image', 100, 100, array( 'center', 'center' ) );    	
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'large-featured-image', 1400 );  	
+	add_image_size( 'list-featured-image', 100, 100, array( 'center', 'center' ) );
 }
 
 /**
@@ -252,24 +252,24 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
  * @param integer $my_title_length Optional. Number of characters in title. Defaults to 33
  * @return string A shortened title.
  */
- 
+
 function shorten_next_prev_title( $direction, $my_title_length = 33 ) {
-    if ( $direction == 'next' ) {
-        $my_post = get_next_post();  
-    } else {
-        $my_post = get_previous_post(); 
-    }
- 
-    if ( !empty( $my_post ) ) {
-         $my_post_title = $my_post->post_title;
-         if ( strlen( $my_post_title ) > $my_title_length ) {
-              $shortened_my_post_title = substr( $my_post_title, 0, $my_title_length ) . '…';   
-         } else {
-             $shortened_my_post_title = $my_post_title;       
-         }
-    }
-         
-    return $shortened_my_post_title;
+	if ( $direction == 'next' ) {
+		$my_post = get_next_post();
+	} else {
+		$my_post = get_previous_post();
+	}
+
+	if ( !empty( $my_post ) ) {
+		$my_post_title = $my_post->post_title;
+		if ( strlen( $my_post_title ) > $my_title_length ) {
+			$shortened_my_post_title = substr( $my_post_title, 0, $my_title_length ) . '…';
+		} else {
+			$shortened_my_post_title = $my_post_title;
+		}
+	}
+
+	return $shortened_my_post_title;
 }
 
 /**
@@ -278,17 +278,17 @@ function shorten_next_prev_title( $direction, $my_title_length = 33 ) {
  */
 function give_linked_images_class($content) {
 
-  $classes = 'img-link'; // separate classes by spaces - 'img image-link'
+	$classes = 'img-link'; // separate classes by spaces - 'img image-link'
 
-  // check if there are already a class property assigned to the anchor
-  if ( preg_match('/<a.*? class=".*?"><img/', $content) ) {
-    // If there is, simply add the class
-    $content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content);
-  } else {
-    // If there is not an existing class, create a class property
-    $content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content);
-  }
-  return $content;
+	// check if there are already a class property assigned to the anchor
+	if ( preg_match('/<a.*? class=".*?"><img/', $content) ) {
+		// If there is, simply add the class
+		$content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content);
+	} else {
+		// If there is not an existing class, create a class property
+		$content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content);
+	}
+	return $content;
 }
 
 add_filter('the_content','give_linked_images_class');
@@ -330,8 +330,8 @@ function register_custom_post_types() {
 	);
 
 	register_post_type( "factory", $args );
-	
-	
+
+
 	/* Post Type: Changelog. */
 	$changelog_labels = array(
 		"name" => "Logs",
@@ -346,7 +346,7 @@ function register_custom_post_types() {
 		"public" => true,
 		"publicly_queryable" => true,
 		"menu_icon" => "dashicons-hammer",
-		"menu_position" => 6,		
+		"menu_position" => 6,
 		"show_ui" => true,
 		"show_in_rest" => false,
 		"rest_base" => "",
@@ -361,7 +361,7 @@ function register_custom_post_types() {
 		"supports" => array( "title"),
 	);
 
-	register_post_type( "log", $args );	
+	register_post_type( "log", $args );
 }
 
 add_action( 'init', 'register_custom_post_types' );
@@ -371,12 +371,12 @@ add_action( 'init', 'register_custom_post_types' );
  */
 
 function register_my_taxes() {
-	
+
 	$factory_tag_labels = array(
 		"name" => "Factory Tags",
 		"singular_name" => "Factory Tags",
 	);
-	
+
 
 	/* Taxonomy: Factory Tags.*/
 	$factory_tag_args = array(
@@ -394,7 +394,7 @@ function register_my_taxes() {
 		"rest_base" => "",
 		"show_in_quick_edit" => true,
 	);
-	register_taxonomy( "factory_tags", array( "factory" ), $factory_tag_args );	
+	register_taxonomy( "factory_tags", array( "factory" ), $factory_tag_args );
 }
 
 add_action( 'init', 'register_my_taxes' );
@@ -445,7 +445,7 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
-	
+
 	register_field_group(array (
 		'id' => 'acf_change-log',
 		'title' => 'Change Log',
@@ -485,16 +485,16 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 0,
-	));	
-}	
-	
+	));
+}
+
 /**
  * Remove archive title prefixes.
  *
  * @param  string  $title  The archive title from get_the_archive_title();
  * @return string          The cleaned title.
  */
- 
+
 function grd_custom_archive_title( $title ) {
 	// Remove any HTML, words, digits, and spaces before the title.
 	return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
@@ -517,21 +517,21 @@ function myprefix_tag_cloud($tag_string){
  * wrap all iframes within content with a div and class
  *
  */
- 
+
 function div_wrapper($content) {
-    // match any iframes
-    $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
-    preg_match_all($pattern, $content, $matches);
+	// match any iframes
+	$pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+	preg_match_all($pattern, $content, $matches);
 
-    foreach ($matches[0] as $match) {
-        // wrap matched iframe with div
-        $wrappedframe = '<div class="responsive-container">' . $match . '</div>';
+	foreach ($matches[0] as $match) {
+		// wrap matched iframe with div
+		$wrappedframe = '<div class="responsive-container">' . $match . '</div>';
 
-        //replace original iframe with new in content
-        $content = str_replace($match, $wrappedframe, $content);
-    }
+		//replace original iframe with new in content
+		$content = str_replace($match, $wrappedframe, $content);
+	}
 
-    return $content;    
+	return $content;
 }
 add_filter('the_content', 'div_wrapper');
 
@@ -564,7 +564,7 @@ function youtube_embeded($content){
 			}
 		}
 	}
-	
+
 	//youtu.be
 	if (preg_match_all('#(?<!href\=\")https\:\/\/youtu.be/([\\\&\;\=\w\d]+|)(?!\"\>)#', $content, $youtube_match)){
 		foreach ($youtube_match[0] as $youtube_url) {
@@ -578,7 +578,7 @@ function youtube_embeded($content){
 	return $content;
 
 }
-add_filter('the_content', 'youtube_embeded',1);	
+add_filter('the_content', 'youtube_embeded',1);
 
 
 /**
@@ -586,7 +586,7 @@ add_filter('the_content', 'youtube_embeded',1);
  *
  */
 function add_opengraph_doctype($output) {
-    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+	return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
 }
 
 add_filter('language_attributes', 'add_opengraph_doctype');
@@ -597,56 +597,59 @@ add_filter('language_attributes', 'add_opengraph_doctype');
  *
  */
 function add_opengraph_infos() {
-	
-    global $post;
+
+	global $post;
 	$default_image = get_template_directory_uri().'/img/open-graph-logo.png';
-	
+
 	// if page is not single
-    if ( !is_singular() ) {
-        echo '<meta property="og:image" content="' . $default_image . '"/>';
-        echo '<meta name="twitter:image" content="' . $default_image . '"/>';
-        return;
+	if ( !is_singular() ) {
+		echo '<meta name="description" content="' . get_bloginfo('description') . '"/>';
+		echo '<meta property="og:type" content="article"/>';
+		echo '<meta property="og:title" content="' . get_bloginfo('name') . '"/>';
+		echo '<meta property="og:description" content="' . get_bloginfo('description') . '"/>';	
+		echo '<meta property="og:image" content="' . $default_image . '"/>';
+		echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+		return;
 	}
-	
+
 	// if post has excerpt or not
-    if ($excerpt = $post->post_excerpt) {
-        $excerpt = strip_tags($post->post_excerpt);
-    } else {
-        $excerpt = wp_trim_words($post->post_content,20);
-    }
+	if ($excerpt = $post->post_excerpt) {
+		$excerpt = strip_tags($post->post_excerpt);
+	} else {
+		$excerpt = wp_trim_words($post->post_content,20);
+	}
 
 	// basic meta infos
-    echo '<meta property="og:title" content="' . get_the_title() . '"/>';
-    echo '<meta property="og:description" content="' . $excerpt . '"/>';
-    
-    // type if is factory or anything else
-    if ( is_singular( 'factory' ) ) {
-    	echo '<meta property="og:type" content="portfolio"/>';
-	} else {
-		echo '<meta property="og:type" content="article"/>';	
-	}
-	
-	// more meta infos
-    echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-    echo '<meta property="og:site_name" content="' . get_bloginfo() . '"/>';
-
-    echo '<meta name="twitter:title" content="' . get_the_title() . '"/>';
-    echo '<meta name="twitter:card" content="summary" />';
-    echo '<meta name="twitter:description" content="' . $excerpt . '" />';
-    echo '<meta name="twitter:url" content="' . get_permalink() . '"/>';
+	echo '<meta name="description" content="' . $excerpt . '"/>';
+	echo '<meta property="og:type" content="article"/>';
+	echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+	echo '<meta property="og:description" content="' . $excerpt . '"/>';
+	echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+	echo '<meta property="og:site_name" content="' . get_bloginfo() . '"/>';
 
 	// if post has featured image or not
-    if ( !has_post_thumbnail($post->ID) ) {
-        echo '<meta property="og:image" content="' . $default_image . '"/>';
-        echo '<meta name="twitter:image" content="' . $default_image . '"/>';
-    } else {
-        $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
-        echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
-        echo '<meta name="twitter:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
-    }
+	if ( !has_post_thumbnail($post->ID) ) {
+		echo '<meta property="og:image" content="' . $default_image . '"/>';
+	} else {
+	$thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+		echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+	}
+
+	echo '<meta name="twitter:title" content="' . get_the_title() . '"/>';
+	echo '<meta name="twitter:card" content="summary" />';
+	echo '<meta name="twitter:description" content="' . $excerpt . '" />';
+	echo '<meta name="twitter:url" content="' . get_permalink() . '"/>';
+
+	// if post has featured image or not
+	if ( !has_post_thumbnail($post->ID) ) {
+		echo '<meta name="twitter:image" content="' . $default_image . '"/>';
+	} else {
+		$thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+		echo '<meta name="twitter:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+	}
 }
 
-add_action('wp_head', 'add_opengraph_infos', 5);
+add_action('wp_head', 'add_opengraph_infos', 1);
 
 
 
@@ -655,10 +658,10 @@ add_action('wp_head', 'add_opengraph_infos', 5);
  *
  */
 function set_custom_ver_css_js( $src ) {
-	$style_file = get_stylesheet_directory().'/style.css'; 
+	$style_file = get_stylesheet_directory().'/style.css';
 	if ( $style_file ) {
-		$version = filemtime($style_file); 
-		
+		$version = filemtime($style_file);
+
 		if ( strpos( $src, 'ver=' ) )
 			$src = add_query_arg( 'ver', $version, $src );
 		return esc_url( $src );

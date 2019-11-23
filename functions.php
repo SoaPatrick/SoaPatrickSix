@@ -222,7 +222,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * https://codex.wordpress.org/Function_Reference/add_image_size
  */
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'large-featured-image', 1250 );    
+	add_image_size( 'large-featured-image', 1400 );  	  
 	add_image_size( 'list-featured-image', 100, 100, array( 'center', 'center' ) );    	
 }
 

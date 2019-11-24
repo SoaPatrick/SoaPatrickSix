@@ -71,7 +71,7 @@
 			display:none;
 			
 			&:checked + .slider {
-				background-color: $dark-grey;
+				background-color: #555;
 				
 				&:before {
 					transform: translateX(1.5em);
@@ -80,7 +80,7 @@
 		}
 		
 		.slider {
-			background-color: $darker-grey;
+			background-color: #222;
 			bottom: 0;
 			cursor: pointer;
 			left: 0;

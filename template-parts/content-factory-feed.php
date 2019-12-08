@@ -26,6 +26,6 @@
 				endif;
 			?>											
 		</div>
-		<p class="lead">The rest of the Factory can be seen <a href="<?php echo esc_url( home_url( '/' ) ); ?>factory">here</a>.</p>					
+		<p class="lead">The rest can be seen <a href="<?php echo esc_url( home_url( '/' ) ); ?>factory">in the Factory</a>.</p>					
 	</div>
 </div>	

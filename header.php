@@ -88,8 +88,8 @@
 	<div id="search-collapse">
 		<div class="container">
 			<form class="search-form" action="<?php echo home_url( '/' ); ?>" method="get">
-				<label class="grid" for="search-collapse--input" aria-labelledby="search-collapse--input">
-					<input type="text" name="s" id="search-collapse--input" value="<?php the_search_query(); ?>" placeholder="Find stuff..." />
+				<label class="grid" for="search-collapse--input">
+					<input type="text" name="s" id="search-collapse--input" value="<?php the_search_query(); ?>" placeholder="Find stuff..." aria-label="Find stuff...">
 				</label>
 			</form>
 		</div>

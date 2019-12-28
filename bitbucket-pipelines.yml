@@ -1,0 +1,25 @@
+image: node:10.15.3
+
+pipelines:
+  default:
+    - step:
+        name: Build
+        caches:
+          - node
+        script:
+          - npm install -g gulp grunt-cli
+          - npm install
+          - gulp sass
+        artifacts:
+          - style.css
+    - step:
+        name: Deploy
+        deployment: production
+        script:
+          - pipe: atlassian/rsync-deploy:0.3.2
+            variables:
+              USER: '$REMOTE_USER'
+              SERVER: '$REMOTE_SERVER'
+              REMOTE_PATH: '$REMOTE_PATH'
+              LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/'
+              EXTRA_ARGS: '--exclude-from=deployment-exclude-list.txt'

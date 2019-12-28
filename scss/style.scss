@@ -50,19 +50,26 @@ $btn-border-width: .125em;
 // CSS Variables
 // Colors @link https://material.io/guidelines/style/color.html#color-color-palette
 :root {
-	--amber: #FFB300;	
+	--amber: #FFB300;
 	--red: #CF3A3A;
 	--pink: #EC407A;
 	--purple: #AB47BC;
-	--blue: #28aae2;	
-	--green: #348236;	
-	
+	--blue: #28aae2;
+	--green: #348236;
+
 	--soap-color: var(--pink);
 	--body-color: #1c1c1c;
 	--bg-color: #222;
 	--text-color: #fff;
-	
-	--navigation-width: 3em;
+
+  --navigation-width: 3em;
+
+
+  --code-green: rgb(180,213,131);
+  --code-blue: rgb(129,207,238);
+  --code-red: rgb(240,113,120);
+  --code-purple: rgb(199,146,234);
+  --code-gray: #999;
 }
 
 /*----------------------------------------------
@@ -73,6 +80,12 @@ $btn-border-width: .125em;
 	--bg-color: #fff;
 	--body-color: #eee;
 	--text-color: #222;
+
+  --code-green: rgb(145,184,89);
+  --code-blue: rgb(57,173,181);
+  --code-red: rgb(255,83,112);
+  --code-purple: rgb(124,77,255);
+  --code-gray: #aeaeae;
 }
 
 [data-color="amber"] { --soap-color: var(--amber); }

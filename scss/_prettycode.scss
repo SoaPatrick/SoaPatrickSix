@@ -5,25 +5,24 @@ pre.prettyprint.wp-block-code  {
 	overflow-x: auto;
 	padding: 0;
 	border: 0;
-	background: #1c1c1c;	
+	background: var(--body-color);
 	border-radius: .2em;
 
 	code {
 		padding: 1em;
 		font-size: 70%;
-		display: block;
 		background: transparent;
 	}
 }
 
-pre .str, code .str { color: #65B042; } /* string  - green */
-pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
-pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
-pre .typ, code .typ { color: #89bdff; } /* type - light blue */
-pre .lit, code .lit { color: #3387CC; } /* literal - blue */
-pre .pun, code .pun { color: #fff; } /* punctuation - white */
-pre .pln, code .pln { color: #fff; } /* plaintext - white */
-pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
-pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
-pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
-pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+pre .str, code .str { color: var(--code-green); } /* string  - green */
+pre .kwd, code .kwd { color: var(--code-blue); } /* keyword - dark pink */
+pre .com, code .com { color: var(--code-gray); font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: var(--code-red); } /* type - light blue */
+pre .lit, code .lit { color: var(--code-purple); } /* literal - blue */
+pre .pun, code .pun { color: var(--text-color); } /* punctuation - white */
+pre .pln, code .pln { color: var(--text-color); } /* plaintext - white */
+pre .tag, code .tag { color: var(--code-red); } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: var(--code-purple); } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: var(--code-green); } /* html/xml attribute value - green */
+pre .dec, code .dec { color: var(--code-purple); } /* decimal - blue */

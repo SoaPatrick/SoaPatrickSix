@@ -4,17 +4,17 @@ pipelines:
   branches:
     master:
     - step:
-        name: Build
+        name: Build CSS
         caches:
           - node
         script:
-          - npm install -g gulp grunt-cli
+          - npm install -g gulp
           - npm install
           - gulp sass
         artifacts:
           - style.css
     - step:
-        name: Deploy
+        name: Deploy Theme
         deployment: production
         script:
           - pipe: atlassian/rsync-deploy:0.3.2

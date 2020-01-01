@@ -16,7 +16,6 @@ h4 {
 	margin: 0;
 }
 
-
 .title-medium {
 	margin: .5em 0;
 	font-size: $font-size-title-medium;
@@ -38,8 +37,6 @@ a {
 	}
 }
 
-
-
 p,
 li {
 	line-height: $line-height-base;
@@ -50,16 +47,8 @@ hr {
 	width: 100%;
 }
 
-
 .svg-inline--fa {
 	color: var(--soap-color);
-}
-
-code {
-	background: var(--body-color);
-	padding: .0em .3em;
-	border-radius: .2em;
-	display: inline-block;
 }
 
 /*----------------------------------------------
@@ -158,7 +147,7 @@ blockquote.wp-block-quote  {
 	.svg-inline--fa {
 		color: var(--soap-color);
 	}
-		
+
 	&:hover,
 	&:focus {
 		background: var(--soap-color);

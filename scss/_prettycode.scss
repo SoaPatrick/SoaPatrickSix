@@ -1,6 +1,16 @@
 /* Pretty printing styles. Used with prettify.js. */
 /* Vim sunburst theme by David Leibovic */
 
+
+code {
+	background: var(--body-color);
+  padding: .3em;
+  display: inline-block;
+  line-height: 1;
+  border-radius: .2em;
+  font-size: 90%;
+}
+
 pre.prettyprint.wp-block-code  {
 	overflow-x: auto;
 	padding: 0;
@@ -9,9 +19,10 @@ pre.prettyprint.wp-block-code  {
 	border-radius: .2em;
 
 	code {
-		padding: 1em;
-		font-size: 70%;
-		background: transparent;
+    background: transparent;
+    padding: 1em;
+    display: block;
+    line-height: initial;
 	}
 }
 

@@ -222,7 +222,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * https://codex.wordpress.org/Function_Reference/add_image_size
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'large-featured-image', 1400 );  	
+	add_image_size( 'large-featured-image', 1400 );
 	add_image_size( 'list-featured-image', 100, 100, array( 'center', 'center' ) );
 }
 
@@ -606,7 +606,7 @@ function add_opengraph_infos() {
 		echo '<meta name="description" content="' . get_bloginfo('description') . '"/>';
 		echo '<meta property="og:type" content="article"/>';
 		echo '<meta property="og:title" content="' . get_bloginfo('name') . '"/>';
-		echo '<meta property="og:description" content="' . get_bloginfo('description') . '"/>';	
+		echo '<meta property="og:description" content="' . get_bloginfo('description') . '"/>';
 		echo '<meta property="og:image" content="' . $default_image . '"/>';
 		echo '<meta name="twitter:image" content="' . $default_image . '"/>';
 		return;
@@ -614,9 +614,9 @@ function add_opengraph_infos() {
 
 	// if post has excerpt or not
 	if ($excerpt = $post->post_excerpt) {
-		$excerpt = strip_tags($post->post_excerpt);
+    $excerpt = esc_html(strip_tags($post->post_excerpt));
 	} else {
-		$excerpt = wp_trim_words($post->post_content,20);
+		$excerpt = esc_html(wp_trim_words($post->post_content,20));
 	}
 
 	// basic meta infos

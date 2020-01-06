@@ -1,6 +1,6 @@
-/* Pretty printing styles. Used with prettify.js. */
-/* Vim sunburst theme by David Leibovic */
-
+/*----------------------------------------------
+	Pretty Code
+----------------------------------------------*/
 
 code {
 	background: var(--body-color);
@@ -11,7 +11,7 @@ code {
   font-size: 90%;
 }
 
-pre.prettyprint.wp-block-code  {
+pre  {
 	overflow-x: auto;
 	padding: 0;
 	border: 0;
@@ -25,15 +25,3 @@ pre.prettyprint.wp-block-code  {
     line-height: initial;
 	}
 }
-
-pre .str, code .str { color: var(--code-green); } /* string  - green */
-pre .kwd, code .kwd { color: var(--code-blue); } /* keyword - dark pink */
-pre .com, code .com { color: var(--code-gray); font-style: italic; } /* comment - gray */
-pre .typ, code .typ { color: var(--code-red); } /* type - light blue */
-pre .lit, code .lit { color: var(--code-purple); } /* literal - blue */
-pre .pun, code .pun { color: var(--text-color); } /* punctuation - white */
-pre .pln, code .pln { color: var(--text-color); } /* plaintext - white */
-pre .tag, code .tag { color: var(--code-red); } /* html/xml tag    - light blue */
-pre .atn, code .atn { color: var(--code-purple); } /* html/xml attribute name  - khaki */
-pre .atv, code .atv { color: var(--code-green); } /* html/xml attribute value - green */
-pre .dec, code .dec { color: var(--code-purple); } /* decimal - blue */

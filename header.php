@@ -41,6 +41,11 @@
 
 	-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php
+    if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('log') || is_tax('factory_tags')) {
+      echo '<meta name="robots" content="noindex,follow" />';
+    }
+	?>
 	<?php wp_head(); ?>
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/favicon/favicon-32x32.png">

@@ -43,7 +43,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
     if($paged > 1 || is_author() || is_tag() || is_date() || is_attachment() || is_singular('log') || is_post_type_archive('log') || is_tax('factory_tags')) {
-      echo '<meta name="robots" content="noindex,follow" />';
+      echo '<meta name="robots" content="noindex">';
     }
 	?>
 	<?php wp_head(); ?>

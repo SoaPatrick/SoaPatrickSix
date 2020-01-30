@@ -325,7 +325,7 @@ function register_custom_post_types() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "factory", "with_front" => false ),
 		"query_var" => true,
-		"supports" => array( "title", "editor", "thumbnail", "post-formats" ),
+		"supports" => array( "title", "editor", "thumbnail", "post-formats", "jetpack_sitemap_post_types" ),
 		"taxonomy" => "factory_tags",
 	);
 

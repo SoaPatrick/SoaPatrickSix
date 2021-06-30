@@ -4,19 +4,16 @@
   "description": "compile sass to css",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "compile"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://SoaPatrick@bitbucket.org/SoaPatrick/soapatricksix.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "SoaPatrick",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/SoaPatrick/soapatricksix#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.13.1"
   }
 }

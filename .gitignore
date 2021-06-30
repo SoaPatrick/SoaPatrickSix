@@ -7,7 +7,12 @@ config.codekit3
 
 # css file gets compiled with deployment process
 *.css
+!style.css
 
 # localy generated files by running node
 package-lock.json
 node_modules/*
+
+# Composer stuff
+composer.lock
+vendor/*

@@ -144,7 +144,7 @@ add_action( 'after_setup_theme', 'soapatricksix_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function soapatricksix_scripts() {
-	wp_enqueue_style( 'soapatricksix-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'soapatricksix-style', get_template_directory_uri() . '/css/app.css' );
 	wp_enqueue_script( 'soapatricksix-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );
 	if ( !is_admin() ) wp_deregister_script('jquery');
 }

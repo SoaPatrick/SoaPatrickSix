@@ -57,7 +57,7 @@
   <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/favicon/browserconfig.xml">
   <meta name="theme-color" content="#222222">
 	<script>const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;const currentColor = localStorage.getItem('color') ? localStorage.getItem('color') : null;if(currentTheme){document.documentElement.setAttribute('data-theme', currentTheme);}if(currentColor){document.documentElement.setAttribute('data-color', currentColor);}</script>
-	<script src="https://kit.fontawesome.com/89d3ae0c6b.js" crossorigin="anonymous"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
